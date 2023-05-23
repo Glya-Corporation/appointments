@@ -1,9 +1,10 @@
-
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
 const db = require('./utils/database');
 const hendleError = require('./middlewares/error.middleware');
+const initModels = require('./models/initModels');
+const { UserRoutes, BusinessRoutes, BusinessClientsRoutes, AppointmentsRoutes, AppointmentsTypesRoutes, ColaboratorsRoutes, ClientsRoutes, AuthRoutes } = require('./routes');
 
 const app = express();
 
@@ -12,24 +13,31 @@ app.use(morgan('dev'));
 app.use(cors());
 
 db.authenticate()
-    .then(() => console.log('Authenticate complete'))
-    .catch(error => console.log(error));
-    
+  .then(() => console.log('Authenticate complete'))
+  .catch(error => console.log(error));
+
+initModels();
+
 db.sync({ force: false })
-    .then(() => console.log('Synchronized database'))
-    .catch(error => console.log(error));
+  .then(() => console.log('Synchronized database'))
+  .catch(error => console.log(error));
 
 app.get('/', (req, res) => {
-    console.log('Bienvenido al server');
+  res.status(200).json({
+    name: 'Appointment',
+    version: process.env.VERSION
+  })
 });
+
+app.use('/api/v1', AuthRoutes);
+app.use('/api/v1', UserRoutes);
+app.use('/api/v1', BusinessRoutes);
+app.use('/api/v1', BusinessClientsRoutes);
+app.use('/api/v1', ColaboratorsRoutes);
+app.use('/api/v1', AppointmentsTypesRoutes);
+app.use('/api/v1', ClientsRoutes);
+app.use('/api/v1', AppointmentsRoutes);
 
 app.use(hendleError);
 
 module.exports = app;
-
-// npm i express sequelize pg pg-hstore dotenv jsonwebtoken bcrypt cors swagger-jsdoc swagger-ui-express ------> dependencias básicas
-// npm i nodemailer  -------> Dependencias para envio de correo
-// npm i multer @aws-sdk/client-s3  ------> Depenendencias para almacenar imagenes en S3 de AWS
-// npm i socket.io  ------> Dependencias para los sockets, interaccions en tiempo real
-
-//npm i nodemon morgan -D

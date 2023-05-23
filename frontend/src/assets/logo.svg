@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="62mm" height="53.09mm" viewBox="0 0 175.76 150.5">
+  <defs>
+    <linearGradient id="Plantas_decorativas_16" data-name="Plantas decorativas 16" x1="40.9" y1="97.33" x2="0" y2="97.33" gradientUnits="userSpaceOnUse">
+      <stop offset="0.02" stop-color="#729f78"/>
+      <stop offset="0.5" stop-color="#00723d"/>
+      <stop offset="1" stop-color="#004d29"/>
+    </linearGradient>
+    <linearGradient id="Plantas_decorativas_16-2" x1="61.18" y1="0" x2="61.18" y2="127.16" xlink:href="#Plantas_decorativas_16"/>
+    <linearGradient id="linear-gradient" x1="175.42" y1="127.57" x2="121.54" y2="83.94" gradientUnits="userSpaceOnUse">
+      <stop offset="0.25" stop-color="#729f78"/>
+      <stop offset="0.59" stop-color="#00723d"/>
+      <stop offset="1" stop-color="#004d29"/>
+    </linearGradient>
+    <linearGradient id="Plantas_decorativas_16-3" x1="141.33" y1="63.58" x2="87.16" y2="63.58" xlink:href="#Plantas_decorativas_16"/>
+    <linearGradient id="linear-gradient-2" x1="88.6" y1="73.51" x2="88.6" y2="150.49" gradientUnits="userSpaceOnUse">
+      <stop offset="0.31" stop-color="#729f78"/>
+      <stop offset="0.67" stop-color="#00723d"/>
+      <stop offset="1" stop-color="#004d29"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="72.24" y1="137.07" x2="104.71" y2="137.07" gradientUnits="userSpaceOnUse">
+      <stop offset="0.34" stop-color="#729f78"/>
+      <stop offset="0.67" stop-color="#004d29"/>
+    </linearGradient>
+  </defs>
+  <g id="Capa_2" data-name="Capa 2">
+    <g id="fondo_color_solido" data-name="fondo color solido">
+      <polygon points="34.48 127.16 40.9 67.49 0 127.16 34.48 127.16" fill="url(#Plantas_decorativas_16)"/>
+      <polygon points="87.16 0 87.88 50.32 34.48 127.16 40.9 67.49 87.16 0" fill="url(#Plantas_decorativas_16-2)"/>
+      <polygon points="141.28 127.16 134.86 67.49 175.76 127.16 141.28 127.16" fill="url(#linear-gradient)"/>
+      <polygon points="87.16 0 87.88 50.32 141.33 127.16 134.86 67.49 87.16 0" fill="url(#Plantas_decorativas_16-3)"/>
+      <path d="M26.34,150.49h34l27.54-41.63,29.45,41.63h33.53L109.48,93l-10.82-15s-11.5-9.91-22.19,0C67.53,91,26.34,150.49,26.34,150.49Z" fill="url(#linear-gradient-2)"/>
+      <polygon points="88.48 123.64 72.24 150.5 104.71 150.5 88.48 123.64 72.24 150.5 104.71 150.5 88.48 123.64" fill="url(#linear-gradient-3)"/>
+    </g>
+  </g>
+</svg>

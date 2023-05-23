@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30px" height="20px" viewBox="0 0 32.47 26.86">
+  <defs>
+    <linearGradient id="linear-gradient" y1="13.43" x2="32.47" y2="13.43" gradientUnits="userSpaceOnUse">
+      <stop offset="0.34" stop-color="#729f78"/>
+      <stop offset="0.67" stop-color="#004d29"/>
+    </linearGradient>
+  </defs>
+  <g id="Capa_2" data-name="Capa 2">
+    <g id="fondo_color_solido" data-name="fondo color solido">
+      <polygon points="16.24 0 0 26.86 32.47 26.86 16.24 0 0 26.86 32.47 26.86 16.24 0" fill="url(#linear-gradient)"/>
+    </g>
+  </g>
+</svg>

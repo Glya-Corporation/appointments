@@ -1,0 +1,132 @@
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --primary: #005d26;
+  --blueBody: #cbe4f1;
+  --violetBody: #c8c1de60;
+  --pink1Body: #f4d1e160;
+  --pink2Body: #f6cfbd60;
+  --whiteBody: #f9f5d160;
+  --greenBody: #cde3cd60;
+}
+
+.body {
+  background: linear-gradient(to right, var(--blueBody) 0%, var(--violetBody) 20%, var(--pink1Body) 40%, var(--pink2Body) 60%, var(--whiteBody) 80%, var(--greenBody) 100%);
+}
+
+img {
+  object-fit: cover;
+}
+
+.logo-container {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+.logo {
+  position: absolute;
+}
+.logo-dos {
+  animation: giro 1.8s infinite;
+}
+
+.logo-tres {
+  animation: giro 1.5s infinite;
+}
+
+@keyframes giro {
+  from {
+    transform: rotateY(360deg);
+  }
+}
+
+.input-container {
+  position: relative;
+}
+
+.icons-input {
+  position: absolute;
+  left: -3rem;
+  bottom: 0.3rem;
+}
+
+.login,
+.register {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-login,
+.form-register {
+  display: grid;
+  gap: 1rem;
+  position: relative;
+  padding: 2rem;
+}
+
+.select-login {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0 .5rem;
+  background-color: #ffffff50;
+  border-radius: 0.5rem 0.5rem 0 0;
+  color: #808080;
+  box-shadow: 1px 1px 1px #00000010, -5px -5px 10px #ffffff80, inset 5px 5px 5px #00000010, inset -5px -5px 5px #ffffff60;
+}
+
+.select-login span {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+}
+
+.form-login input,
+.form-login button,
+.form-register input,
+.form-register button {
+  padding: 0.7rem;
+  border: transparent;
+  box-shadow: 1px 1px 1px #00000020, -5px -5px 10px #ffffff80, inset 5px 5px 5px #00000020, inset -5px -5px 5px #ffffff70;
+  border-radius: 0.5rem;
+  background-color: #ffffff50;
+}
+
+.form-login input:focus,
+.form-register input:focus {
+  outline: 1px var(--primary) solid;
+}
+
+.form-login button,
+.form-register button {
+  margin-top: 1.5rem;
+  box-shadow: -1px -1px 10px #00000010, 5px 5px 10px #ffffff80, inset -5px -5px 5px #00000010, inset 5px 5px 5px #ffffff70;
+  cursor: pointer;
+  color: #5f5f5f;
+  font-weight: bold;
+}
+
+.login-links {
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.login-links span {
+  cursor: pointer;
+  color: #5f5f5f;
+  border-bottom: 1px #5f5f5f00 solid;
+}
+
+.login-links span:hover {
+  border-bottom: 1px var(--primary) solid;
+}

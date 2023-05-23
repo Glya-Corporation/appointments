@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="80px" height="60px" viewBox="0 0 124.52 76.98">
+  <defs>
+    <linearGradient id="linear-gradient" x1="62.26" x2="62.26" y2="76.98" gradientUnits="userSpaceOnUse">
+      <stop offset="0.31" stop-color="#729f78"/>
+      <stop offset="0.67" stop-color="#00723d"/>
+      <stop offset="1" stop-color="#004d29"/>
+    </linearGradient>
+  </defs>
+  <g id="Capa_2" data-name="Capa 2">
+    <g id="fondo_color_solido" data-name="fondo color solido">
+      <path d="M0,77H34L61.54,35.35,91,77h33.53L83.14,19.45l-10.82-15s-11.5-9.92-22.19,0C41.19,17.52,0,77,0,77Z" fill="url(#linear-gradient)"/>
+    </g>
+  </g>
+</svg>
