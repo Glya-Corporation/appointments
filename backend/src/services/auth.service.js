@@ -1,4 +1,4 @@
-const { Users, Cart, Clients, Business, Colaborators } = require('../models');
+const { Users, Cart, Clients, Business, Colaborators, Roles } = require('../models');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
@@ -11,14 +11,8 @@ class AuthServices {
         where: { email },
         attributes: {
           exclude: ['createdAt', 'updatedAt', 'role_id']
-        },
-        include: {
-          model: Cart,
-          as: 'cart',
-          attributes: ['id']
         }
       });
-      console.log(result)
       if (result) {
         const isValid = bcrypt.compareSync(password, result.password);
         return isValid ? result : isValid;
@@ -37,23 +31,46 @@ class AuthServices {
         attributes: {
           exclude: ['createdAt', 'updatedAt']
         },
-        include: {
-          model: Business,
-          as: 'business'
-        }
+        include: [
+          {
+            model: Business,
+            as: 'business',
+            attributes: {
+              exclude: ['userId', 'user_id', 'createdAt', 'updatedAt']
+            }
+          },
+          {
+            model: Roles,
+            as: 'role',
+            attributes: {
+              exclude: ['createdAt', 'updatedAt']
+            }
+          }
+        ]
       });
       const colaborator = await Colaborators.findOne({
         where: { email },
         attributes: {
           exclude: ['createdAt', 'updatedAt']
         },
-        include: {
-          model: Business,
-          as: 'business'
-        }
+        include: [
+          {
+            model: Business,
+            as: 'business',
+            attributes: {
+              exclude: ['userId', 'user_id', 'createdAt', 'updatedAt']
+            }
+          },
+          {
+            model: Roles,
+            as: 'role',
+            attributes: {
+              exclude: ['createdAt', 'updatedAt']
+            }
+          }
+        ]
       });
       const result = user || colaborator;
-      console.log(result);
       if (result) {
         const isValid = bcrypt.compareSync(password, result.password);
         return isValid ? result : isValid;
@@ -66,8 +83,8 @@ class AuthServices {
   }
   static generateToken(user) {
     try {
+      console.log('hi')
       const token = jwt.sign(user, process.env.SECRET_KEY, {
-        expiresIn: '24h',
         algorithm: 'HS512'
       });
       return token;

@@ -36,7 +36,7 @@ const Colaborators = db.define(
     },
     imgProfile: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       field: 'img_profile'
     },
     salary: {
@@ -56,6 +56,11 @@ const Colaborators = db.define(
       type: DataTypes.INTEGER,
       allowNull: false,
       field: 'business_id'
+    },
+    roleId: {
+      type: DataTypes.INTEGER,
+      defaultValue: 3,
+      field: 'role_id'
     }
   },
   {

@@ -1,4 +1,4 @@
-const { Users, Business, Appointments, AppointmentsTypes, Colaborators, BusinessClients } = require('../models');
+const { Users, Business, Appointments, AppointmentsTypes, Colaborators, BusinessClients, Roles } = require('../models');
 
 class UserServices {
   static async createUser({ user, business }) {
@@ -14,15 +14,24 @@ class UserServices {
     try {
       const result = await Users.findByPk(id, {
         attributes: {
-          exclude: ['password', 'createdAt', 'updatedAt']
+          exclude: ['password', 'roleId', 'role_id']
         },
-        include: {
-          model: Business,
-          as: 'business',
-          attributes: {
-            exclude: ['user_id', 'userId', 'createdAt', 'updatedAt']
+        include: [
+          {
+            model: Business,
+            as: 'business',
+            attributes: {
+              exclude: ['user_id', 'userId', 'createdAt', 'updatedAt']
+            }
+          },
+          {
+            model: Roles,
+            as: 'role',
+            attributes: {
+              exclude: ['createdAt', 'updatedAt']
+            }
           }
-        }
+        ]
       });
       return result;
     } catch (error) {

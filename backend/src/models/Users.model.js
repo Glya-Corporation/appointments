@@ -41,6 +41,15 @@ const Users = db.define(
     img_profile: {
       type: DataTypes.STRING,
       allowNull: true
+    },
+    isVerify: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    },
+    roleId: {
+      type: DataTypes.INTEGER,
+      defaultValue: 1,
+      field: 'role_id'
     }
   },
   {

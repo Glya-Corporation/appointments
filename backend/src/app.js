@@ -18,7 +18,7 @@ db.authenticate()
 
 initModels();
 
-db.sync({ force: false })
+db.sync({ force: true })
   .then(() => console.log('Synchronized database'))
   .catch(error => console.log(error));
 
@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
   res.status(200).json({
     name: 'Appointment',
     version: process.env.VERSION
-  })
+  });
 });
 
 app.use('/api/v1', AuthRoutes);

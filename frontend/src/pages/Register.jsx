@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import axios from 'axios';
 const apiUrl = import.meta.env.VITE_API_URL;
@@ -13,12 +13,17 @@ import phone from '../assets/phone.svg';
 import ruc from '../assets/ruc.svg';
 import home from '../assets/home.svg';
 import { useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
+import { getAllBusinessThunk } from '../store/slices/business.slice';
+import { loginThunk } from '../store/slices/user.slice';
 
 const Register = () => {
   const { handleSubmit, register, reset } = useForm();
   const { id } = useParams();
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  const userRegister = ({ user, email, password, number, name, ruc }) => {
+  const userRegister = ({ user, email, password, confir, number, name, ruc }) => {
     const body = {
       user: {
         name: user.split(' ')[0],
@@ -32,10 +37,18 @@ const Register = () => {
         ruc
       }
     };
-    axios
-      .post(`${apiUrl}/${id === '1' ? 'client' : 'user'}/register`, id === '1' ? body.user : body)
-      .then(res => console.log(res.data))
-      .catch(err => console.error(err));
+    if (password === confir) {
+      axios
+        .post(`${apiUrl}/${id === '1' ? 'client' : 'user'}/register`, id === '1' ? body.user : body)
+        .then(res => {
+          dispatch(loginThunk(id === '1', {email, password}, navigate));
+        })
+        .catch(err => console.error(err));
+    } else {
+      alert('Las contraseñas no son iguales');
+    }
+
+
   };
 
   return (

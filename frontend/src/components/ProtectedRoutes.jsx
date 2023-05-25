@@ -2,9 +2,9 @@
 import { Navigate, Outlet } from 'react-router-dom';
 
 const ProtectedRoutes = () => {
-  // Aquí va la condición. Puede ser una condición de cualquier tipo. Lo que
-  // Importa es que valide si el usuario está loggeado o no
-  if (false) {
+  const token = localStorage.getItem('token') || sessionStorage.getItem('token');
+
+  if (token && token.length > 0) {
     return <Outlet />;
   } else {
     return <Navigate to='/login' />;

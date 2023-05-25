@@ -37,6 +37,10 @@ const Clients = db.define(
     number: {
       type: DataTypes.STRING,
       allowNull: true
+    },
+    isVerify: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
     }
   },
   {

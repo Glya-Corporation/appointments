@@ -25,6 +25,11 @@ const AppointmentTypes = db.define('appointment_types', {
     type: DataTypes.INTEGER,
     allowNull: false,
     field: 'business_id'
+  },
+  categoryId: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    field: 'category_id'
   }
 });
 

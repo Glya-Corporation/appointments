@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import { motion } from 'framer-motion';
-import axios from 'axios';
-const apiUrl = import.meta.env.VITE_API_URL;
 import logo1 from '../assets/logo1.svg';
 import logo2 from '../assets/logo2.svg';
 import logo3 from '../assets/logo3.svg';
 import mail from '../assets/mail.svg';
 import key from '../assets/key.svg';
+import { loginThunk } from '../store/slices/user.slice';
 
 const Login = () => {
   const {
@@ -19,9 +19,13 @@ const Login = () => {
 
   const [isVisible, setIsVisible] = useState(false);
   const [isSeleted, setIsSeleted] = useState(true);
+  const [remember, setRemember] = useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  const submit = data => console.log(data);
+  const submit = credentials => {
+    dispatch(loginThunk(isSeleted, credentials, navigate, remember));
+  };
 
   return (
     <main className='login body'>
@@ -40,9 +44,9 @@ const Login = () => {
       </motion.div>
       <form className='form-login' onSubmit={handleSubmit(submit)}>
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className='input-container'>
-          <img className='icons-input' src={mail} alt='' />
-          <input {...register('username', { required: true })} type='text' placeholder='Correo' />
-          {errors.username && <span style={{ color: '#005d26', fontSize: '13px', position: 'absolute', bottom: '-1rem', left: '2.5rem' }}>Username is required</span>}
+          <img className='icons-input' src={mail} alt='icon' />
+          <input {...register('email', { required: true })} type='text' placeholder='Correo' />
+          {errors.email && <span style={{ color: '#005d26', fontSize: '13px', position: 'absolute', bottom: '-1rem', left: '2.5rem' }}>Username is required</span>}
         </motion.div>
 
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className='input-container'>
@@ -65,6 +69,10 @@ const Login = () => {
         <motion.button initial={{ opacity: 0 }} animate={{ opacity: 1 }} type='submit'>
           Ingresar
         </motion.button>
+        <div className='remember-me'>
+          <input type='checkbox' onChange={e => setRemember(e.target.checked)} />
+          <label>Recordar</label>
+        </div>
       </form>
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className='login-links'>
         <span onClick={() => navigate(`/register/${isSeleted ? 1 : 2}`)}>Registrarse</span>

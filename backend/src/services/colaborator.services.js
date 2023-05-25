@@ -1,4 +1,4 @@
-const { Colaborators } = require('../models');
+const { Colaborators, Roles } = require('../models');
 
 class ColaboratorServices {
   static async createColaborator(businessId, body) {
@@ -13,7 +13,14 @@ class ColaboratorServices {
     try {
       const result = await Colaborators.findByPk(id, {
         attributes: {
-          exclude: ['password']
+          exclude: ['password', 'role_id', 'roleId', 'business_id']
+        },
+        include: {
+          model: Roles,
+          as: 'role',
+          attributes: {
+              exclude: ['createdAt', 'updatedAt']
+          }
         }
       });
       return result;

@@ -36,6 +36,19 @@ const Business = db.define('business', {
     type: DataTypes.INTEGER,
     allowNull: false,
     field: 'user_id'
+  },
+  rating: {
+    type: DataTypes.INTEGER,
+    allowNull: true
+  },
+  logo: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  categoryId: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    field: 'category_id'
   }
 });
 
