@@ -46,7 +46,7 @@ const Login = () => {
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className='input-container'>
           <img className='icons-input' src={mail} alt='icon' />
           <input {...register('email', { required: true })} type='text' placeholder='Correo' />
-          {errors.email && <span style={{ color: '#005d26', fontSize: '13px', position: 'absolute', bottom: '-1rem', left: '2.5rem' }}>Username is required</span>}
+          {errors.email && <span style={{ color: '#5f0000', fontSize: '13px', position: 'absolute', bottom: '-1.2rem', left: '1rem' }}>Correo requerido</span>}
         </motion.div>
 
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className='input-container'>
@@ -63,7 +63,7 @@ const Login = () => {
           </span>
           <img className='icons-input' src={key} alt='icon' />
           <input {...register('password', { required: true })} type={!isVisible ? 'password' : 'text'} placeholder='Password' />
-          {errors.password && <span style={{ color: '#005d26', fontSize: '13px', position: 'absolute', bottom: '-1rem', left: '2.5rem' }}>Passowrd is required</span>}
+          {errors.password && <span style={{ color: '#5f0000', fontSize: '13px', position: 'absolute', bottom: '-1.2rem', left: '1rem' }}>Contraseña requerida</span>}
         </motion.div>
 
         <motion.button initial={{ opacity: 0 }} animate={{ opacity: 1 }} type='submit'>
