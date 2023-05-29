@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { getBusinessCategoriesThunk } from '../store/slices/businessCategories.slice';
 import axios from 'axios';
 import getConfig from '../util/getConfig';
-const apiUrl = import.meta.env.VITE_API_URL;
+import apiUrl from '../functions/env.js';
 
 const CompleteRegisterBusiness = () => {
   const [list, setList] = useState([]);

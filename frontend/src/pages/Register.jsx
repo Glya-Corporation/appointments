@@ -2,7 +2,7 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import axios from 'axios';
-const apiUrl = import.meta.env.VITE_API_URL;
+import apiUrl from '../functions/env.js';
 import logo1 from '../assets/logo1.svg';
 import logo2 from '../assets/logo2.svg';
 import logo3 from '../assets/logo3.svg';
@@ -23,7 +23,6 @@ const Register = () => {
   const [isVisible, setIsVisible] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  
 
   const userRegister = ({ user, email, password, confir, number, name, ruc }) => {
     const body = {
