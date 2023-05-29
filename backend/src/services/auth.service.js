@@ -83,7 +83,6 @@ class AuthServices {
   }
   static generateToken(user) {
     try {
-      console.log('hi')
       const token = jwt.sign(user, process.env.SECRET_KEY, {
         algorithm: 'HS512'
       });

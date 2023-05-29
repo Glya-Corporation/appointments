@@ -1,4 +1,4 @@
-const { CategoryBusiness } = require('../models');
+const { CategoryBusiness, CategoriesBusiness } = require('../models');
 
 class CategoryBusinessServices {
   /* static async create(body) {
@@ -7,12 +7,22 @@ class CategoryBusinessServices {
       throw error;
     }
   } */
+  static async addCategoryBusiness(body) {
+    try {
+      const { businessId, list } = body;
+      const result = await CategoriesBusiness.bulkCreate(list.map(categoryBusinessId => ({ categoryBusinessId, businessId })));
+      return result;
+    } catch (error) {
+      throw error;
+    }
+  }
   static async getAllCategoryBusiness() {
     try {
       const result = await CategoryBusiness.findAll({
         attributes: {
           exclude: ['createdAt', 'updatedAt']
-        }
+        },
+        order: [['name', 'ASC']]
       });
       return result;
     } catch (error) {

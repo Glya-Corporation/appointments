@@ -50,7 +50,7 @@ const getAllBusiness = async (req, res, next) => {
   } catch (error) {
     next({
       status: 400,
-      message: 'Error al obtener los usuarios',
+      message: 'Error al obtener los negocios',
       errorContent: error
     });
   }

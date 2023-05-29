@@ -4,7 +4,7 @@ const cors = require('cors');
 const db = require('./utils/database');
 const hendleError = require('./middlewares/error.middleware');
 const initModels = require('./models/initModels');
-const { UserRoutes, BusinessRoutes, BusinessClientsRoutes, AppointmentsRoutes, AppointmentsTypesRoutes, ColaboratorsRoutes, ClientsRoutes, AuthRoutes } = require('./routes');
+const { UserRoutes, BusinessRoutes, BusinessClientsRoutes, AppointmentsRoutes, AppointmentsTypesRoutes, ColaboratorsRoutes, ClientsRoutes, AuthRoutes, BusinessCategoriesRoutes } = require('./routes');
 
 const app = express();
 
@@ -18,7 +18,7 @@ db.authenticate()
 
 initModels();
 
-db.sync({ force: true })
+db.sync({ force: false })
   .then(() => console.log('Synchronized database'))
   .catch(error => console.log(error));
 
@@ -32,6 +32,7 @@ app.get('/', (req, res) => {
 app.use('/api/v1', AuthRoutes);
 app.use('/api/v1', UserRoutes);
 app.use('/api/v1', BusinessRoutes);
+app.use('/api/v1', BusinessCategoriesRoutes);
 app.use('/api/v1', BusinessClientsRoutes);
 app.use('/api/v1', ColaboratorsRoutes);
 app.use('/api/v1', AppointmentsTypesRoutes);

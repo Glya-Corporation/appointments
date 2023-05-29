@@ -18,6 +18,10 @@ const BusinessClients = db.define('business_clients', {
     type: DataTypes.INTEGER,
     allowNull: false,
     field: 'client_id'
+  },
+  isSelected: {
+    type: DataTypes.BOOLEAN,
+    defaultValue: false
   }
 });
 

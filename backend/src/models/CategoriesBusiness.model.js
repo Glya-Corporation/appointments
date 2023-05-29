@@ -11,12 +11,10 @@ const CategoriesBusiness = db.define('categories_business', {
   categoryBusinessId: {
     type: DataTypes.INTEGER,
     allowNull: false,
-    field: 'category_business_id'
   },
   businessId: {
     type: DataTypes.INTEGER,
-    allowNull: false,
-    field: 'business_id'
+    allowNull: false
   }
 });
 

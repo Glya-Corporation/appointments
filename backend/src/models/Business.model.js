@@ -44,11 +44,6 @@ const Business = db.define('business', {
   logo: {
     type: DataTypes.STRING,
     allowNull: false
-  },
-  categoryId: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    field: 'category_id'
   }
 });
 

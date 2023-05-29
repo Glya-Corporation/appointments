@@ -1,7 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 import getConfig from '../../util/getConfig';
-import { getAllBusinessThunk } from './business.slice';
 const apiUrl = import.meta.env.VITE_API_URL;
 
 export const userSlice = createSlice({
@@ -29,12 +28,7 @@ export const loginThunk = (isSeleted, credentials, navigate, remember) => dispat
         sessionStorage.setItem('user', JSON.stringify(res.data.user));
         sessionStorage.setItem('token', res.data.token);
       }
-      setTimeout(() => {
-        dispatch(getUserThunk(res.data.user?.id, res.data.user.role?.id));
-        dispatch(getAllBusinessThunk());
-
-        isSeleted && navigate('/locales');
-      }, 1000);
+      setTimeout(() => isSeleted && navigate('/locales'), 1000);
     })
     .catch(err => console.error(err));
 };

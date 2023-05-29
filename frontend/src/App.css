@@ -157,7 +157,7 @@ li {
 .login-links span {
   cursor: pointer;
   color: var(--gray);
-  border-bottom: 1px var(--gray)00 solid;
+  border-bottom: 1px var(--gray) 00 solid;
 }
 
 .login-links span:hover {
@@ -167,11 +167,12 @@ li {
 .all-business {
   position: relative;
   width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 0 1rem;
+  overflow-y: auto;
 }
 
 .all-business img {
@@ -188,9 +189,9 @@ li {
 
 .all-business input {
   width: 15rem;
-  padding: .3rem;
+  padding: 0.3rem;
   border: 1px var(--primary) solid;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   background-color: transparent;
 }
 
@@ -200,20 +201,29 @@ li {
 
 .all-business--categories {
   padding: 1rem 0;
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
 }
 
 .all-business--categories li {
-  width: 5rem;
-  padding: .3rem;
+  width: 100%;
+  padding: 0.3rem;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  border: 1px var(--primary) solid;
   border-radius: 1rem;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.5s ease-in-out;
+  box-shadow: 1px 1px 1px #00000020, -5px -5px 10px #ffffff50, inset -5px -5px 5px #00000020, inset 5px 5px 5px #ffffff50;
+}
+
+.btn-active {
+  color: var(--primary);
+  border: transparent;
+  box-shadow: 1px 1px 1px #00000020, -5px -5px 10px #ffffff80, inset 5px 5px 5px #00000020, inset -5px -5px 5px #ffffff70 !important;
 }
 
 .all-business--business {
@@ -221,18 +231,21 @@ li {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: 6.5rem;
-  gap: 3rem .5rem;
+  gap: 3rem 0.5rem;
+  padding-bottom: 4rem;
 }
 
 .all-business--item {
+  position: relative;
   border: 1px var(--primary) solid;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
 }
 
 .all-business--item-img {
   width: 100%;
   height: 100%;
-  padding: .5rem;
+  padding: 0.5rem;
 }
 
 .all-business--item-img > img {
@@ -245,8 +258,9 @@ li {
 
 .all-business--description {
   position: relative;
-  left: .5rem;
+  left: 0.5rem;
   bottom: -3px;
+  font-size: 12px;
 }
 
 .rating {
@@ -260,4 +274,76 @@ li {
   height: 15px;
   left: 0;
   top: 0;
+}
+
+.all-business--check {
+  width: min-content !important;
+  height: min-content !important;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  scale: 1.5;
+}
+
+.complete-register {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem 1rem 1rem;
+}
+
+.complete-register img {
+  width: 90%;
+}
+
+.complete-register p {
+  color: var(--gray);
+  padding-top: 3rem;
+}
+
+.complete-register--list {
+  width: 100%;
+  padding: 3rem 0;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 2.5rem;
+}
+
+.complete-register--list--item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  border: 1px var(--primary) solid;
+  border-radius: 0.5rem;
+}
+.complete-register--list--item input {
+  position: absolute;
+  top: -0.5rem;
+  right: 0;
+  scale: 1.5;
+}
+
+.complete-register button {
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  border: 1px var(--primary) solid;
+  border-radius: 0.5rem;
+  color: var(--gray);
+}
+
+@media screen and (min-width: 1024px) {
+  .all-business {
+    padding: 0 15rem;
+  }
+  .all-business--business {
+    gap: 3rem;
+    grid-auto-rows: 10rem;
+  }
+  .all-business--categories {
+    gap: 1rem 2rem;
+  }
 }

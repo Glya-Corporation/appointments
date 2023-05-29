@@ -3,9 +3,9 @@ const { createBusiness, getBusiness, getAllBusinessByUserId, getAllBusiness, upd
 const { createColaborator, getColaborator, getAllColaborators, updateColaborator, deleteColaborator } = require('./colaborator.controllers.js');
 const { createClient, getClient, getAllClientsByBusinessId, updateClient, deleteClient } = require('./client.controllers.js');
 const { createAppointment, getAppointment, getAllAppointmentsByBusiness, getAllAppointmentsByClient, updateAppointment, deleteAppointment } = require('./appointment.controllers.js');
-const { createFavorite, getAllFavorites, deleteFavorite } = require('./favorites.controllers.js');
+const { createFavorite, getAllFavorites, updateFavorite, deleteFavorite } = require('./favorites.controllers.js');
 const { createAppointmentType, getAllAppointmentsTypes, updateAppointmentType, deleteAppointmentType } = require('./appointmentTypes.controllers.js');
-const { getAllCategoryBusiness } = require('./categoryBusiness.controllers.js')
+const { getAllCategoryBusiness, addCategoryBusiness } = require('./categoryBusiness.controllers.js');
 
 module.exports = {
   createUser,
@@ -37,10 +37,12 @@ module.exports = {
   deleteAppointment,
   createFavorite,
   getAllFavorites,
+  updateFavorite,
   deleteFavorite,
   createAppointmentType,
   getAllAppointmentsTypes,
   updateAppointmentType,
   deleteAppointmentType,
-  getAllCategoryBusiness
+  getAllCategoryBusiness,
+  addCategoryBusiness
 };

@@ -1,4 +1,4 @@
-const { BusinessClients, Clients, Business } = require('../models');
+const { BusinessClients, Clients, Business, CategoryBusiness } = require('../models');
 
 class BFServices {
   static async createFavorite(body) {
@@ -16,10 +16,20 @@ class BFServices {
         result = await Clients.findByPk(id, {
           attributes: [],
           include: {
-            through: Business,
+            model: Business,
             as: 'business',
             attributes: {
-              exclude: ['createdAt', 'updatedAt']
+              exclude: ['user_id', 'createdAt', 'updatedAt']
+            },
+            include: {
+              model: CategoryBusiness,
+              as: 'category',
+              attributes: {
+                exclude: ['createdAt', 'updatedAt']
+              },
+              through: {
+                attributes: []
+              }
             }
           }
         });
@@ -27,15 +37,28 @@ class BFServices {
         result = await Business.findByPk(id, {
           attributes: [],
           include: {
-            through: Clients,
+            model: Clients,
             as: 'clients',
             attributes: {
               exclude: ['password', 'createdAt', 'updatedAt']
+            },
+            through: {
+              attributes: []
             }
           }
         });
       }
       return result;
+    } catch (error) {
+      throw error;
+    }
+  }
+  static async updateFavorite(id) {
+    try {
+      const { clientId } = await BusinessClients.findByPk(id);
+      await BusinessClients.update({ isSelected: false }, { where: { clientId } });
+      await BusinessClients.update({ isSelected: true }, { where: { id } });
+      return { message: 'Updated successful' };
     } catch (error) {
       throw error;
     }

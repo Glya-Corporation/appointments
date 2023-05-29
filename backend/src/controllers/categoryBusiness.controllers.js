@@ -14,9 +14,23 @@ const { CategoryBusinessServices } = require('../services');
   }
 }; */
 
+const addCategoryBusiness = async (req, res, next) => {
+  try {
+    const body = req.body;
+    const result = await CategoryBusinessServices.addCategoryBusiness(body);
+    res.status(201).json(result);
+  } catch (error) {
+    next({
+      status: 400,
+      message: 'Error al crear',
+      errorContent: error
+    });
+  }
+};
+
 const getAllCategoryBusiness = async (req, res, next) => {
   try {
-    const result = await CategoryBusinessServices;
+    const result = await CategoryBusinessServices.getAllCategoryBusiness();
     res.status(200).json(result);
   } catch (error) {
     next({
@@ -56,4 +70,4 @@ const deleteCategoryBusiness = async (req, res, next) => {
   }
 }; */
 
-module.exports = { getAllCategoryBusiness }
+module.exports = { addCategoryBusiness, getAllCategoryBusiness };

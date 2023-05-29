@@ -1,4 +1,4 @@
-const { Business } = require('../models');
+const { Business, CategoryBusiness } = require('../models');
 
 class BusinessServices {
   static async createBusiness(id, body) {
@@ -25,7 +25,19 @@ class BusinessServices {
   }
   static async getAllBusiness() {
     try {
-      const result = await Business.findAll();
+      const result = await Business.findAll({
+        include: {
+          model: CategoryBusiness,
+          as: 'category',
+          attributes: {
+            exclude: ['createdAt', 'updatedAt']
+          },
+          through: {
+            attributes: []
+          }
+        },
+        order: [['rating', 'DESC']]
+      });
       return result;
     } catch (error) {
       throw error;

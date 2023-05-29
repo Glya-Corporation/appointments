@@ -6,5 +6,6 @@ const AppointmentsRoutes = require('./appointment.routes');
 const AppointmentsTypesRoutes = require('./appointmentTypes.routes');
 const ColaboratorsRoutes = require('./colaborator.routes');
 const ClientsRoutes = require('./client.routes');
+const BusinessCategoriesRoutes = require('./categoryBusiness.routes');
 
-module.exports = { AuthRoutes, UserRoutes, BusinessRoutes, BusinessClientsRoutes, AppointmentsRoutes, AppointmentsTypesRoutes, ColaboratorsRoutes, ClientsRoutes };
+module.exports = { AuthRoutes, UserRoutes, BusinessRoutes, BusinessClientsRoutes, AppointmentsRoutes, AppointmentsTypesRoutes, ColaboratorsRoutes, ClientsRoutes, BusinessCategoriesRoutes };
