@@ -28,6 +28,20 @@ const getAllAppointmentsTypes = async (req, res, next) => {
   }
 };
 
+const getAllCategories = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const result = await AppointmentTypesServices.getAllCategories(id);
+    res.status(200).json(result);
+  } catch (error) {
+    next({
+      status: 400,
+      message: 'Error al obtener los usuarios',
+      errorContent: error
+    });
+  }
+};
+
 const updateAppointmentType = async (req, res, next) => {
   try {
     const id = req.params.id;
@@ -57,4 +71,4 @@ const deleteAppointmentType = async (req, res, next) => {
   }
 };
 
-module.exports = { createAppointmentType, getAllAppointmentsTypes, updateAppointmentType, deleteAppointmentType };
+module.exports = { createAppointmentType, getAllAppointmentsTypes, getAllCategories, updateAppointmentType, deleteAppointmentType };

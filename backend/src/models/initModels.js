@@ -29,6 +29,9 @@ const initModels = () => {
   Category.hasMany(AppointmentsTypes, { as: 'services', foreignKey: 'category_id' });
   AppointmentsTypes.belongsTo(Category, { as: 'category', foreignKey: 'category_id' });
 
+  Business.hasMany(Category, { as: 'categories_services', foreignKey: 'business_id' });
+  Category.belongsTo(Business, { as: 'business_property', foreignKey: 'business_id' });
+
   /* Un tipo de cita  puede tener muchas citas */
   AppointmentsTypes.belongsToMany(Appointments, { as: 'appointments', through: 'appointment_atypes' });
   Appointments.belongsToMany(AppointmentsTypes, { as: 'appointments types', through: 'appointment_atypes' });

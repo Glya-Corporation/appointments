@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 import getConfig from '../../util/getConfig';
-import apiUrl from '../../functions/env.js';
+const apiUrl = import.meta.env.VITE_API_URL;
 
 export const favoritesSlice = createSlice({
   name: 'favorites',

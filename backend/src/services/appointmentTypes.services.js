@@ -1,4 +1,4 @@
-const { AppointmentsTypes } = require('../models');
+const { AppointmentsTypes, Category } = require('../models');
 
 class AppointmentTypesServices {
   static async createAppointmentTypes(body) {
@@ -16,6 +16,20 @@ class AppointmentTypesServices {
         attributes: {
           exclude: ['createdAt', 'updatedAt']
         }
+      });
+      return result;
+    } catch (error) {
+      throw error;
+    }
+  }
+  static async getAllCategories(business) {
+    try {
+      const result = await Category.findAll({
+        where: { business_id: business },
+        attributes: {
+          exclude: ['createdAt', 'updatedAt']
+        },
+        order: [['id', 'ASC']]
       });
       return result;
     } catch (error) {

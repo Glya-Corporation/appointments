@@ -1,7 +1,9 @@
+/* eslint-disable no-unused-vars */
 import { createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 import getConfig from '../../util/getConfig';
-import apiUrl from '../../functions/env.js';
+const apiUrl = import.meta.env.VITE_API_URL;
+import { setLoaderThunk } from './loader.slice';
 
 export const userSlice = createSlice({
   name: 'user',
@@ -18,6 +20,7 @@ export const getUserThunk = (id, role) => dispatch => {
 };
 
 export const loginThunk = (isSeleted, credentials, navigate, remember) => dispatch => {
+  dispatch(setLoaderThunk(true));
   return axios
     .post(`${apiUrl}/login/${isSeleted ? 'client' : 'business'}`, credentials)
     .then(res => {
@@ -28,9 +31,14 @@ export const loginThunk = (isSeleted, credentials, navigate, remember) => dispat
         sessionStorage.setItem('user', JSON.stringify(res.data.user));
         sessionStorage.setItem('token', res.data.token);
       }
-      setTimeout(() => isSeleted && navigate('/locales'), 1000);
+      isSeleted && navigate('/locales');
     })
-    .catch(err => console.error(err));
+    .catch(err => console.error(err))
+    .finally(() => {
+      setTimeout(() => {
+        dispatch(setLoaderThunk(false));
+      }, 2000);
+    });
 };
 
 export const { setUser } = userSlice.actions;

@@ -2,15 +2,16 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { motion } from 'framer-motion';
-import { useResolvedPath } from 'react-router-dom';
+import { useNavigate, useResolvedPath } from 'react-router-dom';
 
 import logoAlfa from '../assets/alfa.svg';
 import imgStar from '../assets/star.svg';
 import capitalice from '../functions/capitalizar';
 
-import { getAllBusinessThunk, getBusinessCategoriesThunk, getFavoritesThunk, updateFavorite } from '../store/slices';
+import { getBusinessCategoriesThunk, getFavoritesThunk, updateFavorite } from '../store/slices';
 
 import rating from '../functions/rating.js';
+import { setLoader } from '../store/slices/loader.slice';
 
 const Locales = () => {
   const allBusiness = useSelector(state => state.business);
@@ -19,22 +20,14 @@ const Locales = () => {
   const dispatch = useDispatch();
   const { pathname } = useResolvedPath();
 
+  const navigate = useNavigate();
+
   const [business, setBusiness] = useState([]);
   const [categorySelected, setCategorySelected] = useState(0);
   const [isFavorites, setIsFavorites] = useState(false);
   const [selectedBusinessId, setSelectedBusinessId] = useState(null);
 
   const categories = useSelector(state => state.businessCategories);
-
-  const fetchData = () => {
-    if (isFavorites) {
-      dispatch(getFavoritesThunk(user.id));
-      setBusiness(businessFavorite);
-    } else {
-      dispatch(getAllBusinessThunk());
-      setBusiness(allBusiness);
-    }
-  };
 
   const fetchFavorites = () => {
     if (businessFavorite.length < 1) {
@@ -46,15 +39,15 @@ const Locales = () => {
 
   useEffect(() => {
     dispatch(getBusinessCategoriesThunk());
-    setSelectedBusinessId(null); // Desmarcar cualquier negocio seleccionado al cambiar a favoritos o todos los negocios
     if (pathname.includes('favorites')) {
       setIsFavorites(true);
+      setBusiness(businessFavorite);
       fetchFavorites();
       selectionFavorites();
     } else {
-      fetchData();
+      setBusiness(allBusiness);
     }
-  }, [allBusiness, businessFavorite, isFavorites]);
+  }, [allBusiness, businessFavorite]);
 
   const getStar = rating => {
     const stars = [];
@@ -65,6 +58,7 @@ const Locales = () => {
   };
 
   const filterBusiness = id => {
+    setCategorySelected(id);
     if (id === 0) {
       setBusiness(isFavorites ? rating(businessFavorite) : allBusiness);
     } else {
@@ -76,7 +70,6 @@ const Locales = () => {
       }
       setBusiness(businessNew);
     }
-    setCategorySelected(id);
   };
 
   const searchBusiness = text => {
@@ -100,6 +93,14 @@ const Locales = () => {
     dispatch(updateFavorite(businessSelected.business_clients.id, user.id));
   };
 
+  const navigateRute = rute => {
+    dispatch(setLoader(true));
+    navigate(rute);
+    setTimeout(() => {
+      dispatch(setLoader(false));
+    }, 2000);
+  };
+
   return (
     <main className='body all-business'>
       <img src={logoAlfa} alt='logo-alfa' />
@@ -119,7 +120,7 @@ const Locales = () => {
         {business.map(item => (
           <motion.li key={item.id} className='all-business--item' initial={{ scale: 0 }} animate={{ scale: 1 }}>
             <div className='all-business--item-img'>
-              <img src={item.logo} alt='logo' />
+              <img src={item.logo} alt='logo' onClick={() => navigateRute(`/home/${item.name}/${item.id}`)} />
             </div>
             <div className='all-business--description'>
               <span>{item.name}</span>

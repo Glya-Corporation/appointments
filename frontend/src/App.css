@@ -12,7 +12,7 @@
   --black: #000000;
   --gray: #5f5f5f;
   --primary: #005d26;
-  --blueBody: #cbe4f1;
+  --blueBody: #cbe4f160;
   --violetBody: #c8c1de60;
   --pink1Body: #f4d1e160;
   --pink2Body: #f6cfbd60;
@@ -62,6 +62,39 @@ li {
 @keyframes giro {
   from {
     transform: rotateY(360deg);
+  }
+}
+
+.body-loading{
+  width: 100VW;
+  height: 100VH;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to right, #e2ebf0 0%, #d9d8db 20%, #f3e5eb 40%, #f0e8e4 60%, #f3f3f3 80%, #d9dbd9 100%);
+  z-index: 999;
+  overflow: hidden;
+}
+
+.loading {
+  width: 5rem;
+  margin-top: 5rem;
+  animation: loading 1s infinite;
+}
+
+@keyframes loading {
+  to{
+    transform: rotate(0deg);
+  }
+  from{
+    transform: rotate(-360deg);
+
   }
 }
 

@@ -4,7 +4,7 @@ const { createColaborator, getColaborator, getAllColaborators, updateColaborator
 const { createClient, getClient, getAllClientsByBusinessId, updateClient, deleteClient } = require('./client.controllers.js');
 const { createAppointment, getAppointment, getAllAppointmentsByBusiness, getAllAppointmentsByClient, updateAppointment, deleteAppointment } = require('./appointment.controllers.js');
 const { createFavorite, getAllFavorites, updateFavorite, deleteFavorite } = require('./favorites.controllers.js');
-const { createAppointmentType, getAllAppointmentsTypes, updateAppointmentType, deleteAppointmentType } = require('./appointmentTypes.controllers.js');
+const { createAppointmentType, getAllAppointmentsTypes, getAllCategories, updateAppointmentType, deleteAppointmentType } = require('./appointmentTypes.controllers.js');
 const { getAllCategoryBusiness, addCategoryBusiness } = require('./categoryBusiness.controllers.js');
 
 module.exports = {
@@ -41,6 +41,7 @@ module.exports = {
   deleteFavorite,
   createAppointmentType,
   getAllAppointmentsTypes,
+  getAllCategories,
   updateAppointmentType,
   deleteAppointmentType,
   getAllCategoryBusiness,
