@@ -1,7 +1,7 @@
-const { AppointmentsTypes, Category } = require('../models');
+const { AppointmentsTypes, Category, Service } = require('../models');
 
-class AppointmentTypesServices {
-  static async createAppointmentTypes(body) {
+class ServiceServices {
+  static async createService(body) {
     try {
       const result = await AppointmentsTypes.create(body);
       return result;
@@ -9,7 +9,7 @@ class AppointmentTypesServices {
       throw error;
     }
   }
-  static async getAllAppointmentTypes(businessId) {
+  static async getAllServices(businessId) {
     try {
       const result = await AppointmentsTypes.findAll({
         where: { businessId },
@@ -29,14 +29,18 @@ class AppointmentTypesServices {
         attributes: {
           exclude: ['createdAt', 'updatedAt']
         },
-        order: [['id', 'ASC']]
+        order: [['name', 'ASC']],
+        include: {
+          model: Service,
+          as: 'services'
+        }
       });
       return result;
     } catch (error) {
       throw error;
     }
   }
-  static async updateAppointmentTypes(id, body) {
+  static async updateService(id, body) {
     try {
       await AppointmentsTypes.update(body, { where: { id } });
       return { message: 'Updated successful' };
@@ -44,7 +48,7 @@ class AppointmentTypesServices {
       throw error;
     }
   }
-  static async deleteAppointmentTypes(id) {
+  static async deleteService(id) {
     try {
       await AppointmentsTypes.destroy({ where: { id } });
       return { message: 'Deleted successful' };
@@ -54,4 +58,4 @@ class AppointmentTypesServices {
   }
 }
 
-module.exports = AppointmentTypesServices;
+module.exports = ServiceServices;

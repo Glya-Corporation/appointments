@@ -44,6 +44,10 @@ const Business = db.define('business', {
   logo: {
     type: DataTypes.STRING,
     allowNull: false
+  },
+  address: {
+    type: DataTypes.STRING,
+    allowNull: true
   }
 });
 

@@ -13,10 +13,17 @@ export const favoritesSlice = createSlice({
   }
 });
 
-export const getFavoritesThunk = id => dispatch => {
+export const getFavoritesThunk = (id, navigate) => dispatch => {
   return axios
     .get(`${apiUrl}/business/favorite/client/${id}`, getConfig())
-    .then(res => dispatch(setFavorites(res.data.business)))
+    .then(res => {
+      const { data } = res;
+      dispatch(setFavorites(data.business));
+      if (navigate) {
+        const favorite = data.business.find(item => item.business_clients.isSelected);
+        favorite && navigate(`/home/${favorite.name}/${favorite.id}`);
+      }
+    })
     .catch(err => console.error(err));
 };
 

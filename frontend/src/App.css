@@ -24,6 +24,7 @@
 body {
   font-family: var(--font);
   font-weight: 600;
+  background-color: #fdfdfd;
 }
 
 .body {
@@ -65,9 +66,9 @@ li {
   }
 }
 
-.body-loading{
-  width: 100VW;
-  height: 100VH;
+.body-loading {
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -89,12 +90,11 @@ li {
 }
 
 @keyframes loading {
-  to{
+  to {
     transform: rotate(0deg);
   }
-  from{
+  from {
     transform: rotate(-360deg);
-
   }
 }
 
@@ -231,7 +231,7 @@ li {
 .all-business ul {
   width: 100%;
 }
-
+.business-categories--filter ul,
 .all-business--categories {
   padding: 1rem 0;
   display: grid;
@@ -239,6 +239,7 @@ li {
   gap: 0.5rem;
 }
 
+.business-categories--filter ul li,
 .all-business--categories li {
   width: 100%;
   padding: 0.3rem;
@@ -366,6 +367,77 @@ li {
   border: 1px var(--primary) solid;
   border-radius: 0.5rem;
   color: var(--gray);
+}
+
+.business {
+  width: 100vw;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.business-info {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+  gap: 1rem;
+}
+
+.business-info--detail {
+  padding: 0.5rem;
+  border: 1px var(--primary) solid;
+  border-radius: 0.5rem;
+}
+.business-info--detail {
+  font-size: 12px;
+  text-align: left;
+}
+
+.business-info--detail p {
+  color: var(--gray);
+}
+
+.logo-business {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 15px #00000090;
+}
+
+.business-categories--goups {
+  width: 100%;
+  display: grid;
+  padding: 1rem;
+  padding-bottom: 3.5rem;
+  gap: 1rem;
+}
+
+.business-categories--goups> h3 {
+  padding-top: 1rem;
+  width: max-content;
+  border-bottom: 3px var(--primary) double;
+}
+
+.group {
+  width: 100%;
+  height: 160px;
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+}
+
+.group-li {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border: 1px var(--primary) solid;
+  border-radius: 1rem;
+}
+
+.group-li p {
+  position: relative;
+  width: 120px;
+  bottom: -125px;
 }
 
 @media screen and (min-width: 1024px) {

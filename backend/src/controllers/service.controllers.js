@@ -1,9 +1,9 @@
-const { AppointmentTypesServices } = require('../services');
+const { ServiceServices } = require('../services');
 
-const createAppointmentType = async (req, res, next) => {
+const createService = async (req, res, next) => {
   try {
     const body = req.body;
-    const result = await AppointmentTypesServices.createAppointmentTypes(body);
+    const result = await ServiceServices.createService(body);
     res.status(201).json(result);
   } catch (error) {
     next({
@@ -14,10 +14,10 @@ const createAppointmentType = async (req, res, next) => {
   }
 };
 
-const getAllAppointmentsTypes = async (req, res, next) => {
+const getAllServices = async (req, res, next) => {
   try {
     const id = req.params.id;
-    const result = await AppointmentTypesServices(id);
+    const result = await ServiceServices.getAllServices(id);
     res.status(200).json(result);
   } catch (error) {
     next({
@@ -31,7 +31,7 @@ const getAllAppointmentsTypes = async (req, res, next) => {
 const getAllCategories = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const result = await AppointmentTypesServices.getAllCategories(id);
+    const result = await ServiceServices.getAllCategories(id);
     res.status(200).json(result);
   } catch (error) {
     next({
@@ -42,11 +42,11 @@ const getAllCategories = async (req, res, next) => {
   }
 };
 
-const updateAppointmentType = async (req, res, next) => {
+const updateService = async (req, res, next) => {
   try {
     const id = req.params.id;
     const body = req.body;
-    const result = await AppointmentTypesServices(id, body);
+    const result = await ServiceServices.updateService(id, body);
     res.status(200).json(result);
   } catch (error) {
     next({
@@ -57,10 +57,10 @@ const updateAppointmentType = async (req, res, next) => {
   }
 };
 
-const deleteAppointmentType = async (req, res, next) => {
+const deleteService = async (req, res, next) => {
   try {
     const id = req.params.id;
-    const result = await AppointmentTypesServices(id);
+    const result = await ServiceServices.deleteService(id);
     res.status(200).json(result);
   } catch (error) {
     next({
@@ -71,4 +71,4 @@ const deleteAppointmentType = async (req, res, next) => {
   }
 };
 
-module.exports = { createAppointmentType, getAllAppointmentsTypes, getAllCategories, updateAppointmentType, deleteAppointmentType };
+module.exports = { createService, getAllServices, getAllCategories, updateService, deleteService };

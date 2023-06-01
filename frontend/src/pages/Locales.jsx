@@ -31,18 +31,21 @@ const Locales = () => {
 
   const fetchFavorites = () => {
     if (businessFavorite.length < 1) {
-      dispatch(getFavoritesThunk(user.id));
+      dispatch(getFavoritesThunk(user.id, navigate));
     }
     setBusiness(rating(businessFavorite));
     setSelectedBusinessId(null); // Desmarcar cualquier negocio seleccionado anteriormente
   };
 
   useEffect(() => {
+    fetchFavorites();
+  }, [])
+
+  useEffect(() => {
     dispatch(getBusinessCategoriesThunk());
     if (pathname.includes('favorites')) {
       setIsFavorites(true);
       setBusiness(businessFavorite);
-      fetchFavorites();
       selectionFavorites();
     } else {
       setBusiness(allBusiness);

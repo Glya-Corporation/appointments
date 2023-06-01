@@ -4,7 +4,7 @@
   "description": "API for the clients can to create appointments in the business.",
   "main": "swagger.js",
   "scripts": {
-    "start": "nodemon ./src/server.js",
+    "start": "node ./src/server.js",
     "dev": "nodemon ./src/server.js",
     "seeder": "node ./src/seeders/seeder.js"
   },

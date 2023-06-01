@@ -1,4 +1,4 @@
-const { Users, Business, Appointments, AppointmentsTypes, Colaborators, Clients, Roles, CategoryBusiness, Category, Galery } = require('./');
+const { Users, Business, Appointments, Service, Colaborators, Clients, Roles, CategoryBusiness, Category, Galery } = require('./');
 
 const initModels = () => {
   Roles.hasMany(Colaborators, { as: 'user', foreignKey: 'role_id' });
@@ -16,17 +16,17 @@ const initModels = () => {
   Appointments.belongsTo(Business, { as: 'business', foreignKey: 'business_id' });
 
   /* Un negocio puede tener muchas tipos de citas */
-  Business.hasMany(AppointmentsTypes, { as: 'Appointment types', foreignKey: 'business_id' });
-  AppointmentsTypes.belongsTo(Business, { as: 'business', foreignKey: 'business_id' });
-  
-  Business.hasMany(Galery, {as:'galery', foreignKey: 'business_id'});
-  Galery.belongsTo(Business, { as:'business', foreignKey:'business_id'});
-  
-  Colaborators.hasMany(Galery, {as: 'servicesPhotos', foreignKey:'colaborator_id'});
-  Galery.belongsTo(Colaborators, {as:'ownerService', foreignKey:'colaborator_id'});
-  
-  AppointmentsTypes.hasMany(Galery, {as:'photo', foreignKey:'service_id'});
-  Galery.belongsTo(AppointmentsTypes, {as:'service', foreignKey:'service_id'})
+  Business.hasMany(Service, { as: 'Appointment types', foreignKey: 'business_id' });
+  Service.belongsTo(Business, { as: 'business', foreignKey: 'business_id' });
+
+  Business.hasMany(Galery, { as: 'galery', foreignKey: 'business_id' });
+  Galery.belongsTo(Business, { as: 'business', foreignKey: 'business_id' });
+
+  Colaborators.hasMany(Galery, { as: 'servicesPhotos', foreignKey: 'colaborator_id' });
+  Galery.belongsTo(Colaborators, { as: 'ownerService', foreignKey: 'colaborator_id' });
+
+  Service.hasMany(Galery, { as: 'photo', foreignKey: 'service_id' });
+  Galery.belongsTo(Service, { as: 'service', foreignKey: 'service_id' });
 
   /* Un negocio puede tener muchas tipos de citas */
   Business.hasMany(Colaborators, { as: 'colaborators', foreignKey: 'business_id' });
@@ -35,15 +35,15 @@ const initModels = () => {
   CategoryBusiness.belongsToMany(Business, { as: 'business', through: 'categories_business' });
   Business.belongsToMany(CategoryBusiness, { as: 'category', through: 'categories_business' });
 
-  Category.hasMany(AppointmentsTypes, { as: 'services', foreignKey: 'category_id' });
-  AppointmentsTypes.belongsTo(Category, { as: 'category', foreignKey: 'category_id' });
+  Category.hasMany(Service, { as: 'services', foreignKey: 'category_id' });
+  Service.belongsTo(Category, { as: 'category', foreignKey: 'category_id' });
 
   Business.hasMany(Category, { as: 'categories_services', foreignKey: 'business_id' });
   Category.belongsTo(Business, { as: 'business_property', foreignKey: 'business_id' });
 
   /* Un tipo de cita  puede tener muchas citas */
-  AppointmentsTypes.belongsToMany(Appointments, { as: 'appointments', through: 'appointment_atypes' });
-  Appointments.belongsToMany(AppointmentsTypes, { as: 'appointments types', through: 'appointment_atypes' });
+  Service.belongsToMany(Appointments, { as: 'appointments', through: 'appointment_atypes' });
+  Appointments.belongsToMany(Service, { as: 'appointments types', through: 'appointment_atypes' });
 
   /* Una cita se puede reservar con un colaborador especifico */
 

@@ -26,6 +26,10 @@ const Galery = db.define('galery', {
   photo: {
     type: DataTypes.STRING,
     allowNull: false
+  },
+  rating: {
+    type: DataTypes.INTEGER,
+    defaultValue: 0
   }
 });
 

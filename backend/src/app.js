@@ -4,7 +4,7 @@ const cors = require('cors');
 const db = require('./utils/database');
 const hendleError = require('./middlewares/error.middleware');
 const initModels = require('./models/initModels');
-const { UserRoutes, BusinessRoutes, BusinessClientsRoutes, AppointmentsRoutes, AppointmentsTypesRoutes, ColaboratorsRoutes, ClientsRoutes, AuthRoutes, BusinessCategoriesRoutes } = require('./routes');
+const { UserRoutes, BusinessRoutes, BusinessClientsRoutes, AppointmentsRoutes, ServiceRoutes, ColaboratorsRoutes, ClientsRoutes, AuthRoutes, BusinessCategoriesRoutes } = require('./routes');
 
 const app = express();
 
@@ -35,7 +35,7 @@ app.use('/api/v1', BusinessRoutes);
 app.use('/api/v1', BusinessCategoriesRoutes);
 app.use('/api/v1', BusinessClientsRoutes);
 app.use('/api/v1', ColaboratorsRoutes);
-app.use('/api/v1', AppointmentsTypesRoutes);
+app.use('/api/v1', ServiceRoutes);
 app.use('/api/v1', ClientsRoutes);
 app.use('/api/v1', AppointmentsRoutes);
 
