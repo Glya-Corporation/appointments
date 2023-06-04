@@ -3,12 +3,14 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getServicesCategoriesThunk } from '../store/slices/servicesCategories.slice';
+import { getAllGaleryThunk } from '../store/slices/galery.slice';
 import capitalice from '../functions/capitalizar';
 
 const Home = () => {
   const { name, id } = useParams();
   const { business } = useSelector(state => state);
   const { servicesCategories } = useSelector(state => state);
+  const { galery } = useSelector(state => state);
 
   const [selectedBusiness, setSelectedBusiness] = useState({});
 
@@ -19,8 +21,16 @@ const Home = () => {
   }, [business, name]);
 
   useEffect(() => {
+    dispatch(getAllGaleryThunk(id));
+  }, []);
+
+  useEffect(() => {
     selectedBusiness?.id && dispatch(getServicesCategoriesThunk(selectedBusiness.id));
   }, [selectedBusiness]);
+
+  const getServicesSelected = id => {
+    return galery.filter(item => item.service.categoryId === id);
+  };
 
   return (
     <main>
@@ -39,19 +49,24 @@ const Home = () => {
           <img className='logo-business' src={selectedBusiness?.logo} alt='' />
         </section>
 
-        <section className='business-categories--goups'>
+        <section style={{ display: 'grid', paddingTop: '2rem' }}>
           <h3 style={{ margin: 'auto' }}>Catálogo de Servicios</h3>
           {servicesCategories.map(category => (
-            <>
+            <div key={category.id} className='business-categories--goups'>
               <h3>{capitalice(category?.name)}</h3>
-              <ul className='group' key={category.id}>
-                {category.services.map(service => (
-                  <li className='group-li' key={service.id}>
-                    <p>$ {service?.price.toFixed(2)}</p>
-                  </li>
-                ))}
+              <ul className='group'>
+                {getServicesSelected(category.id).length >= 1 &&
+                  getServicesSelected(category?.id).map(service => (
+                    <li key={service.id} className='group-li'>
+                      <img src={service?.photo} alt='foto del servicio' />
+                      <div className='group-li--p'>
+                        <p>$ {service?.price.toFixed(2)} </p>
+                        <p>{service.ownerService?.name} </p>
+                      </div>
+                    </li>
+                  ))}
               </ul>
-            </>
+            </div>
           ))}
         </section>
       </article>

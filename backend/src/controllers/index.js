@@ -6,6 +6,7 @@ const { createAppointment, getAppointment, getAllAppointmentsByBusiness, getAllA
 const { createFavorite, getAllFavorites, updateFavorite, deleteFavorite } = require('./favorites.controllers.js');
 const { createService, getAllServices, getAllCategories, updateService, deleteService } = require('./service.controllers.js');
 const { getAllCategoryBusiness, addCategoryBusiness } = require('./categoryBusiness.controllers.js');
+const { createPhoto, getPhoto, getAllPhotos, updatePhoto, deletePhoto } = require('./galery.controllers.js');
 
 module.exports = {
   createUser,
@@ -45,5 +46,10 @@ module.exports = {
   updateService,
   deleteService,
   getAllCategoryBusiness,
-  addCategoryBusiness
+  addCategoryBusiness,
+  createPhoto,
+  getPhoto,
+  getAllPhotos,
+  updatePhoto,
+  deletePhoto
 };

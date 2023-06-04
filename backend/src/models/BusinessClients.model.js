@@ -1,6 +1,5 @@
 const db = require('../utils/database');
 const { DataTypes } = require('sequelize');
-const bcrypt = require('bcrypt');
 
 const BusinessClients = db.define('business_clients', {
   id: {

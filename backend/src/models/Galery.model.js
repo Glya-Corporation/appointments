@@ -30,6 +30,15 @@ const Galery = db.define('galery', {
   rating: {
     type: DataTypes.INTEGER,
     defaultValue: 0
+  },
+  isSelected: {
+    type: DataTypes.BOOLEAN,
+    defaultValue: false
+  },
+  price: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    defaultValue: 0
   }
 });
 

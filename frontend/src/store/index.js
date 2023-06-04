@@ -5,6 +5,7 @@ import businessCategoriesSlice from './slices/businessCategories.slice';
 import favoritesSlice from './slices/favorites.slice';
 import loaderSlice from './slices/loader.slice';
 import servicesCategoriesSlice from './slices/servicesCategories.slice';
+import galerySlice from './slices/galery.slice';
 
 export default configureStore({
   reducer: {
@@ -13,6 +14,7 @@ export default configureStore({
     business: businessSlice,
     businessCategories: businessCategoriesSlice,
     favorites: favoritesSlice,
-    servicesCategories: servicesCategoriesSlice
+    servicesCategories: servicesCategoriesSlice,
+    galery: galerySlice
   }
 });

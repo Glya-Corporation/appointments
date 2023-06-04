@@ -1,4 +1,4 @@
-const AuthRoutes = require('./auth.routes')
+const AuthRoutes = require('./auth.routes');
 const UserRoutes = require('./user.routes');
 const BusinessRoutes = require('./business.routes');
 const BusinessClientsRoutes = require('./businessClients.routes');
@@ -7,5 +7,6 @@ const ServiceRoutes = require('./services.routes');
 const ColaboratorsRoutes = require('./colaborator.routes');
 const ClientsRoutes = require('./client.routes');
 const BusinessCategoriesRoutes = require('./categoryBusiness.routes');
+const GaleryRoutes = require('./galery.routes');
 
-module.exports = { AuthRoutes, UserRoutes, BusinessRoutes, BusinessClientsRoutes, AppointmentsRoutes, ServiceRoutes, ColaboratorsRoutes, ClientsRoutes, BusinessCategoriesRoutes };
+module.exports = { AuthRoutes, UserRoutes, BusinessRoutes, BusinessClientsRoutes, AppointmentsRoutes, ServiceRoutes, ColaboratorsRoutes, ClientsRoutes, BusinessCategoriesRoutes, GaleryRoutes };
