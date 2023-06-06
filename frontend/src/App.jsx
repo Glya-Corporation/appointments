@@ -13,6 +13,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getUserThunk } from './store/slices/user.slice';
 import { getAllBusinessThunk } from './store/slices/business.slice';
 import { useEffect } from 'react';
+import Profile from './pages/Profile';
+import NavBar from './components/NavBar';
 
 function App() {
   const dispatch = useDispatch();
@@ -29,10 +31,12 @@ function App() {
   return (
     <HashRouter>
       {isLoading && <Loading />}
+      <NavBar />
       <Routes>
-        <Route path='/' element={<Login />} />
+        <Route path='/login' element={<Login />} />
         <Route path='/register/:id' element={<Register />} />
         <Route element={<ProtectedRoutes />}>
+          <Route path='/' element={<Profile />} />
           <Route path='/locales' element={<Locales />} />
           <Route path='/home/:name/:id' element={<Home />} />
           <Route path='/locales/favorites' element={<Locales />} />

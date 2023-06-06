@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getServicesCategoriesThunk } from '../store/slices/servicesCategories.slice';
@@ -7,10 +8,10 @@ import { getAllGaleryThunk } from '../store/slices/galery.slice';
 import capitalice from '../functions/capitalizar';
 
 const Home = () => {
-  const { name, id } = useParams();
-  const { business } = useSelector(state => state);
-  const { servicesCategories } = useSelector(state => state);
-  const { galery } = useSelector(state => state);
+  const { id } = useParams();
+  const business = useSelector(state => state.business);
+  const servicesCategories = useSelector(state => state.servicesCategories);
+  const galery = useSelector(state => state.galery);
 
   const [selectedBusiness, setSelectedBusiness] = useState({});
 
@@ -18,7 +19,7 @@ const Home = () => {
 
   useEffect(() => {
     setSelectedBusiness(business.find(item => item.id === Number(id)));
-  }, [business, name]);
+  }, [business, id]);
 
   useEffect(() => {
     dispatch(getAllGaleryThunk(id));
@@ -57,7 +58,7 @@ const Home = () => {
               <ul className='group'>
                 {getServicesSelected(category.id).length >= 1 &&
                   getServicesSelected(category?.id).map(service => (
-                    <li key={service.id} className='group-li'>
+                    <li key={uuidv4()} className='group-li'>
                       <img src={service?.photo} alt='foto del servicio' />
                       <div className='group-li--p'>
                         <p>$ {service?.price.toFixed(2)} </p>

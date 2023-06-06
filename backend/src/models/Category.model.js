@@ -12,7 +12,7 @@ const Category = db.define('category', {
     type: DataTypes.STRING,
     allowNull: false
   },
-  business: {
+  businessId: {
     type: DataTypes.INTEGER,
     allowNull: false,
     field: 'business_id'

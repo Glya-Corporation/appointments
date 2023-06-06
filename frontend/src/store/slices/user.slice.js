@@ -27,9 +27,11 @@ export const loginThunk = (isSeleted, credentials, navigate, remember) => dispat
       if (remember) {
         localStorage.setItem('user', JSON.stringify(res.data.user));
         localStorage.setItem('token', res.data.token);
+        localStorage.setItem('view', JSON.stringify({ view: true }));
       } else {
         sessionStorage.setItem('user', JSON.stringify(res.data.user));
         sessionStorage.setItem('token', res.data.token);
+        sessionStorage.setItem('view', JSON.stringify({ view: true }));
       }
       isSeleted && navigate('/locales');
     })

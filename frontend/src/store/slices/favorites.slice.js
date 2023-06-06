@@ -22,6 +22,8 @@ export const getFavoritesThunk = (id, navigate) => dispatch => {
       if (navigate) {
         const favorite = data.business.find(item => item.business_clients.isSelected);
         favorite && navigate(`/home/${favorite.name}/${favorite.id}`);
+        sessionStorage.setItem('view', JSON.stringify({ view: false }));
+        localStorage.setItem('view', JSON.stringify({ view: false }));
       }
     })
     .catch(err => console.error(err));
