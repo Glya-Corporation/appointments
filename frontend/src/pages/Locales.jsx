@@ -17,7 +17,6 @@ const Locales = () => {
   const allBusiness = useSelector(state => state.business);
   const businessFavorite = useSelector(state => state.favorites);
   const user = JSON.parse(localStorage.getItem('user')) || JSON.parse(sessionStorage.getItem('user'));
-  const view = JSON.parse(localStorage.getItem('view')) || JSON.parse(sessionStorage.getItem('view'));
   const dispatch = useDispatch();
   const { pathname } = useResolvedPath();
 
@@ -31,9 +30,6 @@ const Locales = () => {
   const categories = useSelector(state => state.businessCategories);
 
   const fetchFavorites = () => {
-    if (businessFavorite.length < 1 && view.view) {
-      dispatch(getFavoritesThunk(user.id, navigate));
-    }
     setBusiness(rating(businessFavorite));
     setSelectedBusinessId(null); // Desmarcar cualquier negocio seleccionado anteriormente
   };

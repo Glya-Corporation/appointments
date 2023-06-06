@@ -7,10 +7,25 @@ import history from '../assets/history.svg';
 import user from '../assets/user.svg';
 import exit from '../assets/exit.svg';
 import { useNavigate } from 'react-router-dom';
+import { getFavoritesThunk } from '../store/slices';
 
 const NavBar = () => {
   const [active, setActive] = useState(1);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const user = JSON.parse(localStorage.getItem('user')) || JSON.parse(sessionStorage.getItem('user'));
+  const businessFavorite = useSelector(state => state.favorites);
+  
+  useEffect(() => {
+    if (businessFavorite.length < 1 && view.view) {
+      dispatch(getFavoritesThunk(user.id, navigate));
+    }
+  },[user]);
+  
+  const selectedBusiness = () => {
+    const favorite = businessFavorite.find(item => item.business_clients.isSelected);
+    favorite && navigate(`/home/${favorite.name}/${favorite.id}`);
+  }
 
   const logout = () => {
     localStorage.clear();
@@ -25,7 +40,7 @@ const NavBar = () => {
             <motion.img src={hexagon} alt='icon' initial={{ translateY: 0 }} animate={{ translateY: active === 1 ? -15 : 0 }} onClick={() => setActive(1)} />
             <motion.img src={home} alt='icon' initial={{ translateY: 0 }} animate={{ translateY: active === 1 ? -15 : 0 }} onClick={() => setActive(1)} />
           </li>
-          <li className='nav-list--item'>
+          <li className='nav-list--item' onClick={() => selectedBusiness()}>
             <motion.img src={hexagon} alt='icon' initial={{ translateY: 0 }} animate={{ translateY: active === 2 ? -15 : 0 }} onClick={() => setActive(2)} />
             <motion.img src={plus} alt='icon' initial={{ translateY: 0 }} animate={{ translateY: active === 2 ? -15 : 0 }} onClick={() => setActive(2)} />
           </li>
