@@ -42,106 +42,556 @@ const categoriesBusiness = [
 ];
 
 const categories = [
-  { name: 'acrílico', businessId: 2 },
-  { name: 'gel', businessId: 2 },
-  { name: 'tradicional', businessId: 2 },
-  { name: 'permanente', businessId: 2 },
-  { name: 'relleno', businessId: 2 },
-  { name: 'semi-permanente', businessId: 2 },
-  { name: 'acrílico-gel', businessId: 2 },
-  { name: 'acrílico', businessId: 9 },
-  { name: 'gel', businessId: 9 },
-  { name: 'tradicional', businessId: 9 },
-  { name: 'permanente', businessId: 9 },
-  { name: 'relleno', businessId: 9 },
-  { name: 'semi-permanente', businessId: 9 },
-  { name: 'acrílico-gel', businessId: 9 }
+  { name: 'acrílico', businessId: 2, price: 12.5, duration: '01:30:00' },
+  { name: 'gel', businessId: 2, price: 10.0, duration: '01:00:00' },
+  { name: 'tradicional', businessId: 2, price: 25.0, duration: '01:00:00' },
+  { name: 'permanente', businessId: 2, price: 11.0, duration: '01:00:00' },
+  { name: 'relleno', businessId: 2, price: 3.0, duration: '01:00:00' },
+  { name: 'semi-permanente', businessId: 2, price: 5.0, duration: '01:00:00' },
+  { name: 'acrílico-gel', businessId: 2, price: 20.0, duration: '01:00:00' },
+  { name: 'acrílico', businessId: 9, price: 0.0, duration: '01:00:00' },
+  { name: 'gel', businessId: 9, price: 0.0, duration: '01:00:00' },
+  { name: 'tradicional', businessId: 9, price: 0.0, duration: '01:00:00' },
+  { name: 'permanente', businessId: 9, price: 0.0, duration: '01:00:00' },
+  { name: 'relleno', businessId: 9, price: 0.0, duration: '01:00:00' },
+  { name: 'semi-permanente', businessId: 9, price: 0.0, duration: '01:00:00' },
+  { name: 'acrílico-gel', businessId: 9, price: 0.0, duration: '01:00:00' }
 ];
 
 const colaborators = [
-  { name: 'Robert', surname: 'Anderson', email: 'robert.anderson@example.com', password: 'pass123', businessId: 1, roleId: 3 },
-  { name: 'Megan', surname: 'Harris', email: 'megan.harris@example.com', password: 'pass123', businessId: 2, roleId: 3 },
-  { name: 'William', surname: 'Martin', email: 'william.martin@example.com', password: 'pass123', businessId: 3, roleId: 3 },
-  { name: 'Samantha', surname: 'Jackson', email: 'samantha.jackson@example.com', password: 'pass123', businessId: 4, roleId: 3 },
-  { name: 'Joseph', surname: 'Adams', email: 'joseph.adams@example.com', password: 'pass123', businessId: 5, roleId: 3 },
-  { name: 'Charlotte', surname: 'Mitchell', email: 'charlotte.mitchell@example.com', password: 'pass123', businessId: 6, roleId: 3 },
-  { name: 'Benjamin', surname: 'Roberts', email: 'benjamin.roberts@example.com', password: 'pass123', businessId: 7, roleId: 3 },
-  { name: 'Emma', surname: 'Turner', email: 'emma.turner@example.com', password: 'pass123', businessId: 8, roleId: 3 },
-  { name: 'Christopher', surname: 'Cook', email: 'christopher.cook@example.com', password: 'pass123', businessId: 9, roleId: 3 },
-  { name: 'Madison', surname: 'Ward', email: 'madison.ward@example.com', password: 'pass123', businessId: 10, roleId: 3 },
-  { name: 'David', surname: 'Smith', email: 'david.smith@example.com', password: 'pass123', businessId: 1, roleId: 3 },
-  { name: 'Olivia', surname: 'Brown', email: 'olivia.brown@example.com', password: 'pass123', businessId: 2, roleId: 3 },
-  { name: 'James', surname: 'Johnson', email: 'james.johnson@example.com', password: 'pass123', businessId: 3, roleId: 3 },
-  { name: 'Sophia', surname: 'Miller', email: 'sophia.miller@example.com', password: 'pass123', businessId: 4, roleId: 3 },
-  { name: 'Daniel', surname: 'Davis', email: 'daniel.davis@example.com', password: 'pass123', businessId: 5, roleId: 3 },
-  { name: 'Emily', surname: 'Moore', email: 'emily.moore@example.com', password: 'pass123', businessId: 6, roleId: 3 },
-  { name: 'Michael', surname: 'Anderson', email: 'michael.anderson@example.com', password: 'pass123', businessId: 7, roleId: 3 },
-  { name: 'Ava', surname: 'Wilson', email: 'ava.wilson@example.com', password: 'pass123', businessId: 8, roleId: 3 },
-  { name: 'William', surname: 'Thomas', email: 'william.thomas@example.com', password: 'pass123', businessId: 9, roleId: 3 },
-  { name: 'Abigail', surname: 'Garcia', email: 'abigail.garcia@example.com', password: 'pass123', businessId: 10, roleId: 3 },
-  { name: 'Ethan', surname: 'Brown', email: 'ethan.brown@example.com', password: 'pass123', businessId: 1, roleId: 3 },
-  { name: 'Avery', surname: 'Lee', email: 'avery.lee@example.com', password: 'pass123', businessId: 2, roleId: 3 },
-  { name: 'Alexander', surname: 'Hall', email: 'alexander.hall@example.com', password: 'pass123', businessId: 3, roleId: 3 },
-  { name: 'Harper', surname: 'Gonzalez', email: 'harper.gonzalez@example.com', password: 'pass123', businessId: 4, roleId: 3 },
-  { name: 'Matthew', surname: 'Young', email: 'matthew.young@example.com', password: 'pass123', businessId: 5, roleId: 3 },
-  { name: 'Scarlett', surname: 'Hernandez', email: 'scarlett.hernandez@example.com', password: 'pass123', businessId: 6, roleId: 3 },
-  { name: 'Elijah', surname: 'Martin', email: 'elijah.martin@example.com', password: 'pass123', businessId: 7, roleId: 3 },
-  { name: 'Grace', surname: 'Lopez', email: 'grace.lopez@example.com', password: 'pass123', businessId: 8, roleId: 3 },
-  { name: 'Ryan', surname: 'Clark', email: 'ryan.clark@example.com', password: 'pass123', businessId: 9, roleId: 3 },
-  { name: 'Lily', surname: 'Baker', email: 'lily.baker@example.com', password: 'pass123', businessId: 10, roleId: 3 }
+  {
+    name: 'Robert',
+    surname: 'Anderson',
+    email: 'robert.anderson@example.com',
+    password: 'pass123',
+    workingHours: {
+      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+    },
+    businessId: 1,
+    roleId: 3
+  },
+  {
+    name: 'Megan',
+    surname: 'Harris',
+    email: 'megan.harris@example.com',
+    password: 'pass123',
+    workingHours: {
+      lunes: { date: '2023-06-07', entryTime: '13:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-06-08', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-06-09', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-06-10', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-06-11', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-06-12', entryTime: '08:00:00', departureTime: '20:00:00' }
+    },
+    businessId: 2,
+    roleId: 3
+  },
+  {
+    name: 'William',
+    surname: 'Martin',
+    email: 'william.martin@example.com',
+    password: 'pass123',
+    workingHours: {
+      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+    },
+    businessId: 3,
+    roleId: 3
+  },
+  {
+    name: 'Samantha',
+    surname: 'Jackson',
+    email: 'samantha.jackson@example.com',
+    password: 'pass123',
+    workingHours: {
+      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+    },
+    businessId: 4,
+    roleId: 3
+  },
+  {
+    name: 'Joseph',
+    surname: 'Adams',
+    email: 'joseph.adams@example.com',
+    password: 'pass123',
+    workingHours: {
+      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+    },
+    businessId: 5,
+    roleId: 3
+  },
+  {
+    name: 'Charlotte',
+    surname: 'Mitchell',
+    email: 'charlotte.mitchell@example.com',
+    password: 'pass123',
+    workingHours: {
+      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+    },
+    businessId: 6,
+    roleId: 3
+  },
+  {
+    name: 'Benjamin',
+    surname: 'Roberts',
+    email: 'benjamin.roberts@example.com',
+    password: 'pass123',
+    workingHours: {
+      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+    },
+    businessId: 7,
+    roleId: 3
+  },
+  {
+    name: 'Emma',
+    surname: 'Turner',
+    email: 'emma.turner@example.com',
+    password: 'pass123',
+    workingHours: {
+      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+    },
+    businessId: 8,
+    roleId: 3
+  },
+  {
+    name: 'Christopher',
+    surname: 'Cook',
+    email: 'christopher.cook@example.com',
+    password: 'pass123',
+    workingHours: {
+      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+    },
+    businessId: 9,
+    roleId: 3
+  },
+  {
+    name: 'Madison',
+    surname: 'Ward',
+    email: 'madison.ward@example.com',
+    password: 'pass123',
+    workingHours: {
+      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+    },
+    businessId: 10,
+    roleI: 3
+  },
+  {
+    name: 'David',
+    surname: 'Smith',
+    email: 'david.smith@example.com',
+    password: 'pass123',
+    workingHours: {
+      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+    },
+    businessId: 1,
+    roleId: 3
+  },
+  {
+    name: 'Olivia',
+    surname: 'Brown',
+    email: 'olivia.brown@example.com',
+    password: 'pass123',
+    workingHours: {
+      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+    },
+    businessId: 2,
+    roleId: 3
+  },
+  {
+    name: 'James',
+    surname: 'Johnson',
+    email: 'james.johnson@example.com',
+    password: 'pass123',
+    workingHours: {
+      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+    },
+    businessId: 3,
+    roleId: 3
+  },
+  {
+    name: 'Ava',
+    surname: 'Wilson',
+    email: 'ava.wilson@example.com',
+    password: 'pass123',
+    workingHours: {
+      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+    },
+    businessId: 8,
+    roleId: 3
+  },
+  {
+    name: 'Alexander',
+    surname: 'Hall',
+    email: 'alexander.hall@example.com',
+    password: 'pass123',
+    workingHours: {
+      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+    },
+    businessId: 3,
+    roleId: 3
+  },
+  {
+    name: 'Grace',
+    surname: 'Lopez',
+    email: 'grace.lopez@example.com',
+    password: 'pass123',
+    workingHours: {
+      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+    },
+    businessId: 8,
+    roleId: 3
+  },
+  {
+    name: 'Sophia',
+    surname: 'Miller',
+    email: 'sophia.miller@example.com',
+    password: 'pass123',
+    workingHours: {
+      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+    },
+    businessId: 4,
+    roleId: 3
+  },
+  {
+    name: 'William',
+    surname: 'Thomas',
+    email: 'william.thomas@example.com',
+    password: 'pass123',
+    workingHours: {
+      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+    },
+    businessId: 9,
+    roleId: 3
+  },
+  {
+    name: 'Harper',
+    surname: 'Gonzalez',
+    email: 'harper.gonzalez@example.com',
+    password: 'pass123',
+    workingHours: {
+      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+    },
+    businessId: 4,
+    roleId: 3
+  },
+  {
+    name: 'Ryan',
+    surname: 'Clark',
+    email: 'ryan.clark@example.com',
+    password: 'pass123',
+    workingHours: {
+      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+    },
+    businessId: 9,
+    roleId: 3
+  },
+  {
+    name: 'Daniel',
+    surname: 'Davis',
+    email: 'daniel.davis@example.com',
+    password: 'pass123',
+    workingHours: {
+      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+    },
+    businessId: 5,
+    roleId: 3
+  },
+  {
+    name: 'Abigail',
+    surname: 'Garcia',
+    email: 'abigail.garcia@example.com',
+    password: 'pass123',
+    workingHours: {
+      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+    },
+    businessId: 10,
+    roleI: 3
+  },
+  {
+    name: 'Matthew',
+    surname: 'Young',
+    email: 'matthew.young@example.com',
+    password: 'pass123',
+    workingHours: {
+      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+    },
+    businessId: 5,
+    roleId: 3
+  },
+  {
+    name: 'Lily',
+    surname: 'Baker',
+    email: 'lily.baker@example.com',
+    password: 'pass123',
+    workingHours: {
+      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+    },
+    businessId: 10,
+    roleI: 3
+  },
+  {
+    name: 'Emily',
+    surname: 'Moore',
+    email: 'emily.moore@example.com',
+    password: 'pass123',
+    workingHours: {
+      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+    },
+    businessId: 6,
+    roleId: 3
+  },
+  {
+    name: 'Ethan',
+    surname: 'Brown',
+    email: 'ethan.brown@example.com',
+    password: 'pass123',
+    workingHours: {
+      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+    },
+    businessId: 1,
+    roleId: 3
+  },
+  {
+    name: 'Scarlett',
+    surname: 'Hernandez',
+    email: 'scarlett.hernandez@example.com',
+    password: 'pass123',
+    workingHours: {
+      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+    },
+    businessId: 6,
+    roleId: 3
+  },
+  {
+    name: 'Michael',
+    surname: 'Anderson',
+    email: 'michael.anderson@example.com',
+    password: 'pass123',
+    workingHours: {
+      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+    },
+    businessId: 7,
+    roleId: 3
+  },
+  {
+    name: 'Avery',
+    surname: 'Lee',
+    email: 'avery.lee@example.com',
+    password: 'pass123',
+    workingHours: {
+      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+    },
+    businessId: 2,
+    roleId: 3
+  },
+  {
+    name: 'Elijah',
+    surname: 'Martin',
+    email: 'elijah.martin@example.com',
+    password: 'pass123',
+    workingHours: {
+      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+    },
+    businessId: 7,
+    roleId: 3
+  }
 ];
 
 const services = [
-  { name: 'nombre 1', price: 57.0, duration: '18:45:27Z', businessId: 2, categoryId: 1 },
-  { name: 'nombre 2', price: 34.0, duration: '13:12:19Z', businessId: 2, categoryId: 2 },
-  { name: 'nombre 3', price: 90.0, duration: '01:31:59Z', businessId: 2, categoryId: 3 },
-  { name: 'nombre 4', price: 21.0, duration: '07:15:07Z', businessId: 2, categoryId: 4 },
-  { name: 'nombre 5', price: 73.0, duration: '23:59:42Z', businessId: 2, categoryId: 5 },
-  { name: 'nombre 6', price: 48.0, duration: '16:37:55Z', businessId: 2, categoryId: 6 },
-  { name: 'nombre 7', price: 64.0, duration: '21:04:29Z', businessId: 2, categoryId: 7 },
-  { name: 'nombre 8', price: 11.0, duration: '06:05:40Z', businessId: 2, categoryId: 1 },
-  { name: 'nombre 9', price: 68.0, duration: '20:52:59Z', businessId: 2, categoryId: 2 },
-  { name: 'nombre 10', price: 52.0, duration: '17:40:16Z', businessId: 2, categoryId: 3 },
-  { name: 'nombre 11', price: 39.0, duration: '13:56:34Z', businessId: 2, categoryId: 4 },
-  { name: 'nombre 12', price: 87.0, duration: '00:28:21Z', businessId: 2, categoryId: 5 },
-  { name: 'nombre 13', price: 26.0, duration: '09:20:49Z', businessId: 2, categoryId: 6 },
-  { name: 'nombre 14', price: 71.0, duration: '21:53:10Z', businessId: 2, categoryId: 7 },
-  { name: 'nombre 15', price: 17.0, duration: '06:38:55Z', businessId: 2, categoryId: 1 },
-  { name: 'nombre 16', price: 44.0, duration: '15:20:47Z', businessId: 2, categoryId: 2 },
-  { name: 'nombre 17', price: 82.0, duration: '02:47:16Z', businessId: 2, categoryId: 3 },
-  { name: 'nombre 18', price: 33.0, duration: '12:34:55Z', businessId: 2, categoryId: 4 },
-  { name: 'nombre 19', price: 78.0, duration: '23:11:23Z', businessId: 2, categoryId: 5 },
-  { name: 'nombre 20', price: 59.0, duration: '18:56:42Z', businessId: 2, categoryId: 6 },
-  { name: 'nombre 21', price: 22.0, duration: '07:08:37Z', businessId: 2, categoryId: 7 },
-  { name: 'nombre 22', price: 65.0, duration: '20:44:55Z', businessId: 2, categoryId: 1 },
-  { name: 'nombre 23', price: 51.0, duration: '17:33:04Z', businessId: 2, categoryId: 2 },
-  { name: 'nombre 24', price: 40.0, duration: '14:13:26Z', businessId: 2, categoryId: 3 },
-  { name: 'nombre 25', price: 96.0, duration: '03:25:51Z', businessId: 2, categoryId: 4 },
-  { name: 'nombre 26', price: 16.0, duration: '06:31:19Z', businessId: 9, categoryId: 8 },
-  { name: 'nombre 27', price: 54.0, duration: '18:15:44Z', businessId: 9, categoryId: 9 },
-  { name: 'nombre 28', price: 89.0, duration: '01:47:19Z', businessId: 9, categoryId: 10 },
-  { name: 'nombre 29', price: 35.0, duration: '13:22:06Z', businessId: 9, categoryId: 11 },
-  { name: 'nombre 30', price: 77.0, duration: '23:47:35Z', businessId: 9, categoryId: 12 },
-  { name: 'nombre 31', price: 25.0, duration: '09:12:12Z', businessId: 9, categoryId: 13 },
-  { name: 'nombre 32', price: 69.0, duration: '21:03:27Z', businessId: 9, categoryId: 14 },
-  { name: 'nombre 33', price: 50.0, duration: '16:51:14Z', businessId: 9, categoryId: 8 },
-  { name: 'nombre 34', price: 38.0, duration: '13:44:28Z', businessId: 9, categoryId: 9 },
-  { name: 'nombre 35', price: 86.0, duration: '00:19:47Z', businessId: 9, categoryId: 10 },
-  { name: 'nombre 36', price: 10.0, duration: '06:01:51Z', businessId: 9, categoryId: 11 },
-  { name: 'nombre 37', price: 67.0, duration: '20:43:14Z', businessId: 9, categoryId: 12 },
-  { name: 'nombre 38', price: 53.0, duration: '17:31:46Z', businessId: 9, categoryId: 13 },
-  { name: 'nombre 39', price: 92.0, duration: '02:04:23Z', businessId: 9, categoryId: 14 },
-  { name: 'nombre 40', price: 20.0, duration: '07:03:11Z', businessId: 9, categoryId: 8 },
-  { name: 'nombre 41', price: 63.0, duration: '20:34:46Z', businessId: 9, categoryId: 9 },
-  { name: 'nombre 42', price: 49.0, duration: '16:22:39Z', businessId: 9, categoryId: 10 },
-  { name: 'nombre 43', price: 18.0, duration: '06:23:50Z', businessId: 9, categoryId: 11 },
-  { name: 'nombre 44', price: 45.0, duration: '15:05:22Z', businessId: 9, categoryId: 12 },
-  { name: 'nombre 45', price: 83.0, duration: '02:32:51Z', businessId: 9, categoryId: 13 },
-  { name: 'nombre 46', price: 32.0, duration: '12:20:34Z', businessId: 9, categoryId: 14 },
-  { name: 'nombre 47', price: 79.0, duration: '23:02:49Z', businessId: 9, categoryId: 8 },
-  { name: 'nombre 48', price: 27.0, duration: '09:55:03Z', businessId: 9, categoryId: 9 },
-  { name: 'nombre 49', price: 72.0, duration: '22:28:28Z', businessId: 9, categoryId: 10 },
-  { name: 'nombre 50', price: 57.0, duration: '18:45:27Z', businessId: 9, categoryId: 11 }
+  { name: 'nombre 1', price: 57.0, duration: '01:40:00', businessId: 2, categoryId: 1 },
+  { name: 'nombre 2', price: 34.0, duration: '01:10:00', businessId: 2, categoryId: 2 },
+  { name: 'nombre 3', price: 90.0, duration: '01:30:00', businessId: 2, categoryId: 3 },
+  { name: 'nombre 4', price: 21.0, duration: '01:10:00', businessId: 2, categoryId: 4 },
+  { name: 'nombre 5', price: 73.0, duration: '01:50:00', businessId: 2, categoryId: 5 },
+  { name: 'nombre 6', price: 48.0, duration: '01:30:00', businessId: 2, categoryId: 6 },
+  { name: 'nombre 7', price: 64.0, duration: '01:00:00', businessId: 2, categoryId: 7 },
+  { name: 'nombre 8', price: 11.0, duration: '01:00:00', businessId: 2, categoryId: 1 },
+  { name: 'nombre 9', price: 68.0, duration: '01:50:00', businessId: 2, categoryId: 2 },
+  { name: 'nombre 10', price: 52.0, duration: '01:40:00', businessId: 2, categoryId: 3 },
+  { name: 'nombre 11', price: 39.0, duration: '01:50:00', businessId: 2, categoryId: 4 },
+  { name: 'nombre 12', price: 87.0, duration: '01:20:00', businessId: 2, categoryId: 5 },
+  { name: 'nombre 13', price: 26.0, duration: '01:20:00', businessId: 2, categoryId: 6 },
+  { name: 'nombre 14', price: 71.0, duration: '01:50:00', businessId: 2, categoryId: 7 },
+  { name: 'nombre 15', price: 17.0, duration: '01:30:00', businessId: 2, categoryId: 1 },
+  { name: 'nombre 16', price: 44.0, duration: '01:20:00', businessId: 2, categoryId: 2 },
+  { name: 'nombre 17', price: 82.0, duration: '01:40:00', businessId: 2, categoryId: 3 },
+  { name: 'nombre 18', price: 33.0, duration: '01:30:00', businessId: 2, categoryId: 4 },
+  { name: 'nombre 19', price: 78.0, duration: '01:10:00', businessId: 2, categoryId: 5 },
+  { name: 'nombre 20', price: 59.0, duration: '01:50:00', businessId: 2, categoryId: 6 },
+  { name: 'nombre 21', price: 22.0, duration: '01:00:00', businessId: 2, categoryId: 7 },
+  { name: 'nombre 22', price: 65.0, duration: '01:40:00', businessId: 2, categoryId: 1 },
+  { name: 'nombre 23', price: 51.0, duration: '01:30:00', businessId: 2, categoryId: 2 },
+  { name: 'nombre 24', price: 40.0, duration: '01:10:00', businessId: 2, categoryId: 3 },
+  { name: 'nombre 25', price: 96.0, duration: '01:20:00', businessId: 2, categoryId: 4 },
+  { name: 'nombre 26', price: 16.0, duration: '01:30:00', businessId: 9, categoryId: 8 },
+  { name: 'nombre 27', price: 54.0, duration: '01:10:00', businessId: 9, categoryId: 9 },
+  { name: 'nombre 28', price: 89.0, duration: '01:40:00', businessId: 9, categoryId: 10 },
+  { name: 'nombre 29', price: 35.0, duration: '01:20:00', businessId: 9, categoryId: 11 },
+  { name: 'nombre 30', price: 77.0, duration: '01:40:00', businessId: 9, categoryId: 12 },
+  { name: 'nombre 31', price: 25.0, duration: '01:10:00', businessId: 9, categoryId: 13 },
+  { name: 'nombre 32', price: 69.0, duration: '01:00:00', businessId: 9, categoryId: 14 },
+  { name: 'nombre 33', price: 50.0, duration: '01:50:00', businessId: 9, categoryId: 8 },
+  { name: 'nombre 34', price: 38.0, duration: '01:40:00', businessId: 9, categoryId: 9 },
+  { name: 'nombre 35', price: 86.0, duration: '01:10:00', businessId: 9, categoryId: 10 },
+  { name: 'nombre 36', price: 10.0, duration: '01:00:00', businessId: 9, categoryId: 11 },
+  { name: 'nombre 37', price: 67.0, duration: '01:40:00', businessId: 9, categoryId: 12 },
+  { name: 'nombre 38', price: 53.0, duration: '01:30:00', businessId: 9, categoryId: 13 },
+  { name: 'nombre 39', price: 92.0, duration: '01:00:00', businessId: 9, categoryId: 14 },
+  { name: 'nombre 40', price: 20.0, duration: '01:00:00', businessId: 9, categoryId: 8 },
+  { name: 'nombre 41', price: 63.0, duration: '01:30:00', businessId: 9, categoryId: 9 },
+  { name: 'nombre 42', price: 49.0, duration: '01:20:00', businessId: 9, categoryId: 10 },
+  { name: 'nombre 43', price: 18.0, duration: '01:20:00', businessId: 9, categoryId: 11 },
+  { name: 'nombre 44', price: 45.0, duration: '01:00:00', businessId: 9, categoryId: 12 },
+  { name: 'nombre 45', price: 83.0, duration: '01:30:00', businessId: 9, categoryId: 13 },
+  { name: 'nombre 46', price: 32.0, duration: '01:20:00', businessId: 9, categoryId: 14 },
+  { name: 'nombre 47', price: 79.0, duration: '01:00:00', businessId: 9, categoryId: 8 },
+  { name: 'nombre 48', price: 27.0, duration: '01:50:00', businessId: 9, categoryId: 9 },
+  { name: 'nombre 49', price: 72.0, duration: '01:20:00', businessId: 9, categoryId: 10 },
+  { name: 'nombre 50', price: 57.0, duration: '01:40:00', businessId: 9, categoryId: 11 }
 ];
 
 const galeries = [
@@ -245,4 +695,11 @@ const businessClients = [
   { businessId: 9, clientId: 1, isSelected: false }
 ];
 
-module.exports = { roles, categoryBusiness, users, businesses, categoriesBusiness, categories, colaborators, services, galeries, clients, businessClients };
+const appointments = [
+  { description: 'acrilicas', status: 'inProgress', dateTime: { date: '2023-06-07', time: '15:00:00' }, totalPrice: 0.0, totalDuration: 2, businessId: 2, colaboratorId: 2, clientId: 5 },
+  { description: 'acrilicas', status: 'inProgress', dateTime: { date: '2023-06-07', time: '18:00:00' }, totalPrice: 0.0, totalDuration: 2, businessId: 2, colaboratorId: 2, clientId: 8 }
+];
+
+const appointmentAtypes = [{ serviceId: 2, appointmentId: 1 }];
+
+module.exports = { roles, categoryBusiness, users, businesses, categoriesBusiness, categories, colaborators, services, galeries, clients, businessClients, appointments, appointmentAtypes };
