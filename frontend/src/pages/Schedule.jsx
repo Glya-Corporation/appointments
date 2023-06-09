@@ -30,7 +30,7 @@ const Schedule = () => {
   }, [business]);
 
   useEffect(() => {
-    businessSelected.id && dispatch(getAllAppointmentsThunk(businessSelected.id));
+    businessSelected.id && dispatch(getAllAppointmentsThunk(businessSelected?.id));
   }, [businessSelected]);
 
   const getAvailable = workingHours => {
