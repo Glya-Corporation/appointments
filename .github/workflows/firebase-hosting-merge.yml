@@ -20,7 +20,7 @@ jobs:
           node-version: 14
 
       - name: Change to frontend directory
-        run: cd appointments/frontend
+        run: cd ./appointments/frontend
 
       - name: Install dependencies and build
         run: |
