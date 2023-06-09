@@ -16,13 +16,15 @@ const Business = db.define('business', {
     type: DataTypes.STRING,
     allowNull: false
   },
-  opening_time: {
+  openingTime: {
     type: DataTypes.TIME,
-    defaultValue: '08:00:00'
+    defaultValue: '08:00:00',
+    field: 'opening_time'
   },
-  closing_time: {
+  closingTime: {
     type: DataTypes.TIME,
-    defaultValue: '20:00:00'
+    defaultValue: '20:00:00',
+    field: 'closing_time'
   },
   isActive: {
     type: DataTypes.BOOLEAN,

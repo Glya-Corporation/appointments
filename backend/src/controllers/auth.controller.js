@@ -13,8 +13,8 @@ const login = async (req, res, next) => {
     if (result) {
       const { email, password, id, role, name, surname, number, isVerify, business } = result;
       const token = await AuthServices.generateToken({ email, password, id });
-      const user = { email, id, role, name, surname, number, isVerify, business };
-      res.status(200).json({ user, token: token });
+      const user = { id, name, surname, email, number, isVerify, role, business };
+      res.status(200).json({ user, token });
     } else {
       res.status(400).json({ message: 'Wrong password or email' });
     }

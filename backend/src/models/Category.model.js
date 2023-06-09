@@ -12,6 +12,14 @@ const Category = db.define('category', {
     type: DataTypes.STRING,
     allowNull: false
   },
+  price: {
+    type: DataTypes.FLOAT,
+    defaultValue: 0
+  },
+  duration: {
+    type: DataTypes.TIME,
+    defaultValue: '01:00:00'
+  },
   businessId: {
     type: DataTypes.INTEGER,
     allowNull: false,

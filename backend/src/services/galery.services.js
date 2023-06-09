@@ -17,12 +17,12 @@ class GaleryServices {
     try {
       const result = await Galery.findAll({
         where: { businessId, isSelected: true },
-        attributes: ['photo', 'rating', 'price'],
+        attributes: ['id', 'photo', 'rating', 'price', 'businessId'],
         include: [
           {
             model: Colaborators,
             as: 'ownerService',
-            attributes: ['id', 'name', 'surname', 'imgProfile']
+            attributes: ['id', 'name', 'surname', 'imgProfile', 'workingHours']
           },
           {
             model: Service,

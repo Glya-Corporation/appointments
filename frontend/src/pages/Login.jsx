@@ -19,7 +19,7 @@ const Login = () => {
 
   const [isVisible, setIsVisible] = useState(false);
   const [isSeleted, setIsSeleted] = useState(true);
-  const [remember, setRemember] = useState(false);
+  const [remember, setRemember] = useState(true);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -70,8 +70,8 @@ const Login = () => {
           Ingresar
         </motion.button>
         <div className='remember-me'>
-          <input type='checkbox' onChange={e => setRemember(e.target.checked)} />
-          <label>Recordar</label>
+          <input type='checkbox' onChange={e => setRemember(e.target.checked)} id='check' defaultChecked='true'/>
+          <label htmlFor='check'>Recordar</label>
         </div>
       </form>
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className='login-links'>

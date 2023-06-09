@@ -1,11 +1,11 @@
-const { Appointments, Clients, AppointmentsTypes, AppointmentAtypes } = require('../models');
+const { Appointments, Clients, AppointmentsTypes, AppointmentAtypes, Service, Colaborators } = require('../models');
 
 class AppointmentServices {
   static async createAppointment(body) {
     try {
-      const { types } = body;
+      const { services } = body;
       const result = await Appointments.create(body);
-      await AppointmentAtypes.bulkCreate(types.map(type => ({ appointmentTypeId: type, appointmentId: result.id })));
+      await AppointmentAtypes.bulkCreate(services.map(service => ({ appointmentTypeId: service, appointmentId: result.id })));
       return result;
     } catch (error) {
       throw error;
@@ -39,7 +39,10 @@ class AppointmentServices {
   static async getAllAppointmentsByBusiness(businessId) {
     try {
       const result = await Appointments.findAll({
-        where: { businessId },
+        where: { businessId, status: 'inProgress' },
+        attributes: {
+          exclude: ['createdAt', 'updatedAt', 'clientId', 'client_id', 'businessId', 'business_id', 'colaboratorId', 'colaborator_id']
+        },
         include: [
           {
             model: Clients,
@@ -49,14 +52,21 @@ class AppointmentServices {
             }
           },
           {
-            through: AppointmentsTypes,
-            as: 'appointments types',
+            model: Service,
+            as: 'appointmentsTypes',
             attributes: {
-              exclude: ['createdAt', 'updatedAt']
+              exclude: ['businessId', 'business_id', 'category_id', 'createdAt', 'updatedAt']
+            },
+            through: {
+              attributes: []
             }
+          },
+          {
+            model: Colaborators,
+            as: 'colaborator',
+            attributes: ['id', 'name', 'surname', 'workingHours']
           }
-        ],
-        order: [['id', 'ASC']]
+        ]
       });
       return result;
     } catch (error) {

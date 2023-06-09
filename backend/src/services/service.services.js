@@ -22,10 +22,10 @@ class ServiceServices {
       throw error;
     }
   }
-  static async getAllCategories(business) {
+  static async getAllCategories(businessId) {
     try {
       const result = await Category.findAll({
-        where: { business_id: business },
+        where: { businessId },
         attributes: {
           exclude: ['createdAt', 'updatedAt', 'business_id', 'businessId']
         },

@@ -43,7 +43,7 @@ const initModels = () => {
 
   /* Un tipo de cita  puede tener muchas citas */
   Service.belongsToMany(Appointments, { as: 'appointments', through: 'appointment_atypes' });
-  Appointments.belongsToMany(Service, { as: 'appointments types', through: 'appointment_atypes' });
+  Appointments.belongsToMany(Service, { as: 'appointmentsTypes', through: 'appointment_atypes' });
 
   /* Una cita se puede reservar con un colaborador especifico */
 

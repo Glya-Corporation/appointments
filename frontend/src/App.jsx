@@ -15,6 +15,8 @@ import { getAllBusinessThunk } from './store/slices/business.slice';
 import { useEffect } from 'react';
 import Profile from './pages/Profile';
 import NavBar from './components/NavBar';
+import Schedule from './pages/Schedule';
+import NotificationBar from './components/NotificationBar';
 
 function App() {
   const dispatch = useDispatch();
@@ -31,6 +33,7 @@ function App() {
   return (
     <HashRouter>
       {isLoading && <Loading />}
+      <NotificationBar />
       <NavBar />
       <Routes>
         <Route path='/login' element={<Login />} />
@@ -41,6 +44,7 @@ function App() {
           <Route path='/home/:name/:id' element={<Home />} />
           <Route path='/locales/favorites' element={<Locales />} />
           <Route path='/complete/register/business' element={<CompleteRegisterBusiness />} />
+          <Route path='/schedule' element={<Schedule />} />
         </Route>
       </Routes>
     </HashRouter>

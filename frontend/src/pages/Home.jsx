@@ -1,11 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getServicesCategoriesThunk } from '../store/slices/servicesCategories.slice';
 import { getAllGaleryThunk } from '../store/slices/galery.slice';
 import capitalice from '../functions/capitalizar';
+import ScheduleModal from '../components/ScheduleModal';
 
 const Home = () => {
   const { id } = useParams();
@@ -14,6 +14,7 @@ const Home = () => {
   const galery = useSelector(state => state.galery);
 
   const [selectedBusiness, setSelectedBusiness] = useState({});
+  const [modal, setModal] = useState({ isVisible: false, service: null });
 
   const dispatch = useDispatch();
 
@@ -33,8 +34,15 @@ const Home = () => {
     return galery.filter(item => item.service.categoryId === id);
   };
 
+  const openModal = service => {
+    setModal({ isVisible: true, service });
+  };
+
+  const closeModal = () => setModal(false);
+
   return (
     <main>
+      {modal.isVisible && <ScheduleModal service={modal.service} closeModal={closeModal} />}
       <article className='business'>
         <section className='business-info'>
           <div className='business-info--detail'>
@@ -50,7 +58,7 @@ const Home = () => {
           <img className='logo-business' src={selectedBusiness?.logo} alt='' />
         </section>
 
-        <section style={{ display: 'grid', paddingTop: '2rem' }}>
+        <section style={{ display: 'grid', paddingTop: '2rem', paddingBottom: '3.5rem' }}>
           <h3 style={{ margin: 'auto' }}>Catálogo de Servicios</h3>
           {servicesCategories.map(category => (
             <div key={category.id} className='business-categories--goups'>
@@ -58,8 +66,8 @@ const Home = () => {
               <ul className='group'>
                 {getServicesSelected(category.id).length >= 1 &&
                   getServicesSelected(category?.id).map(service => (
-                    <li key={uuidv4()} className='group-li'>
-                      <img src={service?.photo} alt='foto del servicio' />
+                    <li key={service.id} className='group-li'>
+                      <img src={service?.photo} alt='foto del servicio' onClick={() => openModal(service)} />
                       <div className='group-li--p'>
                         <p>$ {service?.price.toFixed(2)} </p>
                         <p>{service.ownerService?.name} </p>
@@ -67,6 +75,7 @@ const Home = () => {
                     </li>
                   ))}
               </ul>
+              <hr />
             </div>
           ))}
         </section>

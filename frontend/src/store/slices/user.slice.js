@@ -34,6 +34,7 @@ export const loginThunk = (isSeleted, credentials, navigate, remember) => dispat
         sessionStorage.setItem('view', JSON.stringify({ view: true }));
       }
       isSeleted && navigate('/locales');
+      !isSeleted && navigate('/');
     })
     .catch(err => console.error(err))
     .finally(() => {
