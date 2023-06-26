@@ -42,8 +42,8 @@ const initModels = () => {
   Category.belongsTo(Business, { as: 'business_property', foreignKey: 'business_id' });
 
   /* Un tipo de cita  puede tener muchas citas */
-  Service.belongsToMany(Appointments, { as: 'appointments', through: 'appointment_atypes' });
-  Appointments.belongsToMany(Service, { as: 'appointmentsTypes', through: 'appointment_atypes' });
+  Galery.belongsToMany(Appointments, { as: 'appointments', through: 'appointment_atypes' });
+  Appointments.belongsToMany(Galery, { as: 'galery_appointment', through: 'appointment_atypes' });
 
   /* Una cita se puede reservar con un colaborador especifico */
 

@@ -12,7 +12,7 @@ const Schedule = () => {
   const [date, setDate] = useState('');
   const [hours, setHours] = useState('Seleccionar...');
   const [showList, setShowList] = useState(false);
-  const [aditionals, setAditionals] = useState([]);
+  const [totalServices, setTotalServices] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalDuration, setTotalDuration] = useState('');
 
@@ -32,6 +32,10 @@ const Schedule = () => {
   useEffect(() => {
     businessSelected.id && dispatch(getAllAppointmentsThunk(businessSelected.id));
   }, [businessSelected]);
+
+  useEffect(() => {
+    setTotalServices([service.service]);
+  }, [service]);
 
   const getAvailable = workingHours => {
     let openingTime = '08:00:00';
@@ -79,7 +83,8 @@ const Schedule = () => {
   };
 
   const selectAditionals = (category, isSelected) => {
-    const array = [...aditionals];
+    const array = [...totalServices];
+    console.log(array)
     if (isSelected) {
       array.push(category);
       setTotalPrice(totalPrice + category.price);
@@ -87,9 +92,9 @@ const Schedule = () => {
     } else {
       array.splice(array.indexOf(category), 1);
       setTotalPrice(totalPrice - category.price);
-      setTotalDuration(calDate(date, category.duration, '-'));
+      setTotalDuration(calDate(totalDuration, category.duration, '-'));
     }
-    setAditionals(array);
+    setTotalServices(array);
   };
 
   const create = () => {
@@ -103,7 +108,7 @@ const Schedule = () => {
       businessId: businessSelected.id,
       colaboratorId: service.ownerService.id,
       clientId: user.id,
-      services: aditionals
+      services: totalServices
     };
 
     console.log(data);
@@ -115,6 +120,11 @@ const Schedule = () => {
     setTotalPrice(service.price);
     setTotalDuration(category.duration);
   }, []);
+
+  const getNameCategory = category => {
+    const { name } = categories.find(c => c.id === category);
+    return capitalice(name);
+  };
 
   return (
     <main>
@@ -133,25 +143,28 @@ const Schedule = () => {
           </div>
           <h3>Servicios extras</h3>
           <div className='add-service'>
-            {categories.map(category => {
-              return (
-                <div key={category.id} className='list-service'>
-                  <input type='checkbox' id={category.id} onChange={e => selectAditionals(category, e.target.checked)} />
-                  <label htmlFor={category.id}>{capitalice(category.name)}</label>
-                </div>
-              );
-            })}
+            {categories.map(
+              category =>
+                service.service.categoryId !== category.id && (
+                  <div key={category.id} className='list-service'>
+                    <input type='checkbox' id={category.id} onChange={e => selectAditionals(category, e.target.checked)} />
+                    <label htmlFor={category.id}>{capitalice(category.name)}</label>
+                  </div>
+                )
+            )}
           </div>
         </section>
         <section className='resume'>
           <h3>Resumen de servicio</h3>
           <div className='detail-service body'>
-            <p className='detail-service-name'>{service.service.name}</p>
+            <p className='detail-service-name'>
+              {getNameCategory(service.service.categoryId)} | {service.service.name}
+            </p>
             <p className='detail-service-date-time'>
               <span>Día: {date}</span> <span>Hora: {hours}</span>
             </p>
             <p className='detail-service-aditionals'>
-              {aditionals.map(item => (
+              {totalServices.map(item => (
                 <span key={item.id}>{capitalice(item.name)}</span>
               ))}
             </p>

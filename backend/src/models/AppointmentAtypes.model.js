@@ -7,6 +7,16 @@ const AppointmentAtypes = db.define('appointment_atypes', {
     primaryKey: true,
     autoIncrement: true,
     allowNull: false
+  },
+  appointmentsId: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+    field: 'appointments_id'
+  },
+  galeryId: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+    field: 'galery_id'
   }
 });
 

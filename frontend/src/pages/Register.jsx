@@ -1,8 +1,14 @@
 /* eslint-disable no-unused-vars */
-import { useNavigate, useParams } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import axios from 'axios';
+import { motion } from 'framer-motion';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
+import { loginThunk } from '../store/slices/user.slice';
+import { useState } from 'react';
+
 const apiUrl = import.meta.env.VITE_API_URL;
+
 import logo1 from '../assets/logo1.svg';
 import logo2 from '../assets/logo2.svg';
 import logo3 from '../assets/logo3.svg';
@@ -12,10 +18,8 @@ import user from '../assets/user.svg';
 import phone from '../assets/phone.svg';
 import ruc from '../assets/ruc.svg';
 import home from '../assets/home.svg';
-import { useForm } from 'react-hook-form';
-import { useDispatch } from 'react-redux';
-import { loginThunk } from '../store/slices/user.slice';
-import { useState } from 'react';
+import arrowBackAlt from '../assets/arrow_back_alt.svg';
+
 
 const Register = () => {
   const { handleSubmit, register, reset } = useForm();
@@ -50,6 +54,7 @@ const Register = () => {
 
   return (
     <main className='body register'>
+      <img className='arrowBackAlt' src={arrowBackAlt} alt="arrow back" onClick={() => navigate('/login')} />
       <div className='logo-container'>
         <img className='logo logo-tres' src={logo3} alt='' />
         <img className='logo logo-dos' src={logo2} alt='' />

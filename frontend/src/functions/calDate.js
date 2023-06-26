@@ -1,4 +1,5 @@
 const calDate = (valor1, valor2, operation) => {
+  console.log(valor1, valor2, operation);
   const [hour1, minute1] = valor1.split(':').map(Number);
   const [hour2, minute2] = valor2.split(':').map(Number);
 

@@ -32,6 +32,7 @@ body {
   font-family: var(--font);
   font-weight: 600;
   background-color: #fdfdfd;
+  caret-color: transparent;
 }
 
 .body {
@@ -192,11 +193,18 @@ main {
   }
 }
 
+.arrowBackAlt {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
 .input-container {
   position: relative;
 }
 
 .icons-input {
+  width: 35px;
   position: absolute;
   left: -3rem;
   bottom: 0.3rem;
