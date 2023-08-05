@@ -11,7 +11,7 @@ router.get('/appointment/:id', authenticate, getAppointment);
 
 router.get('/appointments/business/:id', authenticate, getAllAppointmentsByBusiness);
 
-router.get('/appointments/client/:id', authenticate, getAllAppointmentsByClient);
+router.get('/appointments/client/:id'/* , authenticate */, getAllAppointmentsByClient);
 
 router.put('/appointment/:id/update', authenticate, updateAppointment);
 
