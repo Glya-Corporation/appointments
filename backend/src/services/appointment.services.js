@@ -5,7 +5,7 @@ class AppointmentServices {
     try {
       const { services } = body;
       const result = await Appointments.create(body);
-      await AppointmentAtypes.bulkCreate(services.map(service => ({ appointmentTypeId: service, appointmentId: result.id })));
+      await AppointmentAtypes.bulkCreate(services.map(service => ({ galeryId: service, appointmentId: result.id })));
       return result;
     } catch (error) {
       throw error;

@@ -20,8 +20,8 @@ db.sync({ force: true })
     setTimeout(() => Galery.bulkCreate(galeries), 5000);
     setTimeout(() => clients.forEach(client => Clients.create(client)), 5000);
     setTimeout(() => BusinessClients.bulkCreate(businessClients), 6000);
-    setTimeout(() => Appointments.bulkCreate(appointments), 6000);
-    setTimeout(() => AppointmentAtypes.bulkCreate(appointmentAtypes), 6000);
+    setTimeout(() => Appointments.bulkCreate(appointments), 7000);
+    setTimeout(() => AppointmentAtypes.bulkCreate(appointmentAtypes), 8000);
   })
   .catch(error => console.log(error))
   .finally(() => setTimeout(() => console.log('Implantation complete'), 1000));

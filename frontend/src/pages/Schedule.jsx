@@ -84,7 +84,6 @@ const Schedule = () => {
 
   const selectAditionals = (category, isSelected) => {
     const array = [...totalServices];
-    console.log(array)
     if (isSelected) {
       array.push(category);
       setTotalPrice(totalPrice + category.price);
@@ -98,6 +97,7 @@ const Schedule = () => {
   };
 
   const create = () => {
+    
     const data = {
       dateTime: {
         date,
@@ -108,11 +108,9 @@ const Schedule = () => {
       businessId: businessSelected.id,
       colaboratorId: service.ownerService.id,
       clientId: user.id,
-      services: totalServices
+      services: totalServices.map(service => service.id)
     };
-
-    console.log(data);
-    //dispatch(createAppointmentThunk(data));
+    dispatch(createAppointmentThunk(data));
   };
 
   useEffect(() => {

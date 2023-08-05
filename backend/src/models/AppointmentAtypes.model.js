@@ -8,10 +8,10 @@ const AppointmentAtypes = db.define('appointment_atypes', {
     autoIncrement: true,
     allowNull: false
   },
-  appointmentsId: {
+  appointmentId: {
     type: DataTypes.INTEGER,
     allowNull: true,
-    field: 'appointments_id'
+    field: 'appointment_id'
   },
   galeryId: {
     type: DataTypes.INTEGER,
