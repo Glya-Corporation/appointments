@@ -65,12 +65,12 @@ const colaborators = [
     email: 'robert.anderson@example.com',
     password: 'pass123',
     workingHours: {
-      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+      lunes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' }
     },
     businessId: 1,
     roleId: 3
@@ -81,12 +81,12 @@ const colaborators = [
     email: 'megan.harris@example.com',
     password: 'pass123',
     workingHours: {
-      lunes: { date: '2023-06-07', entryTime: '13:00:00', departureTime: '20:00:00' },
-      martes: { date: '2023-06-08', entryTime: '08:00:00', departureTime: '20:00:00' },
-      miercoles: { date: '2023-06-09', entryTime: '08:00:00', departureTime: '20:00:00' },
-      jueves: { date: '2023-06-10', entryTime: '08:00:00', departureTime: '20:00:00' },
-      viernes: { date: '2023-06-11', entryTime: '08:00:00', departureTime: '20:00:00' },
-      sabado: { date: '2023-06-12', entryTime: '08:00:00', departureTime: '20:00:00' }
+      lunes: { date: '2023-08-31', entryTime: '13:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-08-01', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-08-02', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-08-03', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-08-04', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-08-05', entryTime: '08:00:00', departureTime: '20:00:00' }
     },
     businessId: 2,
     roleId: 3
@@ -97,12 +97,12 @@ const colaborators = [
     email: 'william.martin@example.com',
     password: 'pass123',
     workingHours: {
-      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+      lunes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' }
     },
     businessId: 3,
     roleId: 3
@@ -113,12 +113,12 @@ const colaborators = [
     email: 'samantha.jackson@example.com',
     password: 'pass123',
     workingHours: {
-      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+      lunes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' }
     },
     businessId: 4,
     roleId: 3
@@ -129,12 +129,12 @@ const colaborators = [
     email: 'joseph.adams@example.com',
     password: 'pass123',
     workingHours: {
-      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+      lunes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' }
     },
     businessId: 5,
     roleId: 3
@@ -145,12 +145,12 @@ const colaborators = [
     email: 'charlotte.mitchell@example.com',
     password: 'pass123',
     workingHours: {
-      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+      lunes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' }
     },
     businessId: 6,
     roleId: 3
@@ -161,12 +161,12 @@ const colaborators = [
     email: 'benjamin.roberts@example.com',
     password: 'pass123',
     workingHours: {
-      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+      lunes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' }
     },
     businessId: 7,
     roleId: 3
@@ -177,12 +177,12 @@ const colaborators = [
     email: 'emma.turner@example.com',
     password: 'pass123',
     workingHours: {
-      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+      lunes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' }
     },
     businessId: 8,
     roleId: 3
@@ -193,12 +193,12 @@ const colaborators = [
     email: 'christopher.cook@example.com',
     password: 'pass123',
     workingHours: {
-      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+      lunes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' }
     },
     businessId: 9,
     roleId: 3
@@ -209,12 +209,12 @@ const colaborators = [
     email: 'madison.ward@example.com',
     password: 'pass123',
     workingHours: {
-      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+      lunes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' }
     },
     businessId: 10,
     roleI: 3
@@ -225,12 +225,12 @@ const colaborators = [
     email: 'david.smith@example.com',
     password: 'pass123',
     workingHours: {
-      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+      lunes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' }
     },
     businessId: 1,
     roleId: 3
@@ -241,12 +241,12 @@ const colaborators = [
     email: 'olivia.brown@example.com',
     password: 'pass123',
     workingHours: {
-      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+      lunes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' }
     },
     businessId: 2,
     roleId: 3
@@ -257,12 +257,12 @@ const colaborators = [
     email: 'james.johnson@example.com',
     password: 'pass123',
     workingHours: {
-      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+      lunes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' }
     },
     businessId: 3,
     roleId: 3
@@ -273,12 +273,12 @@ const colaborators = [
     email: 'ava.wilson@example.com',
     password: 'pass123',
     workingHours: {
-      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+      lunes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' }
     },
     businessId: 8,
     roleId: 3
@@ -289,12 +289,12 @@ const colaborators = [
     email: 'alexander.hall@example.com',
     password: 'pass123',
     workingHours: {
-      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+      lunes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' }
     },
     businessId: 3,
     roleId: 3
@@ -305,12 +305,12 @@ const colaborators = [
     email: 'grace.lopez@example.com',
     password: 'pass123',
     workingHours: {
-      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+      lunes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' }
     },
     businessId: 8,
     roleId: 3
@@ -321,12 +321,12 @@ const colaborators = [
     email: 'sophia.miller@example.com',
     password: 'pass123',
     workingHours: {
-      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+      lunes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' }
     },
     businessId: 4,
     roleId: 3
@@ -337,12 +337,12 @@ const colaborators = [
     email: 'william.thomas@example.com',
     password: 'pass123',
     workingHours: {
-      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+      lunes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' }
     },
     businessId: 9,
     roleId: 3
@@ -353,12 +353,12 @@ const colaborators = [
     email: 'harper.gonzalez@example.com',
     password: 'pass123',
     workingHours: {
-      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+      lunes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' }
     },
     businessId: 4,
     roleId: 3
@@ -369,12 +369,12 @@ const colaborators = [
     email: 'ryan.clark@example.com',
     password: 'pass123',
     workingHours: {
-      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+      lunes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' }
     },
     businessId: 9,
     roleId: 3
@@ -385,12 +385,12 @@ const colaborators = [
     email: 'daniel.davis@example.com',
     password: 'pass123',
     workingHours: {
-      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+      lunes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' }
     },
     businessId: 5,
     roleId: 3
@@ -401,12 +401,12 @@ const colaborators = [
     email: 'abigail.garcia@example.com',
     password: 'pass123',
     workingHours: {
-      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+      lunes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' }
     },
     businessId: 10,
     roleI: 3
@@ -417,12 +417,12 @@ const colaborators = [
     email: 'matthew.young@example.com',
     password: 'pass123',
     workingHours: {
-      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+      lunes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' }
     },
     businessId: 5,
     roleId: 3
@@ -433,12 +433,12 @@ const colaborators = [
     email: 'lily.baker@example.com',
     password: 'pass123',
     workingHours: {
-      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+      lunes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' }
     },
     businessId: 10,
     roleI: 3
@@ -449,12 +449,12 @@ const colaborators = [
     email: 'emily.moore@example.com',
     password: 'pass123',
     workingHours: {
-      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+      lunes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' }
     },
     businessId: 6,
     roleId: 3
@@ -465,12 +465,12 @@ const colaborators = [
     email: 'ethan.brown@example.com',
     password: 'pass123',
     workingHours: {
-      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+      lunes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' }
     },
     businessId: 1,
     roleId: 3
@@ -481,12 +481,12 @@ const colaborators = [
     email: 'scarlett.hernandez@example.com',
     password: 'pass123',
     workingHours: {
-      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+      lunes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' }
     },
     businessId: 6,
     roleId: 3
@@ -497,12 +497,12 @@ const colaborators = [
     email: 'michael.anderson@example.com',
     password: 'pass123',
     workingHours: {
-      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+      lunes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' }
     },
     businessId: 7,
     roleId: 3
@@ -513,12 +513,12 @@ const colaborators = [
     email: 'avery.lee@example.com',
     password: 'pass123',
     workingHours: {
-      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+      lunes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' }
     },
     businessId: 2,
     roleId: 3
@@ -529,12 +529,12 @@ const colaborators = [
     email: 'elijah.martin@example.com',
     password: 'pass123',
     workingHours: {
-      lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-      sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+      lunes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      martes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      miercoles: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      jueves: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      viernes: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' },
+      sabado: { date: '2023-08-07', entryTime: '08:00:00', departureTime: '20:00:00' }
     },
     businessId: 7,
     roleId: 3
@@ -696,10 +696,13 @@ const businessClients = [
 ];
 
 const appointments = [
-  { description: 'acrilicas', status: 'inProgress', dateTime: { date: '2023-06-07', time: '15:00:00' }, totalPrice: 0.0, totalDuration: 2, businessId: 2, colaboratorId: 2, clientId: 5 },
-  { description: 'acrilicas', status: 'inProgress', dateTime: { date: '2023-06-07', time: '18:00:00' }, totalPrice: 0.0, totalDuration: 2, businessId: 2, colaboratorId: 2, clientId: 8 }
+  { description: 'acrilicas', status: 'pending', dateTime: { date: '2023-08-05', time: '15:00:00' }, totalPrice: 0.0, totalDuration: 2, businessId: 2, colaboratorId: 2, clientId: 5 },
+  { description: 'acrilicas', status: 'pending', dateTime: { date: '2023-08-05', time: '18:00:00' }, totalPrice: 0.0, totalDuration: 2, businessId: 2, colaboratorId: 2, clientId: 8 }
 ];
 
-const appointmentAtypes = [{ serviceId: 2, appointmentId: 1 }];
+const appointmentAtypes = [
+  { galeryId: 2, appointmentId: 1 },
+  { galeryId: 2, appointmentId: 2 }
+];
 
 module.exports = { roles, categoryBusiness, users, businesses, categoriesBusiness, categories, colaborators, services, galeries, clients, businessClients, appointments, appointmentAtypes };
