@@ -18,10 +18,14 @@ export const getAllAppointmentsThunk = businessId => dispatch => {
   return axios.get(`${apiUrl}/appointments/business/${businessId}`, getConfig()).then(res => dispatch(setAppointments(res.data)));
 };
 
-export const createAppointmentThunk = data => (dispatch) => {
-    return axios.post(`${apiUrl}/appointment`, data, getConfig()).then(res => console.log(res.data));
-
-}
+export const createAppointmentThunk = (data, navigate, item) => dispatch => {
+  return axios.post(`${apiUrl}/appointment`, data, getConfig()).then(res => {
+    console.log(res.data);
+    setTimeout(() => {
+      navigate(`/home/${item.name}/${item.id}`);
+    }, 500);
+  });
+};
 
 export const { setAppointments } = appointmentsSlice.actions;
 

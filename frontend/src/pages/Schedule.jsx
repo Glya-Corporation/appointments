@@ -21,6 +21,7 @@ const Schedule = () => {
   const { business } = useSelector(state => state);
   const { appointments } = useSelector(state => state);
   const { user } = useSelector(state => state);
+  const { favorites } = useSelector(state => state);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -97,7 +98,6 @@ const Schedule = () => {
   };
 
   const create = () => {
-    
     const data = {
       dateTime: {
         date,
@@ -110,7 +110,9 @@ const Schedule = () => {
       clientId: user.id,
       services: totalServices.map(service => service.id)
     };
-    dispatch(createAppointmentThunk(data));
+
+    const favotiteSelected = favorites.find(f => f.business_clients.isSelected);
+    dispatch(createAppointmentThunk(data, navigate, favotiteSelected));
   };
 
   useEffect(() => {

@@ -8,6 +8,7 @@ import servicesCategoriesSlice from './slices/servicesCategories.slice';
 import galerySlice from './slices/galery.slice';
 import scheduleSlice from './slices/schedule.slice';
 import appointmentsSlice from './slices/appointments.slice';
+import clientSlice from './slices/client.slice';
 
 export default configureStore({
   reducer: {
@@ -19,6 +20,7 @@ export default configureStore({
     servicesCategories: servicesCategoriesSlice,
     galery: galerySlice,
     schedule: scheduleSlice,
-    appointments: appointmentsSlice
+    appointments: appointmentsSlice,
+    client: clientSlice
   }
 });

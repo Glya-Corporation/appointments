@@ -73,7 +73,7 @@ class AppointmentServices {
       throw error;
     }
   }
-  static async getAllAppointmentByClient(clientId) {
+  static async getAllAppointmentsByClient(clientId) {
     try {
       const result = await Appointments.findAll({
         where: { clientId },
