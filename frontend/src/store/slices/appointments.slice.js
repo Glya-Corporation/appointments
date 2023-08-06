@@ -15,7 +15,10 @@ export const appointmentsSlice = createSlice({
 });
 
 export const getAllAppointmentsThunk = businessId => dispatch => {
-  return axios.get(`${apiUrl}/appointments/business/${businessId}`, getConfig()).then(res => dispatch(setAppointments(res.data)));
+  return axios
+    .get(`${apiUrl}/appointments/business/${businessId}`, getConfig())
+    .then(res => dispatch(setAppointments(res.data)))
+    .catch(err => console.error(err));
 };
 
 export const createAppointmentThunk = (data, navigate, item) => dispatch => {
@@ -25,6 +28,13 @@ export const createAppointmentThunk = (data, navigate, item) => dispatch => {
       navigate(`/home/${item.name}/${item.id}`);
     }, 500);
   });
+};
+
+export const UpdateAppointmentThunk = (id, status) => dispatch => {
+  return axios
+    .put(`${apiUrl}/appointment/${id}/update`, status, getConfig())
+    .then(res => console.log(res.data))
+    .catch(err => console.error(err));
 };
 
 export const { setAppointments } = appointmentsSlice.actions;

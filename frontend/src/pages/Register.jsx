@@ -46,8 +46,7 @@ const Register = () => {
     axios
       .post(`${apiUrl}/${id === '1' ? 'client' : 'user'}/register`, id === '1' ? body.user : body)
       .then(res => {
-        dispatch(loginThunk(id === '1', { email, password }, navigate));
-        id === '2' && navigate('/complete/register/business');
+        dispatch(loginThunk(id === '1', { email, password }, navigate, true, '/complete/register/business'));
       })
       .catch(err => console.error(err));
   };

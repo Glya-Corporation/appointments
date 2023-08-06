@@ -19,7 +19,7 @@ export const getUserThunk = (id, role) => dispatch => {
   return axios.get(`${apiUrl}/${!role ? 'client' : role === 1 ? 'user' : 'colaborator'}/${id}`, getConfig()).then(res => dispatch(setUser(res.data)));
 };
 
-export const loginThunk = (isSeleted, credentials, navigate, remember) => dispatch => {
+export const loginThunk = (isSeleted, credentials, navigate, remember, ruta) => dispatch => {
   dispatch(setLoaderThunk(true));
   return axios
     .post(`${apiUrl}/login/${isSeleted ? 'client' : 'business'}`, credentials)
@@ -33,8 +33,13 @@ export const loginThunk = (isSeleted, credentials, navigate, remember) => dispat
         sessionStorage.setItem('token', res.data.token);
         sessionStorage.setItem('view', JSON.stringify({ view: true }));
       }
-      isSeleted && navigate('/locales');
-      !isSeleted && navigate('/');
+      if (!isSeleted && ruta) {
+        navigate(ruta);
+      } else if (!isSeleted) {
+        navigate('/home/business');
+      } else {
+        navigate('/locales');
+      }
     })
     .catch(err => console.error(err))
     .finally(() => {

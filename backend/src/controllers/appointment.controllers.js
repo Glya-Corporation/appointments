@@ -44,10 +44,10 @@ const getAllAppointmentsByBusiness = async (req, res, next) => {
 
 const getAllAppointmentsByClient = async (req, res, next) => {
   try {
-    console.log('controller')
+    console.log('controller');
     const id = req.params.id;
-    //const result = await AppointmentServices.getAllAppointmentsByClient(id);
-    res.status(200).json({hi: 'hi'});
+    const result = await AppointmentServices.getAllAppointmentsByClient(id);
+    res.status(200).json(result);
   } catch (error) {
     next({
       status: 400,

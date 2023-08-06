@@ -20,7 +20,7 @@ const NavBar = () => {
   const businessFavorite = useSelector(state => state.favorites);
 
   useEffect(() => {
-    if (businessFavorite.length < 1 && view?.view) {
+    if (businessFavorite.length < 1 && view?.view && !user.role) {
       dispatch(getFavoritesThunk(user.id, navigate));
     }
   }, [user]);
@@ -32,7 +32,7 @@ const NavBar = () => {
 
   const pressHome = nav => {
     const favorite = businessFavorite.find(item => item.business_clients.isSelected);
-    nav && navigate('/');
+    nav && navigate('/home/business');
     !nav && navigate(`/home/${favorite.name}/${favorite.id}`);
   };
 

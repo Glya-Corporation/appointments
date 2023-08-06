@@ -1,17 +1,24 @@
-import { useDispatch, useSelector } from 'react-redux';
-import alfa from '../assets/alfa.png';
-import capitalice from '../functions/capitalizar';
-import { useEffect, useState } from 'react';
-import { getBusinessCategoriesThunk } from '../store/slices/businessCategories.slice';
 import axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+import capitalice from '../functions/capitalizar';
 import getConfig from '../util/getConfig';
+
+import { getBusinessCategoriesThunk } from '../store/slices/businessCategories.slice';
+
+import alfa from '../assets/alfa.png';
+
 const apiUrl = import.meta.env.VITE_API_URL;
 
 const CompleteRegisterBusiness = () => {
   const [list, setList] = useState([]);
-  const dispatch = useDispatch();
   const { businessCategories } = useSelector(state => state);
   const { user } = useSelector(state => state);
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate()
 
   useEffect(() => {
     dispatch(getBusinessCategoriesThunk());
@@ -30,7 +37,10 @@ const CompleteRegisterBusiness = () => {
   const save = () => {
     axios
       .post(`${apiUrl}/add/business/category`, { businessId: user.business[0].id, list }, getConfig())
-      .then(res => console.log(res.data))
+      .then(res => {
+        console.log(res.data)
+        navigate('/home/business')
+      })
       .catch(err => console.error(err));
   };
 

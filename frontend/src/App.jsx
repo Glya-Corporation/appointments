@@ -17,6 +17,7 @@ import Profile from './pages/Profile';
 import NavBar from './components/NavBar';
 import Schedule from './pages/Schedule';
 import NotificationBar from './components/NotificationBar';
+import HomeBusiness from './pages/HomeBusiness';
 
 function App() {
   const dispatch = useDispatch();
@@ -42,6 +43,7 @@ function App() {
           <Route path='/' element={<Profile />} />
           <Route path='/locales' element={<Locales />} />
           <Route path='/home/:name/:id' element={<Home />} />
+          <Route path='/home/business' element={<HomeBusiness />} />
           <Route path='/locales/favorites' element={<Locales />} />
           <Route path='/complete/register/business' element={<CompleteRegisterBusiness />} />
           <Route path='/schedule' element={<Schedule />} />

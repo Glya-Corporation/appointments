@@ -1,4 +1,4 @@
-const { Appointments, Clients, AppointmentsTypes, AppointmentAtypes, Service, Colaborators } = require('../models');
+const { Appointments, Clients, AppointmentsTypes, AppointmentAtypes, Service, Colaborators, Business, Galery } = require('../models');
 
 class AppointmentServices {
   static async createAppointment(body) {
@@ -39,7 +39,7 @@ class AppointmentServices {
   static async getAllAppointmentsByBusiness(businessId) {
     try {
       const result = await Appointments.findAll({
-        where: { businessId, status: 'inProgress' },
+        where: { businessId },
         attributes: {
           exclude: ['createdAt', 'updatedAt', 'clientId', 'client_id', 'businessId', 'business_id', 'colaboratorId', 'colaborator_id']
         },
@@ -52,8 +52,8 @@ class AppointmentServices {
             }
           },
           {
-            model: Service,
-            as: 'appointmentsTypes',
+            model: Galery,
+            as: 'galery_appointment',
             attributes: {
               exclude: ['businessId', 'business_id', 'category_id', 'createdAt', 'updatedAt']
             },
@@ -77,23 +77,29 @@ class AppointmentServices {
     try {
       const result = await Appointments.findAll({
         where: { clientId },
+        order: [['id', 'ASC']],
         include: [
           {
             model: Business,
             as: 'business',
             attributes: {
-              exclude: ['createdAt', 'updatedAt']
+              exclude: ['createdAt', 'updatedAt', 'ruc', 'openingTime', 'closingTime', 'isActive', 'settings', 'userId', 'user_id']
             }
           },
           {
-            through: AppointmentsTypes,
-            as: 'appointments types',
+            model: Galery,
+            as: 'galery_appointment',
             attributes: {
-              exclude: ['createdAt', 'updatedAt']
+              exclude: ['createdAt', 'updatedAt', 'colaboratorId', 'serviceId', 'businessId', 'isSelected', 'business_id', 'colaborator_id', 'service_id']
+            },
+            through: {
+              attributes: []
             }
           }
         ],
-        order: [['id', 'ASC']]
+        attributes: {
+          exclude: ['client_id', 'colaborator_id', 'business_id', 'clientId', 'colaboratorId', 'businessId', 'createdAt', 'updatedAt']
+        }
       });
       return result;
     } catch (error) {
