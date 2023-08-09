@@ -52,7 +52,7 @@ main {
 
 .header {
   width: 100vw;
-  height: 5rem;
+  height: 4rem;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -84,7 +84,6 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  scale: 1.2;
 }
 
 .nav-list--item img {
@@ -898,10 +897,11 @@ main {
 
 .list-reservations {
   width: 100%;
-  max-height: 15rem;
+  max-height: 30vh;
   display: grid;
   gap: .5rem;
   overflow-y: auto;
+  border: 1px dashed;
 }
 
 .list-reservations li {
@@ -922,6 +922,8 @@ main {
 }
 
 .item-reservation-pending button {
+  width: 100%;
+  height: 60%;
   padding: .2rem;
   border: transparent;
   color: var(--white);

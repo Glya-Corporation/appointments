@@ -55,7 +55,7 @@ class AppointmentServices {
             model: Galery,
             as: 'galery_appointment',
             attributes: {
-              exclude: ['businessId', 'business_id', 'category_id', 'createdAt', 'updatedAt']
+              exclude: ['businessId', 'business_id', 'service_id', 'colaborator_id', 'colaboratorId', 'isSelected', 'createdAt', 'updatedAt']
             },
             through: {
               attributes: []

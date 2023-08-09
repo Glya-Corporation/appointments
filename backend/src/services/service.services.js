@@ -11,10 +11,17 @@ class ServiceServices {
   }
   static async getAllServices(businessId) {
     try {
-      const result = await AppointmentsTypes.findAll({
+      const result = await Service.findAll({
         where: { businessId },
+        include: {
+          model: Category,
+          as: 'category',
+          attributes: {
+            exclude: ['business_id', 'businessId', 'createdAt', 'updatedAt']
+          }
+        },
         attributes: {
-          exclude: ['createdAt', 'updatedAt']
+          exclude: ['business_id', 'businessId', 'category_id', 'categoryId', 'createdAt', 'updatedAt']
         }
       });
       return result;

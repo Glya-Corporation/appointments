@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { UpdateAppointmentThunk, getAllAppointmentsThunk } from '../store/slices/appointments.slice';
+import { getServicesThunk } from '../store/slices/services.slice';
 
 import sortByTime from '../functions/organizations.js';
 
 const HomeBusiness = () => {
   const { user } = useSelector(state => state);
   const { appointments } = useSelector(state => state);
+  const { services } = useSelector(state => state);
 
   const [appointmentsP, setAppointmentsP] = useState([]);
   const [appointmentsToday, setAppointmentsToday] = useState([]);
@@ -19,12 +21,28 @@ const HomeBusiness = () => {
 
   useEffect(() => {
     dispatch(getAllAppointmentsThunk(user.business?.[0].id));
+    dispatch(getServicesThunk(user.business?.[0].id));
   }, [user]);
 
   useEffect(() => {
-    setAppointmentsP(appointments.filter(appointment => appointment.status === 'pending').sort(sortByTime));
-    setAppointmentsToday(appointments.filter(appointment => appointment.dateTime.date === today).sort(sortByTime));
+    setAppointmentsP(setCategory(services, appointments.filter(appointment => appointment.status === 'pending').sort(sortByTime)));
+    setAppointmentsToday(setCategory(services, appointments.filter(appointment => appointment.dateTime.date === today && appointment.status === 'approved').sort(sortByTime)));
   }, [appointments]);
+
+  const setCategory = (s, a) => {
+    const arrayEmpty = [];
+
+    a.forEach(item => {
+      s.forEach(itemA => {
+        if (item.galery_appointment[0].serviceId === itemA.id) {
+          const element = { ...item, service: itemA.category.name };
+          arrayEmpty.push(element);
+        }
+      });
+    });
+
+    return arrayEmpty;
+  };
 
   const filterReservations = value => {
     const newArry = appointments.filter(appointment => appointment.dateTime.time.includes(value));
@@ -48,6 +66,7 @@ const HomeBusiness = () => {
               {appointment.client.name} {appointment.client.surname}
             </span>
             <span>{appointment.dateTime.time}</span>
+            <span>{appointment?.service}</span>
           </li>
         ))}
       </ul>
@@ -59,14 +78,16 @@ const HomeBusiness = () => {
       <ul className='list-reservations'>
         {appointmentsP.map(appointment => (
           <li key={appointment.id} className='item-reservation-pending body'>
+            <span>{appointment.dateTime.date}</span>
+            <span>{appointment.dateTime.time}</span>
+            <button onClick={() => updateAppointments(appointment.id, { status: 'approved' })} style={{ background: 'var(--primary)', gridRow: '1/3', gridColumn: '3/3' }}>
+              Aceptar
+            </button>
+            <button style={{ background: '#ffa900', gridRow: '1/3', gridColumn: '4/4' }}>Reagendar</button>
             <span>
               {appointment.client.name} {appointment.client.surname}
             </span>
-            <span>{appointment.dateTime.time}</span>
-            <button onClick={() => updateAppointments(appointment.id, { status: 'approved' })} style={{ background: 'var(--primary)' }}>
-              Aceptar
-            </button>
-            <button style={{ background: '#ffa900' }}>Reagendar</button>
+            <span>{appointment?.service}</span>
           </li>
         ))}
       </ul>
