@@ -4,6 +4,7 @@ import { UpdateAppointmentThunk, getAllAppointmentsThunk } from '../store/slices
 import { getServicesThunk } from '../store/slices/services.slice';
 
 import sortByTime from '../functions/organizations.js';
+import setCategory from '../functions/setCategory';
 
 const HomeBusiness = () => {
   const { user } = useSelector(state => state);
@@ -29,20 +30,6 @@ const HomeBusiness = () => {
     setAppointmentsToday(setCategory(services, appointments.filter(appointment => appointment.dateTime.date === today && appointment.status === 'approved').sort(sortByTime)));
   }, [appointments]);
 
-  const setCategory = (s, a) => {
-    const arrayEmpty = [];
-
-    a.forEach(item => {
-      s.forEach(itemA => {
-        if (item.galery_appointment[0].serviceId === itemA.id) {
-          const element = { ...item, service: itemA.category.name };
-          arrayEmpty.push(element);
-        }
-      });
-    });
-
-    return arrayEmpty;
-  };
 
   const filterReservations = value => {
     const newArry = appointments.filter(appointment => appointment.dateTime.time.includes(value));
@@ -57,7 +44,7 @@ const HomeBusiness = () => {
   };
 
   return (
-    <main className='reservations'>
+    <main className='container-main'>
       <h3>Reservas del día</h3>
       <ul className='list-reservations'>
         {appointmentsToday.map(appointment => (
@@ -65,7 +52,7 @@ const HomeBusiness = () => {
             <span>
               {appointment.client.name} {appointment.client.surname}
             </span>
-            <span>{appointment.dateTime.time}</span>
+            <span>{appointment.dateTime.time.slice(0, 5)}</span>
             <span>{appointment?.service}</span>
           </li>
         ))}
@@ -79,7 +66,7 @@ const HomeBusiness = () => {
         {appointmentsP.map(appointment => (
           <li key={appointment.id} className='item-reservation-pending body'>
             <span>{appointment.dateTime.date}</span>
-            <span>{appointment.dateTime.time}</span>
+            <span>{appointment.dateTime.time.slice(0, 5)}</span>
             <button onClick={() => updateAppointments(appointment.id, { status: 'approved' })} style={{ background: 'var(--primary)', gridRow: '1/3', gridColumn: '3/3' }}>
               Aceptar
             </button>

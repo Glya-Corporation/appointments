@@ -56,7 +56,7 @@ const NavBar = () => {
                 <motion.img src={hexagon} alt='icon' initial={{ translateY: 0 }} animate={{ translateY: active === 2 ? -15 : 0 }} onClick={() => setActive(2)} />
                 <motion.img src={plus} alt='icon' initial={{ translateY: 0 }} animate={{ translateY: active === 2 ? -15 : 0 }} onClick={() => setActive(2)} />
               </li>
-              <li className='nav-list--item'>
+              <li className='nav-list--item' onClick={() => navigate('/historial/business')}>
                 <motion.img src={hexagon} alt='icon' initial={{ translateY: 0 }} animate={{ translateY: active === 3 ? -15 : 0 }} onClick={() => setActive(3)} />
                 <motion.img src={history} alt='icon' initial={{ translateY: 0 }} animate={{ translateY: active === 3 ? -15 : 0 }} onClick={() => setActive(3)} />
               </li>

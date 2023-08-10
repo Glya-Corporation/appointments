@@ -18,6 +18,7 @@ import NavBar from './components/NavBar';
 import Schedule from './pages/Schedule';
 import NotificationBar from './components/NotificationBar';
 import HomeBusiness from './pages/HomeBusiness';
+import HistorialBusiness from './pages/HistorialBusiness';
 
 function App() {
   const dispatch = useDispatch();
@@ -47,6 +48,7 @@ function App() {
           <Route path='/locales/favorites' element={<Locales />} />
           <Route path='/complete/register/business' element={<CompleteRegisterBusiness />} />
           <Route path='/schedule' element={<Schedule />} />
+          <Route path='/historial/business' element={<HistorialBusiness />} />
         </Route>
       </Routes>
     </HashRouter>
