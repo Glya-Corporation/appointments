@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
@@ -19,9 +18,7 @@ const Home = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (business.id) {
-      setSelectedBusiness(business.find(item => item.id === Number(id)));
-    }
+    setSelectedBusiness(business.find(item => item.id === Number(id)));
   }, [business, id]);
 
   useEffect(() => {

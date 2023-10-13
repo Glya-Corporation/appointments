@@ -16,7 +16,13 @@ export const userSlice = createSlice({
 });
 
 export const getUserThunk = (id, role) => dispatch => {
-  return axios.get(`${apiUrl}/${!role ? 'client' : role === 1 ? 'user' : 'colaborator'}/${id}`, getConfig()).then(res => dispatch(setUser(res.data)));
+  return axios
+    .get(`${apiUrl}/${!role ? 'client' : role === 1 ? 'user' : 'colaborator'}/${id}`, getConfig())
+    .then(res => {
+      console.log(res, 'hi');
+      dispatch(setUser(res.data));
+    })
+    .catch(err => console.error(err));
 };
 
 export const loginThunk = (isSeleted, credentials, navigate, remember, ruta) => dispatch => {

@@ -21,11 +21,11 @@ import MyBusiness from './pages/MyBusiness';
 
 function App() {
   const dispatch = useDispatch();
-  const user = JSON.parse(localStorage.getItem('user')) || JSON.parse(sessionStorage.getItem('user'));
+  const user = JSON.parse(localStorage.getItem('user')) || JSON.parse(sessionStorage.getItem('user')) || {};
   const isLoading = useSelector(state => state.loader);
 
   useEffect(() => {
-    if (user) {
+    if (user.id) {
       dispatch(getUserThunk(user.id, user.role?.id));
       dispatch(getAllBusinessThunk());
     }

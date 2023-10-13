@@ -24,7 +24,7 @@ const HomeBusiness = () => {
   const today = `${fecha.getFullYear()}-${(fecha.getMonth() + 1).toString().padStart(2, '0')}-${fecha.getDate().toString().padStart(2, '0')}`;
 
   useEffect(() => {
-    if (user.id) {
+    if (user?.id >= 1) {
       dispatch(getAllAppointmentsThunk(user.business?.[0].id));
       dispatch(getServicesThunk(user.business?.[0].id));
     }

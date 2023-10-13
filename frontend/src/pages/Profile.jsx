@@ -74,7 +74,7 @@ const Profile = () => {
   };
 
   useEffect(() => {
-    if (user.id) {
+    if (user?.id) {
       dispatch(getAllAppointmentsClientThunk(user.id));
       dispatch(getFavoritesThunk(user.id));
     }
@@ -92,10 +92,10 @@ const Profile = () => {
         {!showInputs ? (
           <div>
             <p>
-              {user.name} {user.surname}
+              {user?.name} {user?.surname}
             </p>
-            <p>{user.number}</p>
-            <p>{user.email}</p>
+            <p>{user?.number}</p>
+            <p>{user?.email}</p>
           </div>
         ) : (
           <form>
@@ -109,7 +109,7 @@ const Profile = () => {
           <img src={showInputs ? saveIcon : pen} alt='Pencil' onClick={dataModify} />
         </button>
       </div>
-      {!user.role && (
+      {!user?.role && (
         <>
           <h3>Historial de reservas</h3>
           <ul className='list-history'>
@@ -132,7 +132,7 @@ const Profile = () => {
       )}
 
       <button onClick={() => navigate(user.role?.id === 1 ? '/my/business' : '/locales')} className='business-more body'>
-        {user.role?.id === 1 ? 'Mis Comercios' : 'Más Comercios'}
+        {user?.role?.id === 1 ? 'Mis Comercios' : 'Más Comercios'}
       </button>
     </main>
   );
