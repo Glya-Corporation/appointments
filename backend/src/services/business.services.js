@@ -58,6 +58,10 @@ class BusinessServices {
   static async updateBusiness(id, body) {
     try {
       for (const p in body) body[p] === '' && delete body[p];
+      if (body.isSelected) {
+        const { userId } = await Business.findByPk(id, { attributes: ['userId'] });
+        await Business.update({ isSelected: false }, { where: { userId, isSelected: true } });
+      }
       await Business.update(body, { where: { id } });
       return { message: 'Updated successful' };
     } catch (error) {

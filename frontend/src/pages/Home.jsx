@@ -47,12 +47,23 @@ const Home = () => {
         <section className='business-info'>
           <div className='business-info--detail'>
             <h3>{selectedBusiness?.name}</h3>
-            <p>Abre: {selectedBusiness?.opening_time}</p>
-            <p>Cierra: {selectedBusiness?.closing_time}</p>
+            <p>
+              <b>Abre:</b> {selectedBusiness?.openingTime}
+            </p>
+            <p>
+              <b>Cierra:</b> {selectedBusiness?.closingTime}
+            </p>
             <div>
               <h3>Contáctos</h3>
-              <p onClick={() => window.open('https://www.google.com')}>Tlf: {selectedBusiness?.owner?.number}</p>
-              <p>{selectedBusiness?.owner?.email}</p>
+              <p>
+                <b>Dueño (a):</b> {selectedBusiness?.owner?.name} {selectedBusiness?.owner?.surname}
+              </p>
+              <p onClick={() => window.open(`https://wa.me/+593${selectedBusiness?.owner?.number}`)}>
+                <b>Tlf:</b> {selectedBusiness?.owner?.number}
+              </p>
+              <p>
+                <b onClick={() => window.open(`mailto:${selectedBusiness?.owner?.email}`)}>{selectedBusiness?.owner?.email}</b>
+              </p>
             </div>
           </div>
           <img className='logo-business' src={selectedBusiness?.logo} alt='' />

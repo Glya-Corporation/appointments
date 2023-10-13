@@ -1,5 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable no-constant-condition */
 import './App.css';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import ProtectedRoutes from './components/ProtectedRoutes';
@@ -19,6 +17,7 @@ import Schedule from './pages/Schedule';
 import NotificationBar from './components/NotificationBar';
 import HomeBusiness from './pages/HomeBusiness';
 import HistorialBusiness from './pages/HistorialBusiness';
+import MyBusiness from './pages/MyBusiness';
 
 function App() {
   const dispatch = useDispatch();
@@ -46,6 +45,7 @@ function App() {
           <Route path='/home/:name/:id' element={<Home />} />
           <Route path='/home/business' element={<HomeBusiness />} />
           <Route path='/locales/favorites' element={<Locales />} />
+          <Route path='/my/business' element={<MyBusiness />} />
           <Route path='/complete/register/business' element={<CompleteRegisterBusiness />} />
           <Route path='/schedule' element={<Schedule />} />
           <Route path='/historial/business' element={<HistorialBusiness />} />

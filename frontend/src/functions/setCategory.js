@@ -1,4 +1,5 @@
 const setCategory = (s, a) => {
+  if (a.length <= 0) return [];
   const arrayEmpty = [];
 
   a.forEach(item => {

@@ -50,6 +50,10 @@ const Business = db.define('business', {
   address: {
     type: DataTypes.STRING,
     allowNull: true
+  },
+  isSelected: {
+    type: DataTypes.BOOLEAN,
+    defaultValue: false
   }
 });
 

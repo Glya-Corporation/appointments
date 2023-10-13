@@ -20,6 +20,7 @@ class UserServices {
           {
             model: Business,
             as: 'business',
+            where: { isSelected: true },
             attributes: {
               exclude: ['user_id', 'userId', 'createdAt', 'updatedAt']
             }

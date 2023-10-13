@@ -7,7 +7,7 @@ import plus from '../assets/plus.svg';
 import history from '../assets/history.svg';
 import userIcon from '../assets/user.svg';
 import exit from '../assets/exit.svg';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useResolvedPath } from 'react-router-dom';
 import { getFavoritesThunk } from '../store/slices';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -18,6 +18,23 @@ const NavBar = () => {
   const user = JSON.parse(localStorage.getItem('user')) || JSON.parse(sessionStorage.getItem('user'));
   const view = JSON.parse(localStorage.getItem('view')) || JSON.parse(sessionStorage.getItem('view'));
   const businessFavorite = useSelector(state => state.favorites);
+  const { pathname } = useResolvedPath();
+
+  useEffect(() => {
+    switch (pathname.split('/')[1]) {
+      case 'home':
+        setActive(1);
+        break;
+      case 'new':
+        setActive(2);
+        break;
+      case 'historial':
+        setActive(3);
+        break;
+      default:
+        setActive(4);
+    }
+  }, [pathname]);
 
   useEffect(() => {
     if (businessFavorite.length < 1 && view?.view && !user.role) {
@@ -33,7 +50,7 @@ const NavBar = () => {
   const pressHome = nav => {
     const favorite = businessFavorite.find(item => item.business_clients.isSelected);
     nav && navigate('/home/business');
-    !nav && navigate(`/home/${favorite.name}/${favorite.id}`);
+    !nav && navigate(`/home/${favorite?.name}/${favorite?.id}`);
   };
 
   const logout = () => {
