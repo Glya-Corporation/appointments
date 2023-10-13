@@ -19,7 +19,9 @@ const Home = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    setSelectedBusiness(business.find(item => item.id === Number(id)));
+    if (business.id) {
+      setSelectedBusiness(business.find(item => item.id === Number(id)));
+    }
   }, [business, id]);
 
   useEffect(() => {
@@ -27,7 +29,7 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    selectedBusiness?.id && dispatch(getServicesCategoriesThunk(selectedBusiness.id));
+    selectedBusiness?.id && dispatch(getServicesCategoriesThunk(selectedBusiness?.id));
   }, [selectedBusiness]);
 
   const getServicesSelected = id => {
