@@ -203,14 +203,16 @@ main {
 }
 
 .input-container {
+  width: 90%;
+  display: flex;
   position: relative;
+  align-items: center;
 }
 
 .icons-input {
   width: 35px;
   position: absolute;
   left: -3rem;
-  bottom: 0.3rem;
 }
 
 .login,
@@ -227,10 +229,13 @@ main {
 
 .form-login,
 .form-register {
-  display: grid;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
   gap: 1rem;
+  align-items: center;
   position: relative;
-  padding: 2rem;
+  padding: 2.5rem 3.5rem;
 }
 
 .select-login {
@@ -252,6 +257,7 @@ main {
 .form-login button,
 .form-register input,
 .form-register button {
+  width: 100%;
   padding: 0.7rem;
   border: transparent;
   box-shadow: 1px 1px 1px #00000020, -5px -5px 10px #ffffff80, inset 5px 5px 5px #00000020, inset -5px -5px 5px #ffffff70;
@@ -259,6 +265,10 @@ main {
   background-color: #ffffff50;
   font-family: var(--font);
   font-weight: 600;
+}
+
+#check {
+  width: min-content;
 }
 
 .form-login input:focus,
@@ -287,10 +297,10 @@ main {
 }
 
 .login-links {
-  padding-top: 1rem;
+  padding-bottom: 1rem;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: .5rem;
   align-items: center;
 }
 

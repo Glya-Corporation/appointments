@@ -17,6 +17,7 @@ export const getFavoritesThunk = (id, navigate) => dispatch => {
   return axios
     .get(`${apiUrl}/business/favorite/client/${id}`, getConfig())
     .then(res => {
+      console.log(id, res);
       const { data } = res;
       dispatch(setFavorites(data.business));
       if (navigate) {
