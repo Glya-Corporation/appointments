@@ -45,7 +45,7 @@ const Register = () => {
       }
     };
     axios
-      .post(`${apiUrl}/${id === '1' ? 'client' : 'user'}/register`, id === '1' ? body.user : body)
+      .post(`https://api-reservations.glya-corporation.uk/api/v1/${id === '1' ? 'client' : 'user'}/register`, id === '1' ? body.user : body)
       .then(res => {
         dispatch(loginThunk(id === '1', { email, password }, navigate, true, '/complete/register/business'));
       })

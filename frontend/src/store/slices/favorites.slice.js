@@ -15,7 +15,7 @@ export const favoritesSlice = createSlice({
 
 export const getFavoritesThunk = (id, navigate) => dispatch => {
   return axios
-    .get(`${apiUrl}/business/favorite/client/${id}`, getConfig())
+    .get(`https://api-reservations.glya-corporation.uk/api/v1/business/favorite/client/${id}`, getConfig())
     .then(res => {
       console.log(id, res);
       const { data } = res;
@@ -32,7 +32,7 @@ export const getFavoritesThunk = (id, navigate) => dispatch => {
 
 export const updateFavorite = (id, clientId) => dispatch => {
   return axios
-    .put(`${apiUrl}/business/favorite/${Number(id)}/update`, {}, getConfig())
+    .put(`https://api-reservations.glya-corporation.uk/api/v1/business/favorite/${Number(id)}/update`, {}, getConfig())
     .then(res => {
       dispatch(getFavoritesThunk(clientId));
       console.log(res.data);

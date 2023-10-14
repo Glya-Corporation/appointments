@@ -902,8 +902,8 @@ main {
 
 .container-main {
   width: 100vw;
-  height: 100vh;
-  padding: 2.5rem 0.5rem 5.5rem;
+  height: calc(100vh - 4rem);
+  padding: 2.5rem 0.5rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -939,8 +939,9 @@ main {
 
 .list-reservations {
   width: 100%;
-  height: 30vh;
+  height: 100%;
   display: grid;
+  padding: .5rem !important;
   grid-auto-rows: min-content;
   gap: 0.5rem;
   overflow-y: auto;
@@ -992,6 +993,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  margin: 0;
 }
 
 .filter-history-business li {
@@ -1001,8 +1003,9 @@ main {
 
 .list-history-business {
   width: 100%;
-  height: 55vh;
+  height: 100%;
   display: flex;
+  padding: .5rem !important;
   flex-direction: column;
   gap: 0.5rem;
   overflow-y: auto;

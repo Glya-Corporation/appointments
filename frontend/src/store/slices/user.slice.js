@@ -16,7 +16,7 @@ export const userSlice = createSlice({
 
 export const getUserThunk = (id, role) => dispatch => {
   return axios
-    .get(`${apiUrl}/${!role ? 'client' : role === 1 ? 'user' : 'colaborator'}/${id}`, getConfig())
+    .get(`https://api-reservations.glya-corporation.uk/api/v1/${!role ? 'client' : role === 1 ? 'user' : 'colaborator'}/${id}`, getConfig())
     .then(res => {
       console.log(res, 'hi');
       dispatch(setUser(res.data));
@@ -27,7 +27,7 @@ export const getUserThunk = (id, role) => dispatch => {
 export const loginThunk = (isSeleted, credentials, navigate, remember, ruta) => dispatch => {
   dispatch(setLoaderThunk(true));
   return axios
-    .post(`${apiUrl}/login/${isSeleted ? 'client' : 'business'}`, credentials)
+    .post(`https://api-reservations.glya-corporation.uk/api/v1/login/${isSeleted ? 'client' : 'business'}`, credentials)
     .then(res => {
       console.log(res, 'hi');
       setTimeout(() => {

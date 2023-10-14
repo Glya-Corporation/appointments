@@ -16,14 +16,14 @@ export const businessSlice = createSlice({
 
 export const getAllBusinessThunk = () => dispatch => {
   return axios
-    .get(`${apiUrl}/business`, getConfig())
+    .get(`https://api-reservations.glya-corporation.uk/api/v1/business`, getConfig())
     .then(res => dispatch(setBusiness(res.data)))
     .catch(err => console.error(err));
 };
 
 export const updateBusinessThunk = (id, isSelected, userId, roleId) => dispatch => {
   return axios
-    .put(`${apiUrl}/business/${id}/update`, isSelected, getConfig())
+    .put(`https://api-reservations.glya-corporation.uk/api/v1/business/${id}/update`, isSelected, getConfig())
     .then(res => {
       console.log(res.data);
       dispatch(getAllBusinessThunk());

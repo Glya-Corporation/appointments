@@ -15,7 +15,7 @@ export const galerySlice = createSlice({
 
 export const getAllGaleryThunk = id => dispatch => {
   return axios
-    .get(`${apiUrl}/photo/business/${id}`, getConfig())
+    .get(`https://api-reservations.glya-corporation.uk/api/v1/photo/business/${id}`, getConfig())
     .then(res => dispatch(setGalery(res.data)))
     .catch(err => console.error(err));
 };

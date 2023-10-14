@@ -15,7 +15,7 @@ export const clientSlice = createSlice({
 });
 
 export const getAllAppointmentsClientThunk = clientId => dispatch => {
-  return axios.get(`${apiUrl}/appointments/client/${clientId}`, getConfig()).then(res => dispatch(setMyAppointments(res.data)));
+  return axios.get(`https://api-reservations.glya-corporation.uk/api/v1/appointments/client/${clientId}`, getConfig()).then(res => dispatch(setMyAppointments(res.data)));
 };
 
 export const { setMyAppointments } = clientSlice.actions;

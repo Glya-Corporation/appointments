@@ -16,7 +16,7 @@ export const servicesCategoriesSlice = createSlice({
 
 export const getServicesCategoriesThunk = id => dispatch => {
   return axios
-    .get(`${apiUrl}/services/categories/business/${id}`, getConfig())
+    .get(`https://api-reservations.glya-corporation.uk/api/v1/services/categories/business/${id}`, getConfig())
     .then(res => {
       dispatch(setServicesCategories(res.data));
     })

@@ -36,7 +36,7 @@ const CompleteRegisterBusiness = () => {
 
   const save = () => {
     axios
-      .post(`${apiUrl}/add/business/category`, { businessId: user.business[0].id, list }, getConfig())
+      .post(`https://api-reservations.glya-corporation.uk/api/v1/add/business/category`, { businessId: user.business[0].id, list }, getConfig())
       .then(res => {
         console.log(res.data);
         navigate('/home/business');
