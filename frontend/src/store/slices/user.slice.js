@@ -30,23 +30,25 @@ export const loginThunk = (isSeleted, credentials, navigate, remember, ruta) => 
   return axios
     .post(`${apiUrl}/login/${isSeleted ? 'client' : 'business'}`, credentials)
     .then(res => {
-      console.log(res.data);
-      if (remember) {
-        localStorage.setItem('user', JSON.stringify(res.data.user));
-        localStorage.setItem('token', res.data.token);
-        localStorage.setItem('view', JSON.stringify({ view: true }));
-      } else {
-        sessionStorage.setItem('user', JSON.stringify(res.data.user));
-        sessionStorage.setItem('token', res.data.token);
-        sessionStorage.setItem('view', JSON.stringify({ view: true }));
-      }
-      if (!isSeleted && ruta) {
-        navigate(ruta);
-      } else if (!isSeleted) {
-        navigate('/home/business');
-      } else {
-        navigate('/locales');
-      }
+      console.log(res, 'hi');
+      setTimeout(() => {
+        if (remember) {
+          localStorage.setItem('user', JSON.stringify(res.data.user));
+          localStorage.setItem('token', res.data.token);
+          localStorage.setItem('view', JSON.stringify({ view: true }));
+        } else {
+          sessionStorage.setItem('user', JSON.stringify(res.data.user));
+          sessionStorage.setItem('token', res.data.token);
+          sessionStorage.setItem('view', JSON.stringify({ view: true }));
+        }
+        if (!isSeleted && ruta) {
+          navigate(ruta);
+        } else if (!isSeleted) {
+          navigate('/home/business');
+        } else {
+          navigate('/locales');
+        }
+      }, 1000);
     })
     .catch(err => {
       console.error(err);
