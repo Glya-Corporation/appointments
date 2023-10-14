@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 import getConfig from '../../util/getConfig';
-const apiUrl = import.meta.env.VITE_API_URL;
+import apiUrl from '../../util/env.js';
 
 export const galerySlice = createSlice({
   name: 'galery',
@@ -15,7 +15,7 @@ export const galerySlice = createSlice({
 
 export const getAllGaleryThunk = id => dispatch => {
   return axios
-    .get(`${apiUrl}/api/v1/photo/business/${id}`, getConfig())
+    .get(`${apiUrl}photo/business/${id}`, getConfig())
     .then(res => dispatch(setGalery(res.data)))
     .catch(err => console.error(err));
 };

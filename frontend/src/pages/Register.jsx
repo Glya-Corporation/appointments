@@ -7,7 +7,7 @@ import { useDispatch } from 'react-redux';
 import { loginThunk } from '../store/slices/user.slice';
 import { useState } from 'react';
 
-const apiUrl = import.meta.env.VITE_API_URL;
+import apiUrl from '../util/env.js';
 
 import logo1 from '../assets/logo1.svg';
 import logo2 from '../assets/logo2.svg';
@@ -45,7 +45,7 @@ const Register = () => {
       }
     };
     axios
-      .post(`${apiUrl}/api/v1/${id === '1' ? 'client' : 'user'}/register`, id === '1' ? body.user : body)
+      .post(`${apiUrl}${id === '1' ? 'client' : 'user'}/register`, id === '1' ? body.user : body)
       .then(res => {
         dispatch(loginThunk(id === '1', { email, password }, navigate, true, '/complete/register/business'));
       })

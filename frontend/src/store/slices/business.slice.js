@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 import getConfig from '../../util/getConfig';
 import { getUserThunk } from './user.slice';
-const apiUrl = import.meta.env.VITE_API_URL;
+import apiUrl from '../../util/env.js';
 
 export const businessSlice = createSlice({
   name: 'business',
@@ -16,14 +16,14 @@ export const businessSlice = createSlice({
 
 export const getAllBusinessThunk = () => dispatch => {
   return axios
-    .get(`${apiUrl}/api/v1/business`, getConfig())
+    .get(`${apiUrl}business`, getConfig())
     .then(res => dispatch(setBusiness(res.data)))
     .catch(err => console.error(err));
 };
 
 export const updateBusinessThunk = (id, isSelected, userId, roleId) => dispatch => {
   return axios
-    .put(`${apiUrl}/api/v1/business/${id}/update`, isSelected, getConfig())
+    .put(`${apiUrl}business/${id}/update`, isSelected, getConfig())
     .then(res => {
       console.log(res.data);
       dispatch(getAllBusinessThunk());

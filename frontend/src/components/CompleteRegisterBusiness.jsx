@@ -10,7 +10,7 @@ import { getBusinessCategoriesThunk } from '../store/slices/businessCategories.s
 
 import alfa from '../assets/alfa.png';
 
-const apiUrl = import.meta.env.VITE_API_URL;
+import apiUrl from '../util/env.js';
 
 const CompleteRegisterBusiness = () => {
   const [list, setList] = useState([]);
@@ -36,7 +36,7 @@ const CompleteRegisterBusiness = () => {
 
   const save = () => {
     axios
-      .post(`${apiUrl}/api/v1/add/business/category`, { businessId: user.business[0].id, list }, getConfig())
+      .post(`${apiUrl}add/business/category`, { businessId: user.business[0].id, list }, getConfig())
       .then(res => {
         console.log(res.data);
         navigate('/home/business');

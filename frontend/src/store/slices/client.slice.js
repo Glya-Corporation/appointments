@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 import getConfig from '../../util/getConfig';
 
-const apiUrl = import.meta.env.VITE_API_URL;
+import apiUrl from '../../util/env.js';
 
 export const clientSlice = createSlice({
   name: 'client',
@@ -15,7 +15,7 @@ export const clientSlice = createSlice({
 });
 
 export const getAllAppointmentsClientThunk = clientId => dispatch => {
-  return axios.get(`${apiUrl}/api/v1/appointments/client/${clientId}`, getConfig()).then(res => dispatch(setMyAppointments(res.data)));
+  return axios.get(`${apiUrl}appointments/client/${clientId}`, getConfig()).then(res => dispatch(setMyAppointments(res.data)));
 };
 
 export const { setMyAppointments } = clientSlice.actions;

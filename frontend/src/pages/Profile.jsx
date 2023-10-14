@@ -12,7 +12,7 @@ import getConfig from '../util/getConfig';
 import capitalice from '../functions/capitalizar.js';
 import { getFavoritesThunk } from '../store/slices';
 
-const apiUrl = import.meta.env.VITE_API_URL;
+import apiUrl from '../util/env.js';
 
 const Profile = () => {
   const [showInputs, setShowInputs] = useState(false);
@@ -47,7 +47,7 @@ const Profile = () => {
 
       if (user.role) {
         axios
-          .put(`${apiUrl}/api/v1/${user.role.id === 1 ? 'user' : 'colaborator'}/${user.id}/update`, newData, getConfig())
+          .put(`${apiUrl}${user.role.id === 1 ? 'user' : 'colaborator'}/${user.id}/update`, newData, getConfig())
           .then(res => {
             console.log(res.data);
             dispatch(getUserThunk(user.id, user.role.id));
@@ -59,7 +59,7 @@ const Profile = () => {
           .catch(err => console.error(err));
       } else {
         axios
-          .put(`${apiUrl}/api/v1/client/${user.id}/update`, newData, getConfig())
+          .put(`${apiUrl}client/${user.id}/update`, newData, getConfig())
           .then(res => {
             console.log(res.data);
             dispatch(getUserThunk(user.id));

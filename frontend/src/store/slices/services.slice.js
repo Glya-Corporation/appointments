@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 import getConfig from '../../util/getConfig';
 
-const apiUrl = import.meta.env.VITE_API_URL;
+import apiUrl from '../../util/env.js';
 
 export const servicesSlice = createSlice({
   name: 'services',
@@ -16,7 +16,7 @@ export const servicesSlice = createSlice({
 
 export const getServicesThunk = id => dispatch => {
   return axios
-    .get(`${apiUrl}/api/v1/services/business/${id}`, getConfig())
+    .get(`${apiUrl}services/business/${id}`, getConfig())
     .then(res => {
       dispatch(setServices(res.data));
     })
