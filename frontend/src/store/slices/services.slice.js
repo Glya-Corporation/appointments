@@ -16,7 +16,7 @@ export const servicesSlice = createSlice({
 
 export const getServicesThunk = id => dispatch => {
   return axios
-    .get(`${apiUrl}services/business/${id}`, getConfig())
+    .get(`${apiUrl}/services/business/${id}`, getConfig())
     .then(res => {
       dispatch(setServices(res.data));
     })

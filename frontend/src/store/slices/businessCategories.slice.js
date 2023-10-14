@@ -14,7 +14,7 @@ export const businessCategoriesSlice = createSlice({
 
 export const getBusinessCategoriesThunk = () => dispatch => {
   return axios
-    .get(`${apiUrl}business/categories/all`)
+    .get(`${apiUrl}/business/categories/all`)
     .then(res => dispatch(setBusinessCategories(res.data)))
     .catch(err => console.error(err));
 };

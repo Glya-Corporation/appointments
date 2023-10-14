@@ -5,7 +5,7 @@ const router = Router();
 
 /**
 * @openapi
-* /api/v1/login:
+* /api/v1/login/client:
 *   post:
 *     summary: Login
 *     tags: [Auth]
@@ -25,43 +25,26 @@ const router = Router();
 *             example:
 *               email: "example@gmail.com"
 *               password: "123123"
-*     responses:
-*       200:
-*         description: Login
-*         content:
-*           application/json:
-*             schema:
-*               type: object
-*               properties:
-*                 token:
-*                   type: string
-*                   description: Token
-*                 user:
-*                   type: object
-*                   properties:
-*                     id:
-*                       type: integer
-*                       description: Id
-*                     name:
-*                       type: string
-*                       description: Name
-*                     email:
-*                       type: string
-*                       description: Email
-*                     role:
-*                       type: object
-*                       properties:
-*                         id:
-*                          type: integer
-*                          description: Id
-*                         name:
-*                          type: string
-*                          description: Name
-*                         description:
-*                          type: string
-*                          description: Description
-*       400:
-*         description: Bad request 
+* /api/v1/login/business:
+*   post:
+*     summary: Login
+*     tags: [Auth]
+*     requestBody:
+*       required: true
+*       content:
+*         application/json:
+*           schema:
+*             type: object
+*             properties:
+*               email:
+*                 type: string
+*                 description: Email
+*               password:
+*                 type: string
+*                 description: Password
+*             example:
+*               email: "example@gmail.com"
+*               password: "123123"
 */
 
 router.post('/login/client', login);

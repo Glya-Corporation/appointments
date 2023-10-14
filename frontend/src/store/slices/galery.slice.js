@@ -15,7 +15,7 @@ export const galerySlice = createSlice({
 
 export const getAllGaleryThunk = id => dispatch => {
   return axios
-    .get(`${apiUrl}photo/business/${id}`, getConfig())
+    .get(`${apiUrl}/photo/business/${id}`, getConfig())
     .then(res => dispatch(setGalery(res.data)))
     .catch(err => console.error(err));
 };
