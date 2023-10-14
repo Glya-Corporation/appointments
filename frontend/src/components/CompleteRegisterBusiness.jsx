@@ -18,7 +18,7 @@ const CompleteRegisterBusiness = () => {
   const { user } = useSelector(state => state);
 
   const dispatch = useDispatch();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(getBusinessCategoriesThunk());
@@ -36,10 +36,10 @@ const CompleteRegisterBusiness = () => {
 
   const save = () => {
     axios
-      .post(`${apiUrl}/add/business/category`, { businessId: user.business[0].id, list }, getConfig())
+      .post(`${apiUrl}/api/v1/add/business/category`, { businessId: user.business[0].id, list }, getConfig())
       .then(res => {
-        console.log(res.data)
-        navigate('/home/business')
+        console.log(res.data);
+        navigate('/home/business');
       })
       .catch(err => console.error(err));
   };

@@ -47,7 +47,7 @@ const Profile = () => {
 
       if (user.role) {
         axios
-          .put(`${apiUrl}/${user.role.id === 1 ? 'user' : 'colaborator'}/${user.id}/update`, newData, getConfig())
+          .put(`${apiUrl}/api/v1/${user.role.id === 1 ? 'user' : 'colaborator'}/${user.id}/update`, newData, getConfig())
           .then(res => {
             console.log(res.data);
             dispatch(getUserThunk(user.id, user.role.id));
@@ -59,7 +59,7 @@ const Profile = () => {
           .catch(err => console.error(err));
       } else {
         axios
-          .put(`${apiUrl}/client/${user.id}/update`, newData, getConfig())
+          .put(`${apiUrl}/api/v1/client/${user.id}/update`, newData, getConfig())
           .then(res => {
             console.log(res.data);
             dispatch(getUserThunk(user.id));
