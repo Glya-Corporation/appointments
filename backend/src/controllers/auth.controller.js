@@ -16,7 +16,7 @@ const login = async (req, res, next) => {
       const user = { id, name, surname, email, number, isVerify, role, business };
       res.status(200).json({ user, token });
     } else {
-      res.status(400).json({ message: 'Wrong password or email' });
+      res.status(400).json({ message: 'Contraseña incorrecta' });
     }
   } catch (error) {
     next({

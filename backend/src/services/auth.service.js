@@ -17,7 +17,6 @@ class AuthServices {
         const isValid = bcrypt.compareSync(password, result.password);
         return isValid ? result : isValid;
       } else {
-        return result;
       }
     } catch (error) {
       throw error;
@@ -75,7 +74,7 @@ class AuthServices {
         const isValid = bcrypt.compareSync(password, result.password);
         return isValid ? result : isValid;
       } else {
-        return result;
+        throw 'Corrreo no encontrado';
       }
     } catch (error) {
       throw error;

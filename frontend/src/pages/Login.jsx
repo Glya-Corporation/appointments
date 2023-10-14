@@ -55,7 +55,7 @@ const Login = () => {
 
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className='input-container'>
           <img className='icons-input' src={key} alt='icon' />
-          <input {...register('password', { required: true })} type={!isVisible ? 'password' : 'text'} placeholder='Password' />
+          <input {...register('password', { required: true })} type={isVisible ? 'text' : 'password'} placeholder='Password' />
           <span style={{ position: 'absolute', right: '.5rem', opacity: '0.5' }}>{isVisible ? <img src={visibilityOff} alt='' onClick={() => setIsVisible(!isVisible)} /> : <img src={visibility} alt='' onClick={() => setIsVisible(!isVisible)} />}</span>
           {errors.password && <span style={{ color: '#5f0000', fontSize: '13px', position: 'absolute', bottom: '-1.2rem', left: '1rem' }}>Contraseña requerida</span>}
         </motion.div>
@@ -68,10 +68,10 @@ const Login = () => {
           <label htmlFor='check'>Recordar</label>
         </div>
       </form>
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className='login-links'>
+      <div className='login-links'>
         <span onClick={() => navigate(`/register/${isSeleted ? 1 : 2}`)}>Registrarse</span>
         <span>¿Olvido su clave?</span>
-      </motion.div>
+      </div>
     </main>
   );
 };

@@ -30,7 +30,7 @@ export const loginThunk = (isSeleted, credentials, navigate, remember, ruta) => 
   return axios
     .post(`${apiUrl}/login/${isSeleted ? 'client' : 'business'}`, credentials)
     .then(res => {
-      console.log(res.data)
+      console.log(res.data);
       if (remember) {
         localStorage.setItem('user', JSON.stringify(res.data.user));
         localStorage.setItem('token', res.data.token);
@@ -48,7 +48,10 @@ export const loginThunk = (isSeleted, credentials, navigate, remember, ruta) => 
         navigate('/locales');
       }
     })
-    .catch(err => console.error(err))
+    .catch(err => {
+      console.error(err);
+      alert(err.response.data.message);
+    })
     .finally(() => {
       setTimeout(() => {
         dispatch(setLoaderThunk(false));
