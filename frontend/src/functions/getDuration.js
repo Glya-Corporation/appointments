@@ -1,5 +1,4 @@
 const getDuration = duration => {
-  console.log(duration)
   let value = 0;
   const hour = parseInt(duration.split(':')[0]);
   const minute = parseInt(duration.split(':')[1]);

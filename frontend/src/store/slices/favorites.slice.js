@@ -17,7 +17,6 @@ export const getFavoritesThunk = (id, navigate) => dispatch => {
   return axios
     .get(`https://api-reservations.glya-corporation.uk/api/v1/business/favorite/client/${id}`, getConfig())
     .then(res => {
-      console.log(id, res);
       const { data } = res;
       dispatch(setFavorites(data.business));
       if (navigate) {
@@ -35,7 +34,6 @@ export const updateFavorite = (id, clientId) => dispatch => {
     .put(`https://api-reservations.glya-corporation.uk/api/v1/business/favorite/${Number(id)}/update`, {}, getConfig())
     .then(res => {
       dispatch(getFavoritesThunk(clientId));
-      console.log(res.data);
     })
     .catch(err => console.error(err));
 };

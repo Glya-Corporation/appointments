@@ -25,7 +25,6 @@ export const updateBusinessThunk = (id, isSelected, userId, roleId) => dispatch 
   return axios
     .put(`https://api-reservations.glya-corporation.uk/api/v1/business/${id}/update`, isSelected, getConfig())
     .then(res => {
-      console.log(res.data);
       dispatch(getAllBusinessThunk());
       dispatch(getUserThunk(userId, roleId));
     })

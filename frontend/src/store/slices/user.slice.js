@@ -18,7 +18,6 @@ export const getUserThunk = (id, role) => dispatch => {
   return axios
     .get(`https://api-reservations.glya-corporation.uk/api/v1/${!role ? 'client' : role === 1 ? 'user' : 'colaborator'}/${id}`, getConfig())
     .then(res => {
-      console.log(res, 'hi');
       dispatch(setUser(res.data));
     })
     .catch(err => console.error(err));
@@ -29,7 +28,6 @@ export const loginThunk = (isSeleted, credentials, navigate, remember, ruta) => 
   return axios
     .post(`https://api-reservations.glya-corporation.uk/api/v1/login/${isSeleted ? 'client' : 'business'}`, credentials)
     .then(res => {
-      console.log(res, 'hi');
       setTimeout(() => {
         if (remember) {
           localStorage.setItem('user', JSON.stringify(res.data.user));

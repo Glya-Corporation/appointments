@@ -13,6 +13,7 @@ import capitalice from '../functions/capitalizar.js';
 import { getFavoritesThunk } from '../store/slices';
 
 import apiUrl from '../util/env.js';
+import ProfileBusiness from '../components/ProfileBusiness';
 
 const Profile = () => {
   const [showInputs, setShowInputs] = useState(false);
@@ -20,8 +21,8 @@ const Profile = () => {
   const [number, setNumber] = useState('');
   const [email, setEmail] = useState('');
 
-  const { user } = useSelector(state => state);
-  const { client } = useSelector(state => state);
+  const user = useSelector(state => state.user);
+  const client = useSelector(state => state.client);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -49,7 +50,6 @@ const Profile = () => {
         axios
           .put(`https://api-reservations.glya-corporation.uk/api/v1/${user.role.id === 1 ? 'user' : 'colaborator'}/${user.id}/update`, newData, getConfig())
           .then(res => {
-            console.log(res.data);
             dispatch(getUserThunk(user.id, user.role.id));
             setShowInputs(false);
             setName('');
@@ -61,7 +61,6 @@ const Profile = () => {
         axios
           .put(`https://api-reservations.glya-corporation.uk/api/v1/client/${user.id}/update`, newData, getConfig())
           .then(res => {
-            console.log(res.data);
             dispatch(getUserThunk(user.id));
             setShowInputs(false);
             setName('');
@@ -109,7 +108,7 @@ const Profile = () => {
           <img src={showInputs ? saveIcon : pen} alt='Pencil' onClick={dataModify} />
         </button>
       </div>
-      {!user?.role && (
+      {!user?.role ? (
         <>
           <h3>Historial de reservas</h3>
           <ul className='list-history'>
@@ -128,12 +127,13 @@ const Profile = () => {
               </li>
             ))}
           </ul>
+          <button onClick={() => navigate(user.role?.id === 1 ? '/my/business' : '/locales')} className='business-more body'>
+            {user?.role?.id === 1 ? 'Mis Comercios' : 'Más Comercios'}
+          </button>
         </>
+      ) : (
+        <ProfileBusiness />
       )}
-
-      <button onClick={() => navigate(user.role?.id === 1 ? '/my/business' : '/locales')} className='business-more body'>
-        {user?.role?.id === 1 ? 'Mis Comercios' : 'Más Comercios'}
-      </button>
     </main>
   );
 };

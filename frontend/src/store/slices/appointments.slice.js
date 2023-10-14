@@ -23,7 +23,6 @@ export const getAllAppointmentsThunk = businessId => dispatch => {
 
 export const createAppointmentThunk = (data, navigate, item) => dispatch => {
   return axios.post(`https://api-reservations.glya-corporation.uk/api/v1/appointment`, data, getConfig()).then(res => {
-    console.log(res.data);
     setTimeout(() => {
       navigate(`/home/${item.name}/${item.id}`);
     }, 500);
