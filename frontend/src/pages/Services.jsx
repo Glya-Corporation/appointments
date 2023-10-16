@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 
 const Services = () => {
   const { name } = useParams();
-  console.log(name);
+  const categories = useSelector(state => state.servicesCategories)
 
   return (
     <div>
@@ -11,7 +11,16 @@ const Services = () => {
       {
         name === 'main' ? (
           <div>
-            <ul></ul>
+            <ul>
+              {
+                categories.map(category => (
+                  <li key={category.id}>
+                    <span>{category.name}</span>
+                    <span>{category.price}</span>
+                  </li>
+                ))
+              }
+            </ul>
             <button className='body btn-general'>Agregar</button>
           </div>
         ) : (

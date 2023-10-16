@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import axios from 'axios';
 import { motion } from 'framer-motion';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -83,7 +82,7 @@ const Register = () => {
         </motion.div>
         <motion.div initial={{ translateX: 1000 }} animate={{ translateX: 0 }} className='input-container'>
           <img className='icons-input' src={phone} alt='icon' />
-          <input {...register('number')} type='text' placeholder='Numero de teléfono' />
+          <input {...register('number')} type='tel' placeholder='Numero de teléfono' />
         </motion.div>
         <motion.div initial={{ translateX: 1000 }} animate={{ translateX: 0 }} className='input-container'>
           <img className='icons-input' src={key} alt='icon' />
