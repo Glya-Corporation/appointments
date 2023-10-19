@@ -7,7 +7,25 @@ const ModalAddServices = ({data, ...props}) => {
   const {handlesubmit, register, reset} = useForm();
   
   const submit = data => {
-    console.log(data)
+    const newArray = [
+      {
+        name: data.name1,
+        price: data.price1,
+        duration: data.duration1
+      },
+      {
+        name: data.name2,
+        price: data.price2,
+        duration: data.duration2
+      },
+      {
+        name: data.name3,
+        price: data.price3,
+        duration: data.duration3
+      }
+    ]
+    
+    console.log(newArray)
   }
   
   return (

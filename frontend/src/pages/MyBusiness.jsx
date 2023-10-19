@@ -67,7 +67,7 @@ const MyBusiness = () => {
     <main className='body all-business'>
       <img src={logoAlfa} alt='logo-alfa' />
       <p>Estos son tus establecimientos, puedes seleccionar uno paraque se muestre como predeterminado</p>
-      <input type='text' placeholder='Buscar' onChange={e => searchBusiness(e.target.value)} />
+      <input type='search' placeholder='Buscar' onChange={e => searchBusiness(e.target.value)} />
       {/* <ul className='all-business--categories'>
         {categories.map(category => (
           <li key={category.id} onClick={() => filterBusiness(category.id)} className={categorySelected === category.id ? 'btn-active' : ''}>

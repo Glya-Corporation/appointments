@@ -104,7 +104,7 @@ const Locales = () => {
     <main className='body all-business'>
       <img src={logoAlfa} alt='logo-alfa' />
       <p>{isFavorites ? 'Estos son tus establecimientos favoritos, puedes seleccionar uno predeterminado' : 'Reserva tu próxima cita en estos establecimientos'}</p>
-      <input type='text' placeholder='Buscar' onChange={e => searchBusiness(e.target.value)} />
+      <input type='search' placeholder='Buscar' onChange={e => searchBusiness(e.target.value)} />
       <ul className='all-business--categories'>
         {categories.map(category => (
           <li key={category.id} onClick={() => filterBusiness(category.id)} className={categorySelected === category.id ? 'btn-active' : ''}>
