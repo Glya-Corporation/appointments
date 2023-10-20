@@ -8,9 +8,9 @@ import setCategory from '../functions/setCategory';
 import ModalDetail from '../components/ModalDetail';
 
 const HomeBusiness = () => {
-  const { user } = useSelector(state => state);
-  const { appointments } = useSelector(state => state);
-  const { services } = useSelector(state => state);
+  const user = useSelector(state => state.user);
+  const appointments = useSelector(state => state.appointments);
+  const services = useSelector(state => state.services);
 
   const [modalShow, setModalShow] = useState(false);
   const [appointmentsP, setAppointmentsP] = useState([]);

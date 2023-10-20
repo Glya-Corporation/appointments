@@ -9,7 +9,7 @@ import { getServicesThunk } from '../store/slices/services.slice';
 const HistorialBusiness = () => {
   const user = useSelector(state => state.user);
   const allAppointments = useSelector(state => state.appointments);
-  const { services } = useSelector(state => state);
+  const services = useSelector(state => state.services);
 
   const [modalShow, setModalShow] = useState(false);
   const [appointments, setAppointments] = useState([]);

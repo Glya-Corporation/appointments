@@ -1,9 +1,9 @@
-const { AppointmentsTypes, Category, Service, Galery } = require('../models');
+const { AppointmentsTypes, Category, Service } = require('../models');
 
 class ServiceServices {
   static async createService(body) {
     try {
-      const result = await AppointmentsTypes.create(body);
+      const result = await AppointmentsTypes.bulkCreate(body);
       return result;
     } catch (error) {
       throw error;

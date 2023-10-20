@@ -8,11 +8,11 @@ import saveIcon from '../assets/save.svg';
 
 import { getAllAppointmentsClientThunk } from '../store/slices/client.slice';
 import { getUserThunk } from '../store/slices/user.slice';
-import getConfig from '../util/getConfig';
-import capitalice from '../functions/capitalizar.js';
 import { getFavoritesThunk } from '../store/slices';
 
-import apiUrl from '../util/env.js';
+import getConfig from '../util/getConfig';
+import capitalice from '../functions/capitalizar.js';
+
 import ProfileBusiness from '../components/ProfileBusiness';
 
 const Profile = () => {

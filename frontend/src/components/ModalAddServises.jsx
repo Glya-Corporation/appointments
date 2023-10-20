@@ -1,68 +1,56 @@
-import {Modal, Button} from 'react-bootstrap'
-import {useForm} from 'react-hook-form'
+import { useState } from 'react';
+import { Modal, Button } from 'react-bootstrap';
+import { useForm } from 'react-hook-form';
 
+const ModalAddServices = ({ data, ...props }) => {
+  const { handleSubmit, register, reset, setValue, getValues } = useForm();
+  const [inputs, setInputs] = useState([1, 2, 3]);
+  const maxInputs = 20;
 
-const ModalAddServices = ({data, ...props}) => {
-  
-  const {handlesubmit, register, reset} = useForm();
-  
-  const submit = data => {
-    const newArray = [
-      {
-        name: data.name1,
-        price: data.price1,
-        duration: data.duration1
-      },
-      {
-        name: data.name2,
-        price: data.price2,
-        duration: data.duration2
-      },
-      {
-        name: data.name3,
-        price: data.price3,
-        duration: data.duration3
-      }
-    ]
-    
-    console.log(newArray)
-  }
-  
+  const addInput = () => {
+    if (inputs.length < maxInputs) {
+      setInputs([...inputs, inputs.length + 1]);
+    }
+  };
+
+  const submit = () => {
+    const dataArray = inputs.map(element => ({
+      name: getValues(`name${element}`),
+      duration: getValues(`duration${element}`),
+      price: getValues(`price${element}`)
+    }));
+
+    console.log(dataArray.filter(item => item.name !== '' && item.price !== ''));
+    reset();
+    setInputs([1, 2, 3]);
+  };
+
   return (
-    <Modal {...props}>
-      <Modal.Header>
+    <Modal {...props} centered>
+      <Modal.Header closeButton>
         <Modal.Title>{data.title}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <form onSubmit={handlesubmit(submit)}>
-          <div>
-          <input type='text' placeholder='Nonmbre' {...register('name1')}/>
-          <input type='text' placeholder='Price' {...register('price1')}/>
-          <input type='date' placeholder='Duración' {...register('duration1')}/>
-          </div>
-          <div>
-          <input type='text' placeholder='Nonmbre' {...register('name2')}/>
-          <input type='text' placeholder='Price' {...register('price2')}/>
-          <input type='date' placeholder='Duración' {...register('duration2')}/>
-          </div>
-          <div>
-          <input type='text' placeholder='Nonmbre' {...register('name3')}/>
-          <input type='text' placeholder='Price' {...register('price3')}/>
-          <input type='date' placeholder='Duración' {...register('duration3')}/>
-          </div>
-          <div>
-          <input type='text' placeholder='Nonmbre' {...register('name4')}/>
-          <input type='text' placeholder='Price' {...register('price4')}/>
-          <input type='date' placeholder='Duración' {...register('duration4')}/>
-          </div>
-          <button>Crear</button>
+        <form onSubmit={handleSubmit(submit)} className='form-services'>
+          {inputs.map(element => (
+            <div key={element} className='list-inputs'>
+              <input type='text' placeholder='Nombre' {...register(`name${element}`)} />
+              <input type='time' defaultValue='01:00' {...register(`duration${element}`)} />
+              <input type='number' placeholder='Precio' {...register(`price${element}`)} />
+            </div>
+          ))}
+          <Button variant='success' type='submit'>
+            Guardar Servicios
+          </Button>
         </form>
       </Modal.Body>
       <Modal.Footer>
-            <Button onClick={props.onHide} variant='success'>Close</Button>
-          </Modal.Footer>
-    </Modal>  
-  )
-}
+        <Button variant='success' onClick={addInput} disabled={inputs.length === maxInputs}>
+          Agregar más
+        </Button>
+      </Modal.Footer>
+    </Modal>
+  );
+};
 
 export default ModalAddServices;
