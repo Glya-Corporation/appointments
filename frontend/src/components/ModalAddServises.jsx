@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 
+import { createServicesThunk } from '../store/slices/index';
+
 const ModalAddServices = ({ data, ...props }) => {
   const { handleSubmit, register, reset, setValue, getValues } = useForm();
   const [inputs, setInputs] = useState([1, 2, 3]);
@@ -17,10 +19,13 @@ const ModalAddServices = ({ data, ...props }) => {
     const dataArray = inputs.map(element => ({
       name: getValues(`name${element}`),
       duration: getValues(`duration${element}`),
-      price: getValues(`price${element}`)
+      price: getValues(`price${element}`),
+      businessId: data.business
     }));
 
-    console.log(dataArray.filter(item => item.name !== '' && item.price !== ''));
+    const dataArrayCleared = dataArray.filter(item => item.name !== '' && item.price !== '');
+
+    createServicesThunk(dataArrayCleared);
     reset();
     setInputs([1, 2, 3]);
   };

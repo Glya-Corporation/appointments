@@ -1,17 +1,29 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import ModalAddServices from '../components/ModalAddServises';
 
 const Services = () => {
   const { name } = useParams();
   const categories = useSelector(state => state.servicesCategories);
+  const { business } = useSelector(state => state.user);
 
   const [show, setShow] = useState(false);
 
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!business) navigate('/');
+  }, []);
+
+  const data = {
+    title: name === 'main' ? 'Servicios Principales' : 'Servicios Adicionles',
+    business: business?.[0].id
+  };
+
   return (
     <div className='services-main'>
-      <ModalAddServices show={show} onHide={() => setShow(false)} data={{ title: name === 'main' ? 'Servicios Principales' : 'Servicios Adicionles' }} />
+      <ModalAddServices show={show} onHide={() => setShow(false)} data={data} />
       <h3>Servicios</h3>
       {name === 'main' ? (
         <div>

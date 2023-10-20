@@ -23,6 +23,15 @@ export const getServicesCategoriesThunk = id => dispatch => {
     .catch(err => console.error(err));
 };
 
+export const createServicesThunk = services => {
+  return axios
+    .post('https://api-reservations.glya-corporation.uk/api/v1/service', services, getConfig())
+    .then(res => {
+      console.log(res.data);
+    })
+    .catch(err => console.error(err));
+};
+
 export const { setServicesCategories } = servicesCategoriesSlice.actions;
 
 export default servicesCategoriesSlice.reducer;

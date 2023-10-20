@@ -3,7 +3,8 @@ const { AppointmentsTypes, Category, Service } = require('../models');
 class ServiceServices {
   static async createService(body) {
     try {
-      const result = await AppointmentsTypes.bulkCreate(body);
+      console.log(body);
+      const result = await Category.bulkCreate(body);
       return result;
     } catch (error) {
       throw error;
@@ -45,7 +46,7 @@ class ServiceServices {
   }
   static async updateService(id, body) {
     try {
-      await AppointmentsTypes.update(body, { where: { id } });
+      await Category.update(body, { where: { id } });
       return { message: 'Updated successful' };
     } catch (error) {
       throw error;
@@ -53,7 +54,7 @@ class ServiceServices {
   }
   static async deleteService(id) {
     try {
-      await AppointmentsTypes.destroy({ where: { id } });
+      await Category.destroy({ where: { id } });
       return { message: 'Deleted successful' };
     } catch (error) {
       throw error;
