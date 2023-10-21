@@ -46,12 +46,12 @@ const Colaborators = db.define(
     workingHours: {
       type: DataTypes.JSON,
       defaultValue: {
-        lunes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-        martes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-        miercoles: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-        jueves: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-        viernes: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' },
-        sabado: { date: '2023-06-07', entryTime: '08:00:00', departureTime: '20:00:00' }
+        lunes: { date: '2023-10-21', entryTime: '08:00:00', departureTime: '20:00:00' },
+        martes: { date: '2023-10-21', entryTime: '08:00:00', departureTime: '20:00:00' },
+        miercoles: { date: '2023-10-21', entryTime: '08:00:00', departureTime: '20:00:00' },
+        jueves: { date: '2023-10-21', entryTime: '08:00:00', departureTime: '20:00:00' },
+        viernes: { date: '2023-10-21', entryTime: '08:00:00', departureTime: '20:00:00' },
+        sabado: { date: '2023-10-21', entryTime: '08:00:00', departureTime: '20:00:00' }
       },
       allowNull: true,
       field: 'working_hours'
