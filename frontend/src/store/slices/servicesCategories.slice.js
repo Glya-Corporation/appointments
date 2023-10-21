@@ -23,11 +23,21 @@ export const getServicesCategoriesThunk = id => dispatch => {
     .catch(err => console.error(err));
 };
 
-export const createServicesThunk = services => {
+export const createServicesThunk = (newServices, services) => dispatch => {
   return axios
-    .post('https://api-reservations.glya-corporation.uk/api/v1/service', services, getConfig())
+    .post('https://api-reservations.glya-corporation.uk/api/v1/service', newServices, getConfig())
+    .then(res => {
+      dispatch(setServicesCategories([...services, ...res.data]));
+    })
+    .catch(err => console.error(err));
+};
+
+export const updateServiceThunk = (data, update) => dispatch => {
+  return axios
+    .put(`https://api-reservations.glya-corporation.uk/api/v1/service/${data.id}/update`, update, getConfig())
     .then(res => {
       console.log(res.data);
+      dispatch(getServicesCategoriesThunk(data.businessId));
     })
     .catch(err => console.error(err));
 };

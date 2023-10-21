@@ -1,13 +1,18 @@
 import { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { createServicesThunk } from '../store/slices/index';
 
-const ModalAddServices = ({ data, ...props }) => {
+const ModalAddServices = ({ businessId, ...props }) => {
   const { handleSubmit, register, reset, setValue, getValues } = useForm();
   const [inputs, setInputs] = useState([1, 2, 3]);
   const maxInputs = 20;
+
+  const services = useSelector(state => state.servicesCategories);
+
+  const dispatch = useDispatch();
 
   const addInput = () => {
     if (inputs.length < maxInputs) {
@@ -20,20 +25,23 @@ const ModalAddServices = ({ data, ...props }) => {
       name: getValues(`name${element}`),
       duration: getValues(`duration${element}`),
       price: getValues(`price${element}`),
-      businessId: data.business
+      businessId
     }));
 
     const dataArrayCleared = dataArray.filter(item => item.name !== '' && item.price !== '');
 
-    createServicesThunk(dataArrayCleared);
+    dispatch(createServicesThunk(dataArrayCleared, services));
     reset();
     setInputs([1, 2, 3]);
+    setTimeout(() => {
+      props.onHide();
+    }, 1000);
   };
 
   return (
     <Modal {...props} centered>
       <Modal.Header closeButton>
-        <Modal.Title>{data.title}</Modal.Title>
+        <Modal.Title>Servicios Principales</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <form onSubmit={handleSubmit(submit)} className='form-services'>

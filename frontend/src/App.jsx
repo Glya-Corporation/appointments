@@ -50,7 +50,7 @@ function App() {
           <Route path='/complete/register/business' element={<CompleteRegisterBusiness />} />
           <Route path='/schedule' element={<Schedule />} />
           <Route path='/historial/business' element={<HistorialBusiness />} />
-          <Route path='/service/:name' element={<Services />} />
+          <Route path='/service' element={<Services />} />
         </Route>
       </Routes>
     </HashRouter>

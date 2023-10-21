@@ -23,11 +23,8 @@ const ProfileBusiness = () => {
     <div className='settings-container'>
       <h3>Configuraciones</h3>
       <div>
-        <button className='body btn-general' onClick={() => goToRute('/service/main')}>
+        <button className='body btn-general' onClick={() => goToRute('/service')}>
           Servicio principal
-        </button>
-        <button className='body btn-general' onClick={() => goToRute('/service/secondary')}>
-          Servicio adicional
         </button>
         <button className='body btn-general' onClick={() => goToRute('')}>
           Colaboradores

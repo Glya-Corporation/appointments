@@ -2,13 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import ModalAddServices from '../components/ModalAddServises';
+import ModalUpdateServices from '../components/ModalUpdateServices';
 
 const Services = () => {
-  const { name } = useParams();
   const categories = useSelector(state => state.servicesCategories);
   const { business } = useSelector(state => state.user);
 
-  const [show, setShow] = useState(false);
+  const [showAdd, setShowAdd] = useState(false);
+  const [showUpdate, setShowUpdate] = useState(false);
+  const [currentService, setCurrentService] = useState({});
 
   const navigate = useNavigate();
 
@@ -16,38 +18,35 @@ const Services = () => {
     if (!business) navigate('/');
   }, []);
 
-  const data = {
-    title: name === 'main' ? 'Servicios Principales' : 'Servicios Adicionles',
-    business: business?.[0].id
+  const openModalUpdate = current => {
+    setCurrentService(current);
+    setShowUpdate(true);
   };
 
   return (
     <div className='services-main'>
-      <ModalAddServices show={show} onHide={() => setShow(false)} data={data} />
+      <ModalAddServices show={showAdd} onHide={() => setShowAdd(false)} data={business?.[0].id} />
+      <ModalUpdateServices show={showUpdate} onHide={() => setShowUpdate(false)} data={currentService} />
       <h3>Servicios</h3>
-      {name === 'main' ? (
-        <div>
-          <ul className='list-services'>
-            <li className='item-services item-services-header'>
-              <span>Servicio</span>
-              <span>Duración</span>
-              <span>Precio</span>
+      <div>
+        <ul className='list-services'>
+          <li className='item-services item-services-header'>
+            <span>Servicio</span>
+            <span>Duración</span>
+            <span>Precio</span>
+          </li>
+          {categories.map(category => (
+            <li key={category.id} className='item-services' onClick={() => openModalUpdate(category)}>
+              <span>{category.name}</span>
+              <span>{category.duration.slice(0, 5)}</span>
+              <span>${category.price.toFixed(2)}</span>
             </li>
-            {categories.map(category => (
-              <li key={category.id} className='item-services'>
-                <span>{category.name}</span>
-                <span>{category.duration.slice(0, 5)}</span>
-                <span>${category.price.toFixed(2)}</span>
-              </li>
-            ))}
-          </ul>
-          <button className='body btn-general' onClick={() => setShow(true)}>
-            Agregar
-          </button>
-        </div>
-      ) : (
-        <div></div>
-      )}
+          ))}
+        </ul>
+        <button className='body btn-general' onClick={() => setShowAdd(true)}>
+          Agregar
+        </button>
+      </div>
     </div>
   );
 };
