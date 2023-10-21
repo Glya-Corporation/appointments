@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 import getConfig from '../../util/getConfig';
 
-import apiUrl from '../../util/env.js';
+import apiUrl from '../../util/apiUrl.js';
 
 export const servicesCategoriesSlice = createSlice({
   name: 'servicesCategories',
@@ -16,7 +16,7 @@ export const servicesCategoriesSlice = createSlice({
 
 export const getServicesCategoriesThunk = id => dispatch => {
   return axios
-    .get(`https://api-reservations.glya-corporation.uk/api/v1/services/categories/business/${id}`, getConfig())
+    .get(`${apiUrl}/services/categories/business/${id}`, getConfig())
     .then(res => {
       dispatch(setServicesCategories(res.data));
     })
@@ -25,7 +25,7 @@ export const getServicesCategoriesThunk = id => dispatch => {
 
 export const createServicesThunk = (newServices, services) => dispatch => {
   return axios
-    .post('https://api-reservations.glya-corporation.uk/api/v1/service', newServices, getConfig())
+    .post('${apiUrl}/service', newServices, getConfig())
     .then(res => {
       dispatch(setServicesCategories([...services, ...res.data]));
     })
@@ -34,10 +34,20 @@ export const createServicesThunk = (newServices, services) => dispatch => {
 
 export const updateServiceThunk = (data, update) => dispatch => {
   return axios
-    .put(`https://api-reservations.glya-corporation.uk/api/v1/service/${data.id}/update`, update, getConfig())
+    .put(`${apiUrl}/service/${data.id}/update`, update, getConfig())
     .then(res => {
       console.log(res.data);
       dispatch(getServicesCategoriesThunk(data.businessId));
+    })
+    .catch(err => console.error(err));
+};
+
+export const deleteServiceThunk = (id, services) => dispatch => {
+  return axios
+    .delete(`${apiUrl}/service/${id}/delete`, getConfig())
+    .then(res => {
+      console.log(res.data);
+      dispatch(setServicesCategories(services));
     })
     .catch(err => console.error(err));
 };

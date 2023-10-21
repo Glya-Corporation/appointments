@@ -14,6 +14,7 @@ import getConfig from '../util/getConfig';
 import capitalice from '../functions/capitalizar.js';
 
 import ProfileBusiness from '../components/ProfileBusiness';
+import apiUrl from '../util/apiUrl';
 
 const Profile = () => {
   const [showInputs, setShowInputs] = useState(false);
@@ -48,7 +49,7 @@ const Profile = () => {
 
       if (user.role) {
         axios
-          .put(`https://api-reservations.glya-corporation.uk/api/v1/${user.role.id === 1 ? 'user' : 'colaborator'}/${user.id}/update`, newData, getConfig())
+          .put(`${apiUrl}/${user.role.id === 1 ? 'user' : 'colaborator'}/${user.id}/update`, newData, getConfig())
           .then(res => {
             dispatch(getUserThunk(user.id, user.role.id));
             setShowInputs(false);
@@ -59,7 +60,7 @@ const Profile = () => {
           .catch(err => console.error(err));
       } else {
         axios
-          .put(`https://api-reservations.glya-corporation.uk/api/v1/client/${user.id}/update`, newData, getConfig())
+          .put(`${apiUrl}/client/${user.id}/update`, newData, getConfig())
           .then(res => {
             dispatch(getUserThunk(user.id));
             setShowInputs(false);

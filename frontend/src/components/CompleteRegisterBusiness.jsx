@@ -10,7 +10,7 @@ import { getBusinessCategoriesThunk } from '../store/slices/businessCategories.s
 
 import alfa from '../assets/alfa.png';
 
-import apiUrl from '../util/env.js';
+import apiUrl from '../util/apiUrl.js';
 
 const CompleteRegisterBusiness = () => {
   const [list, setList] = useState([]);
@@ -36,7 +36,7 @@ const CompleteRegisterBusiness = () => {
 
   const save = () => {
     axios
-      .post(`https://api-reservations.glya-corporation.uk/api/v1/add/business/category`, { businessId: user.business[0].id, list }, getConfig())
+      .post(`${apiUrl}/add/business/category`, { businessId: user.business[0].id, list }, getConfig())
       .then(res => {
         navigate('/home/business');
       })

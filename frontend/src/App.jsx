@@ -19,6 +19,10 @@ import HomeBusiness from './pages/HomeBusiness';
 import HistorialBusiness from './pages/HistorialBusiness';
 import MyBusiness from './pages/MyBusiness';
 import Services from './pages/Services';
+import Colaborators from './pages/Colaborators';
+import Photos from './pages/Photos';
+import Schedules from './pages/Schedules';
+import Settings from './pages/Settings';
 
 function App() {
   const dispatch = useDispatch();
@@ -51,6 +55,10 @@ function App() {
           <Route path='/schedule' element={<Schedule />} />
           <Route path='/historial/business' element={<HistorialBusiness />} />
           <Route path='/service' element={<Services />} />
+          <Route path='/colaborator' element={<Colaborators />} />
+          <Route path='/photos' element={<Photos />} />
+          <Route path='/schedules' element={<Schedules />} />
+          <Route path='/settings' element={<Settings />} />
         </Route>
       </Routes>
     </HashRouter>

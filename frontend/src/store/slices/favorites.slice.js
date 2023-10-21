@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 import getConfig from '../../util/getConfig';
-import apiUrl from '../../util/env.js';
+import apiUrl from '../../util/apiUrl.js';
 
 export const favoritesSlice = createSlice({
   name: 'favorites',
@@ -15,7 +15,7 @@ export const favoritesSlice = createSlice({
 
 export const getFavoritesThunk = (id, navigate) => dispatch => {
   return axios
-    .get(`https://api-reservations.glya-corporation.uk/api/v1/business/favorite/client/${id}`, getConfig())
+    .get(`${apiUrl}/business/favorite/client/${id}`, getConfig())
     .then(res => {
       const { data } = res;
       dispatch(setFavorites(data.business));
@@ -31,7 +31,7 @@ export const getFavoritesThunk = (id, navigate) => dispatch => {
 
 export const updateFavorite = (id, clientId) => dispatch => {
   return axios
-    .put(`https://api-reservations.glya-corporation.uk/api/v1/business/favorite/${Number(id)}/update`, {}, getConfig())
+    .put(`${apiUrl}/business/favorite/${Number(id)}/update`, {}, getConfig())
     .then(res => {
       dispatch(getFavoritesThunk(clientId));
     })

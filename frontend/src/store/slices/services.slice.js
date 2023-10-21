@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 import getConfig from '../../util/getConfig';
 
-import apiUrl from '../../util/env.js';
+import apiUrl from '../../util/apiUrl.js';
 
 export const servicesSlice = createSlice({
   name: 'services',
@@ -16,7 +16,7 @@ export const servicesSlice = createSlice({
 
 export const getServicesThunk = id => dispatch => {
   return axios
-    .get(`https://api-reservations.glya-corporation.uk/api/v1/services/business/${id}`, getConfig())
+    .get(`${apiUrl}/services/business/${id}`, getConfig())
     .then(res => {
       dispatch(setServices(res.data));
     })

@@ -10,6 +10,7 @@ import galerySlice from './slices/galery.slice';
 import scheduleSlice from './slices/schedule.slice';
 import appointmentsSlice from './slices/appointments.slice';
 import clientSlice from './slices/client.slice';
+import colaboratorsSlice from './slices/colaborators.slice';
 
 export default configureStore({
   reducer: {
@@ -23,6 +24,7 @@ export default configureStore({
     galery: galerySlice,
     schedule: scheduleSlice,
     appointments: appointmentsSlice,
-    client: clientSlice
+    client: clientSlice,
+    colaborators: colaboratorsSlice
   }
 });

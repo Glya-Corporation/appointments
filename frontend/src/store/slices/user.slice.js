@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 import getConfig from '../../util/getConfig';
-import apiUrl from '../../util/env.js';
+import apiUrl from '../../util/apiUrl.js';
 import { setLoaderThunk } from './loader.slice';
 
 export const userSlice = createSlice({
@@ -16,7 +16,7 @@ export const userSlice = createSlice({
 
 export const getUserThunk = (id, role) => dispatch => {
   return axios
-    .get(`https://api-reservations.glya-corporation.uk/api/v1/${!role ? 'client' : role === 1 ? 'user' : 'colaborator'}/${id}`, getConfig())
+    .get(`${apiUrl}/${!role ? 'client' : role === 1 ? 'user' : 'colaborator'}/${id}`, getConfig())
     .then(res => {
       dispatch(setUser(res.data));
     })
@@ -26,7 +26,7 @@ export const getUserThunk = (id, role) => dispatch => {
 export const loginThunk = (isSeleted, credentials, navigate, remember, ruta) => dispatch => {
   dispatch(setLoaderThunk(true));
   return axios
-    .post(`https://api-reservations.glya-corporation.uk/api/v1/login/${isSeleted ? 'client' : 'business'}`, credentials)
+    .post(`${apiUrl}/login/${isSeleted ? 'client' : 'business'}`, credentials)
     .then(res => {
       setTimeout(() => {
         if (remember) {

@@ -19,7 +19,7 @@ class ColaboratorServices {
           model: Roles,
           as: 'role',
           attributes: {
-              exclude: ['createdAt', 'updatedAt']
+            exclude: ['createdAt', 'updatedAt']
           }
         }
       });
@@ -33,8 +33,9 @@ class ColaboratorServices {
       const result = await Colaborators.findAll({
         where: { businessId },
         attributes: {
-          exclude: ['password', 'createdAt', 'updatedAt']
-        }
+          exclude: ['password', 'createdAt', 'updatedAt', 'role_id', 'business_id']
+        },
+        order: [['id', 'ASC']]
       });
       return result;
     } catch (error) {

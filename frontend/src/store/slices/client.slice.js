@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 import getConfig from '../../util/getConfig';
 
-import apiUrl from '../../util/env.js';
+import apiUrl from '../../util/apiUrl.js';
 
 export const clientSlice = createSlice({
   name: 'client',
@@ -15,7 +15,7 @@ export const clientSlice = createSlice({
 });
 
 export const getAllAppointmentsClientThunk = clientId => dispatch => {
-  return axios.get(`https://api-reservations.glya-corporation.uk/api/v1/appointments/client/${clientId}`, getConfig()).then(res => dispatch(setMyAppointments(res.data)));
+  return axios.get(`${apiUrl}/appointments/client/${clientId}`, getConfig()).then(res => dispatch(setMyAppointments(res.data)));
 };
 
 export const { setMyAppointments } = clientSlice.actions;

@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 import getConfig from '../../util/getConfig';
 
-import apiUrl from '../../util/env.js';
+import apiUrl from '../../util/apiUrl.js';
 
 export const appointmentsSlice = createSlice({
   name: 'appointments',
@@ -16,13 +16,13 @@ export const appointmentsSlice = createSlice({
 
 export const getAllAppointmentsThunk = businessId => dispatch => {
   return axios
-    .get(`https://api-reservations.glya-corporation.uk/api/v1/appointments/business/${businessId}`, getConfig())
+    .get(`${apiUrl}/appointments/business/${businessId}`, getConfig())
     .then(res => dispatch(setAppointments(res.data)))
     .catch(err => console.error(err));
 };
 
 export const createAppointmentThunk = (data, navigate, item) => dispatch => {
-  return axios.post(`https://api-reservations.glya-corporation.uk/api/v1/appointment`, data, getConfig()).then(res => {
+  return axios.post(`${apiUrl}/appointment`, data, getConfig()).then(res => {
     setTimeout(() => {
       navigate(`/home/${item.name}/${item.id}`);
     }, 500);
@@ -31,7 +31,7 @@ export const createAppointmentThunk = (data, navigate, item) => dispatch => {
 
 export const UpdateAppointmentThunk = (id, status) => dispatch => {
   return axios
-    .put(`https://api-reservations.glya-corporation.uk/api/v1/appointment/${id}/update`, status, getConfig())
+    .put(`${apiUrl}/appointment/${id}/update`, status, getConfig())
     .then(res => console.log(res.data))
     .catch(err => console.error(err));
 };

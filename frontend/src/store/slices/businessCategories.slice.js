@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
-import apiUrl from '../../util/env.js';
+import apiUrl from '../../util/apiUrl.js';
 
 export const businessCategoriesSlice = createSlice({
   name: 'businessCategories',
@@ -14,7 +14,7 @@ export const businessCategoriesSlice = createSlice({
 
 export const getBusinessCategoriesThunk = () => dispatch => {
   return axios
-    .get(`https://api-reservations.glya-corporation.uk/api/v1/business/categories/all`)
+    .get(`${apiUrl}/business/categories/all`)
     .then(res => dispatch(setBusinessCategories(res.data)))
     .catch(err => console.error(err));
 };

@@ -1,8 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
+import { deleteServiceThunk } from '../store/slices';
+
 import ModalAddServices from '../components/ModalAddServises';
 import ModalUpdateServices from '../components/ModalUpdateServices';
+import GoBack from '../components/GoBack';
+
+import capitalize from '../functions/capitalizar.js';
+
+import deleteIcon from '../assets/delete.svg';
 
 const Services = () => {
   const categories = useSelector(state => state.servicesCategories);
@@ -13,6 +20,7 @@ const Services = () => {
   const [currentService, setCurrentService] = useState({});
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (!business) navigate('/');
@@ -23,8 +31,14 @@ const Services = () => {
     setShowUpdate(true);
   };
 
+  const deleteItem = id => {
+    const services = categories.filter(category => category.id !== id);
+    dispatch(deleteServiceThunk(id, services));
+  };
+
   return (
     <div className='services-main'>
+      <GoBack />
       <ModalAddServices show={showAdd} onHide={() => setShowAdd(false)} data={business?.[0].id} />
       <ModalUpdateServices show={showUpdate} onHide={() => setShowUpdate(false)} data={currentService} />
       <h3>Servicios</h3>
@@ -36,10 +50,11 @@ const Services = () => {
             <span>Precio</span>
           </li>
           {categories.map(category => (
-            <li key={category.id} className='item-services' onClick={() => openModalUpdate(category)}>
-              <span>{category.name}</span>
-              <span>{category.duration.slice(0, 5)}</span>
-              <span>${category.price.toFixed(2)}</span>
+            <li key={category.id} className='item-services'>
+              <span onClick={() => openModalUpdate(category)}>{capitalize(category.name)}</span>
+              <span onClick={() => openModalUpdate(category)}>{category.duration.slice(0, 5)}</span>
+              <span onClick={() => openModalUpdate(category)}>${category.price.toFixed(2)}</span>
+              <img src={deleteIcon} alt='icono' onClick={() => deleteItem(category.id)} />
             </li>
           ))}
         </ul>

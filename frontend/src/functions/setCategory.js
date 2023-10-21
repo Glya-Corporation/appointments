@@ -5,7 +5,7 @@ const setCategory = (s, a) => {
   a.forEach(item => {
     s.forEach(itemA => {
       if (item.galery_appointment[0].serviceId === itemA.id) {
-        const element = { ...item, service: itemA.category.name };
+        const element = { ...item, service: itemA.category?.name };
         arrayEmpty.push(element);
       }
     });
