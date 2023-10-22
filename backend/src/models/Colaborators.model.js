@@ -36,6 +36,7 @@ const Colaborators = db.define(
     },
     imgProfile: {
       type: DataTypes.STRING,
+      defaultValue: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png',
       allowNull: true,
       field: 'img_profile'
     },
@@ -45,14 +46,14 @@ const Colaborators = db.define(
     },
     workingHours: {
       type: DataTypes.JSON,
-      defaultValue: {
-        lunes: { date: '2023-10-21', entryTime: '08:00:00', departureTime: '20:00:00' },
-        martes: { date: '2023-10-21', entryTime: '08:00:00', departureTime: '20:00:00' },
-        miercoles: { date: '2023-10-21', entryTime: '08:00:00', departureTime: '20:00:00' },
-        jueves: { date: '2023-10-21', entryTime: '08:00:00', departureTime: '20:00:00' },
-        viernes: { date: '2023-10-21', entryTime: '08:00:00', departureTime: '20:00:00' },
-        sabado: { date: '2023-10-21', entryTime: '08:00:00', departureTime: '20:00:00' }
-      },
+      defaultValue: [
+        { date: '2023-10-23', entryTime: '08:00:00', departureTime: '20:00:00' },
+        { date: '2023-10-24', entryTime: '08:00:00', departureTime: '20:00:00' },
+        { date: '2023-10-25', entryTime: '08:00:00', departureTime: '20:00:00' },
+        { date: '2023-10-26', entryTime: '08:00:00', departureTime: '20:00:00' },
+        { date: '2023-10-27', entryTime: '08:00:00', departureTime: '20:00:00' },
+        { date: '2023-10-28', entryTime: '08:00:00', departureTime: '20:00:00' }
+      ],
       allowNull: true,
       field: 'working_hours'
     },
@@ -77,10 +78,12 @@ const Colaborators = db.define(
   },
   {
     hooks: {
-      beforeCreate: (colaborator, options) => {
-        const { password } = colaborator;
-        const hash = bcrypt.hashSync(password, 8);
-        colaborator.password = hash;
+      beforeBulkCreate: (colaborators, options) => {
+        for (const colaborator of colaborators) {
+          const { password } = colaborator;
+          const hash = bcrypt.hashSync(password, 8);
+          colaborator.password = hash;
+        }
       }
     }
   }

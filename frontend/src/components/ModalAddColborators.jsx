@@ -4,12 +4,13 @@ import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { createColaboratorThunk } from '../store/slices';
 
-const ModalAddColborators = ({ businessId, ...props }) => {
+const ModalAddColborators = ({ ...props }) => {
   const { handleSubmit, register, reset, setValue, getValues } = useForm();
   const [inputs, setInputs] = useState([1, 2]);
   const maxInputs = 20;
 
   const colaborators = useSelector(state => state.colaborators);
+  const { business } = useSelector(state => state.user);
 
   const dispatch = useDispatch();
 
@@ -26,11 +27,14 @@ const ModalAddColborators = ({ businessId, ...props }) => {
       number: getValues(`number${element}`),
       salary: getValues(`salary${element}`),
       email: getValues(`email${element}`),
-      businessId
+      businessId: business[0].id,
+      password: business[0].name.split(' ').join('').toLowerCase() + '123'
     }));
 
-    const dataArrayCleared = dataArray.filter(item => item.name !== '' && item.price !== '');
+    const dataArrayCleared = dataArray.filter(item => item.name !== '' && item.surname !== '' && item.email !== '');
 
+    if (dataArrayCleared.length < 1) return;
+    
     dispatch(createColaboratorThunk(dataArrayCleared, colaborators));
     reset();
     setInputs([1, 2]);
