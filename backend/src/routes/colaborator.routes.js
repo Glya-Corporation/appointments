@@ -5,7 +5,7 @@ const authenticate = require('../middlewares/auth.middleware');
 
 const router = Router();
 
-router.post('/colaborator/business/:id', authenticate, createColaborator);
+router.post('/colaborator', authenticate, createColaborator);
 
 router.get('/colaborator/:id', authenticate, getColaborator);
 

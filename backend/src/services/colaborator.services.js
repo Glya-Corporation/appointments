@@ -1,9 +1,9 @@
 const { Colaborators, Roles } = require('../models');
 
 class ColaboratorServices {
-  static async createColaborator(businessId, body) {
+  static async createColaborator(colaborator) {
     try {
-      const result = await Colaborators.create({ ...body, businessId });
+      const result = await Colaborators.bulkCreate(colaborator);
       return result;
     } catch (error) {
       throw error;

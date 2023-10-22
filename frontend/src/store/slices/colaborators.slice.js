@@ -20,6 +20,26 @@ export const getColaboratorsThunk = businessId => dispatch => {
     .catch(err => console.error(err));
 };
 
+export const updateColaboratorThunk = (id, status, colaborators) => dispatch => {
+  return axios
+    .put(`${apiUrl}/colaborator/${id}/update`, status, getConfig())
+    .then(res => {
+      console.log(res.data);
+      dispatch(setColaborators(colaborators));
+    })
+    .catch(err => console.error(err));
+};
+
+export const createColaboratorThunk = (colaborator, colaborators) => dispatch => {
+  return axios
+    .post(`${apiUrl}/colaborator`, colaborator, getConfig())
+    .then(res => {
+      console.log(res.data);
+      dispatch(setColaborators([...colaborators, ...res.data]));
+    })
+    .catch(err => console.error(err));
+};
+
 export const { setColaborators } = colaboratorsSlice.actions;
 
 export default colaboratorsSlice.reducer;

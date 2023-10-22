@@ -3,8 +3,7 @@ const { ColaboratorServices } = require('../services');
 const createColaborator = async (req, res, next) => {
   try {
     const body = req.body;
-    const businessId = req.params.id;
-    const result = await ColaboratorServices.createColaborator(businessId, body);
+    const result = await ColaboratorServices.createColaborator(body);
     res.status(201).json(result);
   } catch (error) {
     next({

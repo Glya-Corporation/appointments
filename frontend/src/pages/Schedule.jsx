@@ -18,10 +18,10 @@ const Schedule = () => {
 
   const categories = useSelector(state => state.servicesCategories);
   const service = useSelector(state => state.schedule);
-  const { business } = useSelector(state => state);
-  const { appointments } = useSelector(state => state);
-  const { user } = useSelector(state => state);
-  const { favorites } = useSelector(state => state);
+  const business = useSelector(state => state.business);
+  const appointments = useSelector(state => state.appointments);
+  const user = useSelector(state => state.user);
+  const favorites = useSelector(state => state.favorites);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -137,7 +137,7 @@ const Schedule = () => {
           <div className='date-service'>
             <input type='date' onChange={e => setDate(e.target.value)} />
             <div onClick={() => setShowList(!showList)}>
-              <b className='date-service-div-b'>{hours}</b>
+              <b className='date-service-div-b' >{hours}</b>
               <ul className={`date-service-div-ul ${showList ? 'show-hours' : ''}`}>{businessSelected?.id && getAvailable(service?.ownerService['workingHours'])}</ul>
             </div>
           </div>
