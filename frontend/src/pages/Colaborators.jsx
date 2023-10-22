@@ -15,7 +15,7 @@ import { Button } from 'react-bootstrap';
 import ModalAddColborators from '../components/ModalAddColborators';
 
 const Colaborators = () => {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
   const colaborators = useSelector(state => state.colaborators);
 
   const dispatch = useDispatch();
@@ -68,7 +68,7 @@ const Colaborators = () => {
             <span>{colaborator.email}</span>
             <div className='icons-colaborator'>
               <img src={colaborator.status === 'active' ? toggleOnIcon : toggleOffIcon} alt='icono' onClick={() => updateColaborator(colaborator.id)} />
-              <img src={scheduleIcon} alt='icono' onClick={() => navigate('/schedules')} />
+              <img src={scheduleIcon} alt='icono' onClick={() => navigate(`/schedules/${colaborator.id}`)} />
               <img src={penIcon} alt='icono' />
               <img src={deleteIcon} alt='icono' onClick={() => deleteColaborator(colaborator.id)} />
             </div>

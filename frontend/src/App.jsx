@@ -57,7 +57,7 @@ function App() {
           <Route path='/service' element={<Services />} />
           <Route path='/colaborator' element={<Colaborators />} />
           <Route path='/photos' element={<Photos />} />
-          <Route path='/schedules' element={<Schedules />} />
+          <Route path='/schedules/:id' element={<Schedules />} />
           <Route path='/settings' element={<Settings />} />
         </Route>
       </Routes>
