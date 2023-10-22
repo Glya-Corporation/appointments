@@ -8,7 +8,7 @@ import penIcon from '../assets/pen.svg';
 import scheduleIcon from '../assets/schedule.svg';
 import deleteIcon from '../assets/delete.svg';
 
-import { updateColaboratorThunk } from '../store/slices/index';
+import { deleteColaboratorThunk, updateColaboratorThunk } from '../store/slices/index';
 import { useNavigate } from 'react-router-dom';
 
 import { Button } from 'react-bootstrap';
@@ -33,6 +33,11 @@ const Colaborators = () => {
     dispatch(updateColaboratorThunk(id, { status: colaborator.status === 'active' ? 'inactive' : 'active' }, newArray));
   };
 
+  const deleteColaborator = id => {
+    const newArray = colaborators.filter(colaborator => colaborator.id !== id);
+    dispatch(deleteColaboratorThunk(id, newArray));
+  };
+
   const styles = {
     active: {
       backgroundColor: 'var(--primaryT)',
@@ -45,7 +50,7 @@ const Colaborators = () => {
 
   return (
     <div className='colaborator-main'>
-      <ModalAddColborators show={show} onHide={() => setShow(false)} businessId={colaborators?.[0].businessId} />
+      <ModalAddColborators show={show} onHide={() => setShow(false)} />
       <GoBack />
       <h3>Colaboradores</h3>
 
@@ -65,7 +70,7 @@ const Colaborators = () => {
               <img src={colaborator.status === 'active' ? toggleOnIcon : toggleOffIcon} alt='icono' onClick={() => updateColaborator(colaborator.id)} />
               <img src={scheduleIcon} alt='icono' onClick={() => navigate('/schedules')} />
               <img src={penIcon} alt='icono' />
-              <img src={deleteIcon} alt='icono' />
+              <img src={deleteIcon} alt='icono' onClick={() => deleteColaborator(colaborator.id)} />
             </div>
           </li>
         ))}

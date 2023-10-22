@@ -24,7 +24,6 @@ export const updateColaboratorThunk = (id, status, colaborators) => dispatch => 
   return axios
     .put(`${apiUrl}/colaborator/${id}/update`, status, getConfig())
     .then(res => {
-      console.log(res.data);
       dispatch(setColaborators(colaborators));
     })
     .catch(err => console.error(err));
@@ -34,8 +33,16 @@ export const createColaboratorThunk = (colaborator, colaborators) => dispatch =>
   return axios
     .post(`${apiUrl}/colaborator`, colaborator, getConfig())
     .then(res => {
-      console.log(res.data);
       dispatch(setColaborators([...colaborators, ...res.data]));
+    })
+    .catch(err => console.error(err));
+};
+
+export const deleteColaboratorThunk = (id, colaborators) => dispatch => {
+  return axios
+    .delete(`${apiUrl}/colaborator/${id}/delete`, getConfig())
+    .then(res => {
+      dispatch(setColaborators(colaborators));
     })
     .catch(err => console.error(err));
 };

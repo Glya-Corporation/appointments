@@ -34,7 +34,7 @@ const ModalAddColborators = ({ ...props }) => {
     const dataArrayCleared = dataArray.filter(item => item.name !== '' && item.surname !== '' && item.email !== '');
 
     if (dataArrayCleared.length < 1) return;
-    
+
     dispatch(createColaboratorThunk(dataArrayCleared, colaborators));
     reset();
     setInputs([1, 2]);

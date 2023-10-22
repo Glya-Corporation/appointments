@@ -60,7 +60,7 @@ const updateColaborator = async (req, res, next) => {
 const deleteColaborator = async (req, res, next) => {
   try {
     const id = req.params.id;
-    const result = await ColaboratorServices(id);
+    const result = await ColaboratorServices.deleteColaborator(id);
     res.status(200).json(result);
   } catch (error) {
     next({
