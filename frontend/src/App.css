@@ -1092,10 +1092,12 @@ main {
 }
 
 .services-main,
-.colaborator-main {
+.colaborator-main,
+.schedules-main,
+.settings-main {
   width: 100%;
-  height: calc(100vh - 4rem);
-  padding: 5.5rem 0.5rem 3.5rem;
+  height: calc(100vh - 4.5rem);
+  padding: 5.5rem 0.5rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1250,12 +1252,6 @@ main {
   grid-template-columns: repeat(2, 1fr);
   margin: 0.5rem 0;
   border-bottom: 1px solid var(--primaryT);
-}
-
-.schedules-main {
-  width: 100%;
-  height: 100%;
-  padding: 6.5rem 0.5rem 5rem;
 }
 
 .schedule-detail--hours input,
