@@ -59,15 +59,15 @@ const ModalAddColborators = ({ ...props }) => {
               <input type='email' placeholder='Correo' {...register(`email${element}`)} />
             </div>
           ))}
-          <Button variant='success' type='submit'>
+          <button className='body btn' type='submit'>
             Guardar Colaboradores
-          </Button>
+          </button>
         </form>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant='success' onClick={addInput} disabled={inputs.length === maxInputs}>
+        <button className='body btn' onClick={addInput} disabled={inputs.length === maxInputs}>
           Agregar más
-        </Button>
+        </button>
       </Modal.Footer>
     </Modal>
   );

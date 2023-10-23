@@ -1,0 +1,125 @@
+.vinoG {
+  --primary: #bf0c42;
+  --primaryT: #bf0c4250;
+  --unoBody: #bf0c42;
+  --unoBodyT: #bf0c4280;
+  --dosBody: #982d3b;
+  --dosBodyT: #982d3b80;
+  --tresBody: #ed8389;
+  --tresBodyT: #ed838980;
+  --cuatroBody: #ed8389;
+  --cuatroBodyT: #ed838980;
+  --cincoBody: #982d3b;
+  --cincoBodyT: #982d3b80;
+  --seisBody: #bf0c42;
+  --seisBodyT: #bf0c4280;
+  --colorFont: #ffffff;
+}
+
+.verdeG {
+  --primary: #009357;
+  --primaryT: #00935750;
+  --unoBody: #009357;
+  --unoBodyT: #00935780;
+  --dosBody: #57b035;
+  --dosBodyT: #57b03580;
+  --tresBody: #95c670;
+  --tresBodyT: #95c67080;
+  --cuatroBody: #95c670;
+  --cuatroBodyT: #95c67080;
+  --cincoBody: #57b035;
+  --cincoBodyT: #57b03580;
+  --seisBody: #009357;
+  --seisBodyT: #00935780;
+  --colorFont: var(--gray);
+}
+
+.mostazaG {
+  --primary: #78280f;
+  --primaryT: #78280f50;
+  --unoBody: #78280f;
+  --unoBodyT: #78280f80;
+  --dosBody: #e9a700;
+  --dosBodyT: #e9a70080;
+  --tresBody: #ddc467;
+  --tresBodyT: #ddc46780;
+  --cuatroBody: #ddc467;
+  --cuatroBodyT: #ddc46780;
+  --cincoBody: #e9a700;
+  --cincoBodyT: #e9a70080;
+  --seisBody: #78280f;
+  --seisBodyT: #78280f80;
+  --colorFont: #ffffff;
+}
+
+.verde {
+  --primary: #198754;
+  --primaryT: #19875450;
+  --unoBody: #198754;
+  --unoBodyT: #19875480;
+  --dosBody: #198754;
+  --dosBodyT: #19875480;
+  --tresBody: #198754;
+  --tresBodyT: #19875480;
+  --cuatroBody: #198754;
+  --cuatroBodyT: #19875480;
+  --cincoBody: #198754;
+  --cincoBodyT: #19875480;
+  --seisBody: #198754;
+  --seisBodyT: #19875480;
+  --colorFont: #ffffff;
+}
+
+.vino {
+  --primary: #982d3b;
+  --primaryT: #982d3b50;
+  --unoBody: #982d3b;
+  --unoBodyT: #982d3b80;
+  --dosBody: #982d3b;
+  --dosBodyT: #982d3b80;
+  --tresBody: #982d3b;
+  --tresBodyT: #982d3b80;
+  --cuatroBody: #982d3b;
+  --cuatroBodyT: #982d3b80;
+  --cincoBody: #982d3b;
+  --cincoBodyT: #982d3b80;
+  --seisBody: #982d3b;
+  --seisBodyT: #982d3b80;
+  --colorFont: #ffffff;
+}
+
+.mostaza {
+  --primary: #ba7f0f;
+  --primaryT: #ba7f0f50;
+  --unoBody: #ba7f0f;
+  --unoBodyT: #ba7f0f80;
+  --dosBody: #ba7f0f;
+  --dosBodyT: #ba7f0f80;
+  --tresBody: #ba7f0f;
+  --tresBodyT: #ba7f0f80;
+  --cuatroBody: #ba7f0f;
+  --cuatroBodyT: #ba7f0f80;
+  --cincoBody: #ba7f0f;
+  --cincoBodyT: #ba7f0f80;
+  --seisBody: #ba7f0f;
+  --seisBodyT: #ba7f0f80;
+  --colorFont: #ffffff;
+}
+
+.azul {
+  --primary: #1080bf;
+  --primaryT: #1080bf50;
+  --unoBody: #1080bf;
+  --unoBodyT: #1080bf80;
+  --dosBody: #1080bf;
+  --dosBodyT: #1080bf80;
+  --tresBody: #1080bf;
+  --tresBodyT: #1080bf80;
+  --cuatroBody: #1080bf;
+  --cuatroBodyT: #1080bf80;
+  --cincoBody: #1080bf;
+  --cincoBodyT: #1080bf80;
+  --seisBody: #1080bf;
+  --seisBodyT: #1080bf80;
+  --colorFont: #ffffff;
+}

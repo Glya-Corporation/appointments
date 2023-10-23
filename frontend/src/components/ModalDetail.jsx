@@ -5,7 +5,6 @@ import capitalice from '../functions/capitalizar.js';
 import getDurationHour from '../functions/getDurationHour.js';
 
 const ModalDetail = ({ item, ...props }) => {
-
   return (
     <>
       {item.id && (
@@ -33,7 +32,9 @@ const ModalDetail = ({ item, ...props }) => {
             </ul>
           </Modal.Body>
           <Modal.Footer>
-            <Button onClick={props.onHide} variant='success'>Close</Button>
+            <button className='body btn' onClick={props.onHide} variant='success'>
+              Close
+            </button>
           </Modal.Footer>
         </Modal>
       )}

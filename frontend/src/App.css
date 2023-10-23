@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Arima:wght@300;400;500&display=swap');
+@import url('./styles/colores.css');
 
 * {
   padding: 0;
@@ -13,20 +14,21 @@
   --gray: #5f5f5f;
   --primary: #198754;
   --primaryT: #19875450;
-  --blueBody: #cbe4f1;
-  --blueBodyT: #e3eaee;
-  --violetBody: #c8c1de;
-  --violetBodyT: #d7d6db;
-  --pink1Body: #f4d1e1;
-  --pink1BodyT: #f1e2e9;
-  --pink2Body: #f6cfbd;
-  --pink2BodyT: #f1e1da;
-  --whiteBody: #f9f5d1;
-  --whiteBodyT: #f8f6e3;
-  --greenBody: #cde3cd;
-  --greenBodyT: #d8e0d8;
+  --unoBody: #cbe4f1;
+  --unoBodyT: #e3eaee;
+  --dosBody: #c8c1de;
+  --dosBodyT: #d7d6db;
+  --tresBody: #f4d1e1;
+  --tresBodyT: #f1e2e9;
+  --cuatroBody: #f6cfbd;
+  --cuatroBodyT: #f1e1da;
+  --cincoBody: #f9f5d1;
+  --cincoBodyT: #f8f6e3;
+  --seisBody: #cde3cd;
+  --seisBodyT: #d8e0d8;
   --font: 'Arima';
   --colorrr: #9c8d00;
+  --colorFont: var(--gray);
 }
 
 body {
@@ -37,7 +39,8 @@ body {
 }
 
 .body {
-  background: linear-gradient(to right, var(--blueBodyT) 0%, var(--violetBodyT) 20%, var(--pink1BodyT) 40%, var(--pink2BodyT) 60%, var(--whiteBodyT) 80%, var(--greenBodyT) 100%);
+  background: linear-gradient(to right, var(--unoBodyT) 0%, var(--dosBodyT) 20%, var(--tresBodyT) 40%, var(--cuatroBodyT) 60%, var(--cincoBodyT) 80%, var(--seisBodyT) 100%);
+  color: var(--colorFont) !important;
 }
 
 img {
@@ -63,7 +66,7 @@ main {
   left: 0;
   right: 0;
   z-index: 900;
-  background: linear-gradient(to right, var(--blueBody) 0%, var(--violetBody) 20%, var(--pink1Body) 40%, var(--pink2Body) 60%, var(--whiteBody) 80%, var(--greenBody) 100%);
+  background: linear-gradient(to right, var(--unoBody) 0%, var(--dosBody) 20%, var(--tresBody) 40%, var(--cuatroBody) 60%, var(--cincoBody) 80%, var(--seisBody) 100%);
 }
 
 .nav {
@@ -442,7 +445,7 @@ main {
 
 .btn-update {
   background-color: var(--primary) !important;
-  color: var(--blueBody) !important;
+  color: var(--unoBody) !important;
 }
 
 .complete-register {
@@ -1058,8 +1061,7 @@ main {
 }
 
 .btn-view-resume {
-  color: var(--black) !important;
-  border: transparent !important;
+  color: var(--colorFont);
 }
 
 .settings-container {
@@ -1091,11 +1093,10 @@ main {
   box-shadow: 1px 1px 1px #00000020, -5px -5px 10px #ffffff50, inset 5px 5px 5px #00000020, inset -5px -5px 5px #ffffff50;
 }
 
-.services-main,
-.colaborator-main {
+.main {
   width: 100%;
   height: calc(100vh - 4rem);
-  padding: 5.5rem 0.5rem 3.5rem;
+  padding: 5.5rem 0.5rem 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1252,12 +1253,6 @@ main {
   border-bottom: 1px solid var(--primaryT);
 }
 
-.schedules-main {
-  width: 100%;
-  height: 100%;
-  padding: 6.5rem 0.5rem 5rem;
-}
-
 .schedule-detail--hours input,
 .schedule-detail--hours select,
 .input-week {
@@ -1289,7 +1284,7 @@ main {
 .schedule-detail {
   width: 95%;
   margin: auto;
-  padding: 1rem .5rem;
+  padding: 1rem 0.5rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -1333,10 +1328,52 @@ main {
 .schedule-detail--days ul li {
   display: flex;
   align-items: center;
-  gap: .5rem;
-  padding: .5rem 1rem;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
   border: 1px solid var(--primary);
-  border-radius: .5rem;
+  border-radius: 0.5rem;
+}
+
+.business-card {
+  width: 80%;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 25rem;
+  border: 1px solid var(--primary);
+  margin: 2rem 0;
+  border-radius: 0.5rem;
+}
+
+.business-card > img {
+  border-radius: 1rem;
+}
+
+.business-card p {
+  margin: 0.1rem;
+  font-weight: bold;
+}
+
+.list-btn-sttings {
+  width: 100%;
+  padding: 0.5rem 1.5rem !important;
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  text-align: center;
+}
+
+.colors-list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.colors-list li {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
 }
 
 @media screen and (min-width: 1024px) {

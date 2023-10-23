@@ -4,13 +4,14 @@ import { motion } from 'framer-motion';
 import { useNavigate, useResolvedPath } from 'react-router-dom';
 
 import logoAlfa from '../assets/alfa.svg';
-import imgStar from '../assets/star.svg';
+
 import capitalice from '../functions/capitalizar';
 
 import { getBusinessCategoriesThunk, getFavoritesThunk, updateFavorite } from '../store/slices';
 
 import rating from '../functions/rating.js';
 import { setLoader } from '../store/slices/loader.slice';
+import GetStar from '../functions/GetStar';
 
 const Locales = () => {
   const allBusiness = useSelector(state => state.business);
@@ -47,14 +48,6 @@ const Locales = () => {
       setTimeout(() => setBusiness(allBusiness), 550);
     }
   }, [allBusiness, businessFavorite]);
-
-  const getStar = rating => {
-    const stars = [];
-    for (let i = 0; i < rating; i++) {
-      stars.push(<img src={imgStar} key={i} width='100px' />);
-    }
-    return stars;
-  };
 
   const filterBusiness = id => {
     setCategorySelected(id);
@@ -123,7 +116,7 @@ const Locales = () => {
             </div>
             <div className='all-business--description'>
               <span>{item.name}</span>
-              <div className='rating'>{getStar(item.rating)}</div>
+              <div className='rating'>{GetStar(item.rating)}</div>
             </div>
             {isFavorites && <input className='all-business--check' type='checkbox' checked={selectedBusinessId === item.id} onChange={() => setSelectedBusinessId(item.id)} />}
           </motion.li>

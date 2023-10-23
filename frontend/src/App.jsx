@@ -33,8 +33,10 @@ function App() {
     if (user.id) {
       dispatch(getUserThunk(user.id, user.role?.id));
       dispatch(getAllBusinessThunk());
+      document.body.classList.add(user.business[0].settings?.color);
     }
   }, [user]);
+
 
   return (
     <HashRouter>

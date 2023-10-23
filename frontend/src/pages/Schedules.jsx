@@ -78,7 +78,7 @@ const Schedules = () => {
             ))}
           </ul>
         </section>
-        <Button variant='success'>Guardar</Button>
+        <button className='body btn'>Guardar</button>
       </article>
     </div>
   );

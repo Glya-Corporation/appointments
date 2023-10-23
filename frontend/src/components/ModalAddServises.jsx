@@ -52,15 +52,15 @@ const ModalAddServices = ({ businessId, ...props }) => {
               <input type='number' placeholder='Precio' {...register(`price${element}`)} />
             </div>
           ))}
-          <Button variant='success' type='submit'>
+          <button className='body btn' type='submit'>
             Guardar Servicios
-          </Button>
+          </button>
         </form>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant='success' onClick={addInput} disabled={inputs.length === maxInputs}>
+        <button className='body btn' onClick={addInput} disabled={inputs.length === maxInputs}>
           Agregar más
-        </Button>
+        </button>
       </Modal.Footer>
     </Modal>
   );

@@ -21,7 +21,7 @@ const ModalUpdateServices = ({ data, ...props }) => {
     object.businessId = business?.[0].id;
 
     dispatch(updateServiceThunk(object, update));
-    
+
     reset();
     setTimeout(() => {
       props.onHide();
@@ -38,9 +38,9 @@ const ModalUpdateServices = ({ data, ...props }) => {
           <input type='text' placeholder={data.name} {...register('name')} />
           <input type='time' defaultValue={data.duration} {...register('duration')} />
           <input type='number' placeholder={data.price} {...register('price')} />
-          <Button variant='success' type='submit'>
+          <button className='body btn' type='submit'>
             Actualizar Servicio
-          </Button>
+          </button>
         </form>
       </Modal.Body>
       <Modal.Footer></Modal.Footer>

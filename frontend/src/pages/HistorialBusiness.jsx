@@ -116,7 +116,7 @@ const HistorialBusiness = () => {
         <button>Next</button>
       </div> */}
       <OverlayTrigger placement='top' delay={{ show: 250, hide: 400 }} overlay={renderTooltip}>
-        <Button className='body btn-view-resume'>Resumen de Ganancias</Button>
+        <button className='body btn btn-view-resume'>Resumen de Ganancias</button>
       </OverlayTrigger>
     </main>
   );

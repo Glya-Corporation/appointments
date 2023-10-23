@@ -49,7 +49,7 @@ const Colaborators = () => {
   };
 
   return (
-    <div className='colaborator-main'>
+    <main className='colaborator-main main'>
       <ModalAddColborators show={show} onHide={() => setShow(false)} />
       <GoBack />
       <h3>Colaboradores</h3>
@@ -75,10 +75,10 @@ const Colaborators = () => {
           </li>
         ))}
       </ul>
-      <Button variant='success' onClick={() => setShow(true)}>
+      <button className='body btn' onClick={() => setShow(true)}>
         Agregar
-      </Button>
-    </div>
+      </button>
+    </main>
   );
 };
 

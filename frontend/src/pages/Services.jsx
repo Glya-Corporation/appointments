@@ -10,6 +10,7 @@ import GoBack from '../components/GoBack';
 import capitalize from '../functions/capitalizar.js';
 
 import deleteIcon from '../assets/delete.svg';
+import { Button } from 'react-bootstrap';
 
 const Services = () => {
   const categories = useSelector(state => state.servicesCategories);
@@ -37,7 +38,7 @@ const Services = () => {
   };
 
   return (
-    <div className='services-main'>
+    <div className='services-main main'>
       <GoBack />
       <ModalAddServices show={showAdd} onHide={() => setShowAdd(false)} data={business?.[0].id} />
       <ModalUpdateServices show={showUpdate} onHide={() => setShowUpdate(false)} data={currentService} />
@@ -58,10 +59,10 @@ const Services = () => {
             </li>
           ))}
         </ul>
-        <button className='body btn-general' onClick={() => setShowAdd(true)}>
-          Agregar
-        </button>
       </div>
+      <button className='body btn' onClick={() => setShowAdd(true)}>
+        Agregar
+      </button>
     </div>
   );
 };
