@@ -2,7 +2,7 @@ import React from 'react';
 import { Modal } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux'
 
-import { updateSettings } from '../store/slices/index.js'
+import { updateSettingsThunk } from '../store/slices/index.js';
 
 const ModalTemas = ({ ...props }) => {
   const { business } = useSelector(state => state.user);
@@ -59,7 +59,7 @@ const ModalTemas = ({ ...props }) => {
     const colorSelected = colors.find(color => color.id === id);
     const settings = { ...business[0].settings, color: colorSelect.title }
 
-    dispatch(updateSettings(business[0].id), settings)
+    dispatch(updateSettingsThunk(business[0].id), settings);
   }
 
   return (

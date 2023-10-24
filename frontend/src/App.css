@@ -1093,12 +1093,9 @@ main {
   box-shadow: 1px 1px 1px #00000020, -5px -5px 10px #ffffff50, inset 5px 5px 5px #00000020, inset -5px -5px 5px #ffffff50;
 }
 
-.services-main,
-.colaborator-main,
-.schedules-main,
-.settings-main {
+.main {
   width: 100%;
-  height: calc(100vh - 4rem);
+  height: calc(100vh - 4.5rem);
   padding: 5.5rem 0.5rem 1.5rem;
   display: flex;
   flex-direction: column;
@@ -1208,6 +1205,7 @@ main {
 
 .list-colaborator {
   width: 90%;
+  height: 100%;
   padding: 0 2rem !important;
   display: grid;
   gap: 1rem;
@@ -1346,10 +1344,12 @@ main {
   border: 1px solid var(--primary);
   margin: 2rem 0;
   border-radius: 0.5rem;
+  box-shadow: 0 0 10px #00000080;
 }
 
 .business-card > img {
   border-radius: 1rem;
+  margin-bottom: 1rem;
 }
 
 .business-card p {

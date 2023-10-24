@@ -16,7 +16,7 @@ router.get('/business', authenticate, getAllBusiness);
 
 router.put('/business/:id/update', authenticate, updateBusiness);
 
-route.put('/business/:id/update/settings', authenticate, updateSettings)
+router.put('/business/:id/update/settings', authenticate, updateSettings)
 
 router.delete('/business/:id/delete', authenticate, deleteBusiness);
 

@@ -11,7 +11,6 @@ import deleteIcon from '../assets/delete.svg';
 import { deleteColaboratorThunk, updateColaboratorThunk } from '../store/slices/index';
 import { useNavigate } from 'react-router-dom';
 
-import { Button } from 'react-bootstrap';
 import ModalAddColborators from '../components/ModalAddColborators';
 
 const Colaborators = () => {
