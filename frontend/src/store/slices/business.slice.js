@@ -31,6 +31,15 @@ export const updateBusinessThunk = (id, isSelected, userId, roleId) => dispatch 
     .catch(err => console.error(err));
 };
 
+export const updateSettingsThunk = (id, settings) => dispatch => {
+  return axios
+    .put(`${apiUrl}/business/${id}/update/settings`, settings, getConfig())
+    .then(res => {
+      console.log(res.data)
+    })
+    .catch(err => console.error(err));
+};
+
 export const { setBusiness } = businessSlice.actions;
 
 export default businessSlice.reducer;

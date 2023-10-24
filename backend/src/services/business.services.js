@@ -68,6 +68,14 @@ class BusinessServices {
       throw error;
     }
   }
+  static async updateSettings(id, { settings }) {
+    try {
+      await Business.update({ settings }, { where: { id } });
+      return { message: 'Updated successful' };
+    } catch (error) {
+      throw error;
+    }
+  }
   static async deleteBusiness(id) {
     try {
       await Business.destroy({ where: { id } });

@@ -41,10 +41,12 @@ const Business = db.define('business', {
   },
   rating: {
     type: DataTypes.INTEGER,
+    defaultValue: 1,
     allowNull: true
   },
   logo: {
     type: DataTypes.STRING,
+    defaultValue: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png',
     allowNull: false
   },
   address: {
