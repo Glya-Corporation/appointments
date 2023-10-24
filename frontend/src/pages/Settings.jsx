@@ -12,6 +12,15 @@ const Settings = () => {
   const [showModal, setModalShow] = useState(true);
 
   return (
+    <div className='settings-main'>
+      <h3>Configuraciones</h3>
+      <ul>
+        <li>Temas</li>
+        <li>Días laborables</li>
+        <li>Colores</li>
+        <li>Pagos</li>
+      </ul>
+    </div>
     <main className='main'>
       <ModalTemas show={showModal} onHide={() => setModalShow(false)} />
       <GoBack />

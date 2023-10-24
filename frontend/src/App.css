@@ -1093,7 +1093,10 @@ main {
   box-shadow: 1px 1px 1px #00000020, -5px -5px 10px #ffffff50, inset 5px 5px 5px #00000020, inset -5px -5px 5px #ffffff50;
 }
 
-.main {
+.services-main,
+.colaborator-main,
+.schedules-main,
+.settings-main {
   width: 100%;
   height: calc(100vh - 4rem);
   padding: 5.5rem 0.5rem 1.5rem;
