@@ -14,6 +14,7 @@ const ModalTemas = ({ ...props }) => {
   const colorSelect = id => {
     const colorSelected = colors.find(color => color.id === id);
     const settings = { ...business[0].settings, color: colorSelected.title };
+    console.log()
     dispatch(updateSettingsThunk(business[0].id), settings);
     //location.reload();
   };
