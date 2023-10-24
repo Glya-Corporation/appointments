@@ -68,9 +68,9 @@ class BusinessServices {
       throw error;
     }
   }
-  static async updateSettings(id, { settings }) {
+  static async updateSettings(id, settings) {
     try {
-      await Business.update({ settings }, { where: { id } });
+      await Business.update(settings, { where: { id } });
       return { message: 'Updated successful' };
     } catch (error) {
       throw error;
