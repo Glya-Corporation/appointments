@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const { createBusiness, getBusiness, getAllBusinessByUserId, getAllBusiness, updateBusiness, deleteBusiness } = require('../controllers');
+const { createBusiness, getBusiness, getAllBusinessByUserId, getAllBusiness, updateBusiness, updateSettings, deleteBusiness } = require('../controllers');
 const authenticate = require('../middlewares/auth.middleware');
 
 
@@ -15,6 +15,8 @@ router.get('/business/user/:id', getAllBusinessByUserId);
 router.get('/business', authenticate, getAllBusiness);
 
 router.put('/business/:id/update', authenticate, updateBusiness);
+
+route.put('/business/:id/update/settings', authenticate, updateSettings)
 
 router.delete('/business/:id/delete', authenticate, deleteBusiness);
 

@@ -71,6 +71,21 @@ const updateBusiness = async (req, res, next) => {
   }
 };
 
+const updateSettings = async (req, res, next) => {
+  try {
+    const id = req.params.id;
+    const body = req.body;
+    const result = await BusinessServices.updateSttings(id, body);
+    res.status(200).json(result);
+  } catch (error) {
+    next({
+      status: 400,
+      message: 'Error al actualizar',
+      errorContent: error
+    });
+  }
+}
+
 const deleteBusiness = async (req, res, next) => {
   try {
     const id = req.params.id;

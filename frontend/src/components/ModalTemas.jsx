@@ -1,26 +1,36 @@
 import React from 'react';
 import { Modal } from 'react-bootstrap';
+import { useSelector, useDispatch } from 'react-redux'
+
+import { updateSettings } from '../store/slices/index.js'
 
 const ModalTemas = ({ ...props }) => {
+  const { business } = useSelector(state => state.user);
+
+  const dispatch = useDispatch()
+
   const colors = [
     {
       id: 1,
-      title: 'Primario',
-      color: ['#cbe4f1', '#c8c1de', '#f4d1e1', '#f6cfbd', '#f9f5d1', '#f9f5d1']
+      title: 'Original',
+      color: ['#cbe4f1', '#c8c1de', '#f4d1e1', '#f6cfbd', '#f9f5d1', '#f9f5d1'],
+      colorBase: 'Multicolor'
     },
     {
       id: 2,
-      title: 'Vino',
-      color: ['#BF0C42', '#982D3B', '#ED8389', '#ED8389', '#982D3B', '#BF0C42']
+      title: 'Vino Degradado',
+      color: ['#BF0C42', '#982D3B', '#ED8389', '#ED8389', '#982D3B', '#BF0C42'],
+      colorBase: '#BF0C42'
     },
     {
       id: 3,
-      title: 'Verde',
-      color: ['#009357', '#57B035', '#95C670', '#95C670', '#57B035', '#009357']
+      title: 'Verde Degradado',
+      color: ['#009357', '#57B035', '#95C670', '#95C670', '#57B035', '#009357'],
+      colorBase: '#009357'
     },
     {
       id: 4,
-      title: 'Naranja',
+      title: 'Naranja Degradado',
       color: ['#78280F', '#E9A700', '#DDC467', '#DDC467', '#E9A700', '#78280F']
     },
     {
@@ -44,6 +54,13 @@ const ModalTemas = ({ ...props }) => {
       color: ['#1080BF', '#1080BF', '#1080BF', '#1080BF', '#1080BF', '#1080BF']
     }
   ];
+
+  const colorSelect = id => {
+    const colorSelected = colors.find(color => color.id === id);
+    const settings = { ...business[0].settings, color: colorSelect.title }
+
+    dispatch(updateSettings(business[0].id), settings)
+  }
 
   return (
     <Modal {...props} centered>

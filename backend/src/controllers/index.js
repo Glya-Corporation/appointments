@@ -1,5 +1,5 @@
 const { createUser, getUser, getAllUsers, updateUser, deleteUser } = require('./user.controllers.js');
-const { createBusiness, getBusiness, getAllBusinessByUserId, getAllBusiness, updateBusiness, deleteBusiness } = require('./business.controllers.js');
+const { createBusiness, getBusiness, getAllBusinessByUserId, getAllBusiness, updateBusiness, updateSettings, deleteBusiness } = require('./business.controllers.js');
 const { createColaborator, getColaborator, getAllColaborators, updateColaborator, deleteColaborator } = require('./colaborator.controllers.js');
 const { createClient, getClient, getAllClientsByBusinessId, updateClient, deleteClient } = require('./client.controllers.js');
 const { createAppointment, getAppointment, getAllAppointmentsByBusiness, getAllAppointmentsByClient, updateAppointment, deleteAppointment } = require('./appointment.controllers.js');
@@ -19,6 +19,7 @@ module.exports = {
   getAllBusinessByUserId,
   getAllBusiness,
   updateBusiness,
+  updateSettings,
   deleteBusiness,
   createColaborator,
   getColaborator,

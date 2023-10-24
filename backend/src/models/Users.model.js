@@ -40,6 +40,7 @@ const Users = db.define(
     },
     img_profile: {
       type: DataTypes.STRING,
+      defaultValue: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png',
       allowNull: true
     },
     isVerify: {
