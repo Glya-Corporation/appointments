@@ -75,7 +75,7 @@ const updateSettings = async (req, res, next) => {
   try {
     const id = req.params.id;
     const body = req.body;
-    const result = await BusinessServices.updateSttings(id, body);
+    const result = await BusinessServices.updateSettings(id, body);
     res.status(200).json(result);
   } catch (error) {
     next({
@@ -84,7 +84,7 @@ const updateSettings = async (req, res, next) => {
       errorContent: error
     });
   }
-}
+};
 
 const deleteBusiness = async (req, res, next) => {
   try {
@@ -100,4 +100,4 @@ const deleteBusiness = async (req, res, next) => {
   }
 };
 
-module.exports = { createBusiness, getBusiness, getAllBusinessByUserId, getAllBusiness, updateBusiness, deleteBusiness };
+module.exports = { createBusiness, getBusiness, getAllBusinessByUserId, getAllBusiness, updateBusiness, updateSettings, deleteBusiness };
