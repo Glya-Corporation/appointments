@@ -13,7 +13,7 @@
   --cincoBodyT: #a12a3a80;
   --seisBody: #bf0c42;
   --seisBodyT: #bf0c4280;
-  --colorFont: #2c0000;
+  --colorFont: #3f0008;
 }
 
 .verdeG {
@@ -41,15 +41,15 @@
   --unoBodyT: #78280f80;
   --dosBody: #e9a700;
   --dosBodyT: #e9a70080;
-  --tresBody: #ddc467;
-  --tresBodyT: #ddc46780;
-  --cuatroBody: #ddc467;
-  --cuatroBodyT: #ddc46780;
+  --tresBody: #caad43;
+  --tresBodyT: #caad4380;
+  --cuatroBody: #caad43;
+  --cuatroBodyT: #caad4380;
   --cincoBody: #e9a700;
   --cincoBodyT: #e9a70080;
   --seisBody: #78280f;
   --seisBodyT: #78280f80;
-  --colorFont: #ffffff;
+  --colorFont: #462d00;
 }
 
 .verde {
@@ -67,7 +67,7 @@
   --cincoBodyT: #19875480;
   --seisBody: #198754;
   --seisBodyT: #19875480;
-  --colorFont: #ffffff;
+  --colorFont: #00331b;
 }
 
 .vino {
@@ -85,7 +85,7 @@
   --cincoBodyT: #982d3b80;
   --seisBody: #982d3b;
   --seisBodyT: #982d3b80;
-  --colorFont: #ffffff;
+  --colorFont: #3f0008;
 }
 
 .mostaza {
@@ -103,7 +103,7 @@
   --cincoBodyT: #ba7f0f80;
   --seisBody: #ba7f0f;
   --seisBodyT: #ba7f0f80;
-  --colorFont: #ffffff;
+  --colorFont: #462d00;
 }
 
 .azul {

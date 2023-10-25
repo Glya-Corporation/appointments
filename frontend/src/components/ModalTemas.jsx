@@ -7,16 +7,21 @@ import { updateSettingsThunk } from '../store/slices/index.js';
 import colors from '../util/colors.js';
 
 const ModalTemas = ({ ...props }) => {
-  const { business } = useSelector(state => state.user);
+  const user = useSelector(state => state.user);
 
   const dispatch = useDispatch();
 
   const colorSelect = id => {
     const colorSelected = colors.find(color => color.id === id);
-    const settings = { ...business[0].settings, color: colorSelected.title };
-    console.log()
-    dispatch(updateSettingsThunk(business[0].id), settings);
-    //location.reload();
+    const settings = { ...user.business[0].settings, color: colorSelected.title };
+    dispatch(updateSettingsThunk(user.business[0].id, settings));
+    const updateStorage = {
+      ...user,
+      business: [{ ...user.business[0], settings }]
+    };
+
+    localStorage.setItem('user', JSON.stringify(updateStorage));
+    location.reload();
   };
 
   return (

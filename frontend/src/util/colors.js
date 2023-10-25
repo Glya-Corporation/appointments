@@ -1,7 +1,7 @@
 const colors = [
   {
     id: 1,
-    title: '',
+    title: 'multicolor',
     color: ['#cbe4f1', '#c8c1de', '#f4d1e1', '#f6cfbd', '#f9f5d1', '#f9f5d1'],
     colorBase: 'Multicolor'
   },

@@ -70,6 +70,7 @@ class BusinessServices {
   }
   static async updateSettings(id, settings) {
     try {
+      console.log(settings);
       await Business.update({ settings }, { where: { id } });
       return { message: 'Updated successful' };
     } catch (error) {
